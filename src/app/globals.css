@@ -1,26 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;500;600&display=swap');
+
 @import "tailwindcss";
 
+@theme {
+  /* Colors */
+  --color-primary: #0C4F6A;
+  --color-primary-dark: #083848;
+  --color-primary-light: #1A7A9A;
+  --color-cream: #F5F0E8;
+  --color-cream-dark: #EDE7D9;
+  --color-coral: #E07A5F;
+  --color-coral-dark: #C96A50;
+  --color-gold: #C9A84C;
+  --color-ink: #1C2B33;
+  --color-muted: #4A6572;
+  --color-quiet: #8EA8B4;
+
+  /* Font Families */
+  --font-family-display: 'Cormorant Garamond', Georgia, serif;
+  --font-family-body: 'Outfit', system-ui, sans-serif;
+
+  /* Custom Easing */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-gentle: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Shadows */
+  --shadow-soft: 0 4px 24px rgba(12,79,106,0.08);
+  --shadow-card: 0 8px 40px rgba(12,79,106,0.12);
+  --shadow-hover: 0 16px 56px rgba(12,79,106,0.18);
+  --shadow-elevated: 0 24px 80px rgba(12,79,106,0.22);
+}
+
+/* ── CSS Variables ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.5);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base Styles ── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-body);
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ── Keyframes ── */
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-drift {
+  0%   { transform: translateY(0px) translateX(0px); opacity: 0.15; }
+  33%  { transform: translateY(-18px) translateX(8px); opacity: 0.25; }
+  66%  { transform: translateY(-8px) translateX(-12px); opacity: 0.18; }
+  100% { transform: translateY(0px) translateX(0px); opacity: 0.15; }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes bounce-chevron {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%       { transform: translateY(8px); opacity: 0.6; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 122, 95, 0); }
+  50%       { box-shadow: 0 0 0 12px rgba(224, 122, 95, 0.2); }
+}
+
+/* ── Utility Classes ── */
+.font-display {
+  font-family: var(--font-family-display);
+}
+
+.font-body {
+  font-family: var(--font-family-body);
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-bounce-chevron {
+  animation: bounce-chevron 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
