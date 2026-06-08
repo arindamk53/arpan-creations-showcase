@@ -38,6 +38,16 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /arpan-creations-showcase
         run: npm run build
 
+      - name: Copy static sites to output
+        run: |
+          # Copy any static site folders (non-Next.js) to out directory
+          for dir in */; do
+            if [ -f "${dir}index.html" ] && [ ! -f "${dir}package.json" ]; then
+              echo "Copying static site: $dir"
+              cp -r "$dir" out/
+            fi
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
