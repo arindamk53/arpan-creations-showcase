@@ -1,0 +1,2907 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="High Five Care Family Practice — Comprehensive family medicine in Richmond, TX. Board-certified Dr. Abdulla H. Abdulla. Call 346-546-6020 or book online.">
+  <meta name="keywords" content="family doctor Richmond TX, family medicine Richmond Texas, Dr. Abdulla, Fort Bend County doctor, primary care Richmond TX">
+  
+  <meta property="og:title" content="High Five Care Family Practice | Richmond, TX">
+  <meta property="og:description" content="Comprehensive Care for Every Stage of Life. Board-certified family medicine in Richmond, Texas.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80">
+  
+  <title>High Five Care Family Practice | Richmond, TX | Dr. Abdulla H. Abdulla</title>
+  
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#081B2E',
+            'navy-mid': '#0F2D47',
+            teal: '#0BA3C0',
+            'teal-light': '#E0F6FB',
+            'teal-mid': '#6DD3E8',
+            gold: '#C9A860',
+            'off-white': '#F7FBFD',
+            'text-dark': '#0D1F33',
+            'text-mid': '#476075',
+            'text-light': '#98BACC',
+            border: '#DCF0F6',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['"DM Mono"', 'monospace'],
+          },
+          boxShadow: {
+            sm: '0 2px 12px rgba(11,163,192,0.08)',
+            md: '0 8px 32px rgba(8,27,46,0.12)',
+            lg: '0 24px 64px rgba(8,27,46,0.18)',
+            teal: '0 8px 32px rgba(11,163,192,0.25)',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <style type="text/css">
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #081B2E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0BA3C0;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6DD3E8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      --banner-height: 0px;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: #0D1F33;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    .font-serif-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Custom cursor styles (hidden on touch devices) */
+    @media (pointer: coarse) {
+      .custom-cursor, .custom-cursor-ring {
+        display: none !important;
+      }
+    }
+
+    .custom-cursor {
+      width: 8px;
+      height: 8px;
+      background: #0BA3C0;
+      border-radius: 50%;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      display: none;
+    }
+
+    .custom-cursor-ring {
+      width: 32px;
+      height: 32px;
+      border: 2px solid rgba(11, 163, 192, 0.3);
+      border-radius: 50%;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9998;
+      display: none;
+      transition: width 0.2s, height 0.2s, border-color 0.2s, background-color 0.2s;
+    }
+
+    *:focus-visible {
+      outline: 2px solid #0BA3C0;
+      outline-offset: 2px;
+    }
+
+    /* Infinite scrolling marquee */
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-content {
+      display: flex;
+      animation: scrollMarquee 30s linear infinite;
+    }
+    .marquee-content:hover {
+      animation-play-state: paused;
+    }
+
+    /* ECG heartbeat animation */
+    .ecg-line {
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+    }
+
+    /* Bounce Slow for Floating Badges */
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 4s ease-in-out infinite;
+    }
+
+    /* Hero curved clip-path */
+    .hero-clip {
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    @media (max-width: 1023px) {
+      .hero-clip {
+        clip-path: none;
+      }
+    }
+
+    /* Hamburger Menu Active state styling */
+    .hamburger-active .line-1 {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .hamburger-active .line-2 {
+      opacity: 0;
+    }
+    .hamburger-active .line-3 {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Navigation Bar states */
+    .nav-dark-mode {
+      background-color: transparent;
+      color: #FFFFFF;
+    }
+    .nav-dark-mode .logo-text-primary {
+      color: #FFFFFF;
+    }
+    .nav-dark-mode .logo-text-secondary {
+      color: #98BACC;
+    }
+    .nav-dark-mode .nav-link-item {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .nav-dark-mode .nav-link-item:hover {
+      color: #6DD3E8;
+    }
+    .nav-dark-mode .nav-cta-outline {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+    }
+    .nav-dark-mode .nav-cta-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: #FFFFFF;
+    }
+    .nav-dark-mode #hamburger span {
+      background-color: #FFFFFF;
+    }
+
+    .nav-light-mode {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(8, 27, 46, 0.08);
+      border-bottom: 1px solid rgba(220, 240, 246, 0.5);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .nav-light-mode .logo-text-primary {
+      color: #081B2E;
+    }
+    .nav-light-mode .logo-text-secondary {
+      color: #476075;
+    }
+    .nav-light-mode .nav-link-item {
+      color: #476075;
+    }
+    .nav-light-mode .nav-link-item:hover {
+      color: #0BA3C0;
+    }
+    .nav-light-mode .nav-cta-outline {
+      border-color: rgba(11, 163, 192, 0.3);
+      color: #0BA3C0;
+    }
+    .nav-light-mode .nav-cta-outline:hover {
+      background-color: rgba(11, 163, 192, 0.05);
+      border-color: #0BA3C0;
+    }
+    .nav-light-mode #hamburger span {
+      background-color: #081B2E;
+    }
+    #hamburger.hamburger-active span {
+      background-color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- SKIP TO CONTENT LINK -->
+  <a href="#content-start" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:bg-white focus:text-teal focus:p-4 focus:rounded-md focus:shadow-md focus:top-4 focus:left-4 font-sans font-medium">Skip to content</a>
+
+  <!-- Emergency Banner -->
+  <div id="emergency-banner" class="bg-teal text-white py-3 px-6 transition-all duration-300 relative z-40 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center text-center w-full">
+      <i data-lucide="alert-circle" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+      <span class="font-sans text-xs md:text-sm font-medium tracking-wide">
+        For non-urgent communications only — use the patient portal. For emergencies, call 911.
+      </span>
+    </div>
+    <button onclick="dismissEmergencyBanner()" class="text-white hover:text-white/80 transition-colors focus:outline-none flex-shrink-0" aria-label="Dismiss banner">
+      <i data-lucide="x" class="w-4 h-4"></i>
+    </button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-dark-mode py-5 px-6 md:px-12 flex items-center justify-between">
+    <!-- Left Logo -->
+    <a href="#hero" class="flex items-center group" aria-label="High Five Care Family Practice Home">
+      <svg class="w-10 h-10 mr-3" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" stroke="url(#logo-grad)" stroke-width="3" fill="none" />
+        <path d="M22 38V26C22 24.3431 23.3431 23 25 23C26.6569 23 28 24.3431 28 26V32M28 32V20C28 18.3431 29.3431 17 31 17C32.6569 17 34 18.3431 34 20V32M34 32V18C34 16.3431 35.3431 15 37 15C38.6569 15 40 16.3431 40 18V32M40 32V22C40 20.3431 41.3431 19 43 19C44.6569 19 46 20.3431 46 22V38C46 44.0751 41.0751 49 35 49H33C26.9249 49 22 44.0751 22 38Z" stroke="#0BA3C0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M14 32C14 41.9411 22.0589 50 32 50C41.9411 50 50 41.9411 50 32" stroke="#C9A860" stroke-width="2" stroke-dasharray="4 4" />
+        <defs>
+          <linearGradient id="logo-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0BA3C0" />
+            <stop offset="1" stop-color="#C9A860" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="flex flex-col">
+        <span class="font-serif-cormorant font-bold text-xl leading-none tracking-wide logo-text-primary"><span class="text-teal">HIGH FIVE</span> CARE</span>
+        <span class="font-sans text-[10px] uppercase tracking-wider mt-0.5 logo-text-secondary">Family Practice</span>
+      </div>
+    </a>
+
+    <!-- Center Navigation Links (Desktop) -->
+    <nav class="hidden lg:flex items-center space-x-8">
+      <a href="#hero" class="nav-link-item font-sans font-medium text-sm transition-all duration-300">Home</a>
+      <a href="#about" class="nav-link-item font-sans font-medium text-sm transition-all duration-300">About Us</a>
+      <a href="#provider" class="nav-link-item font-sans font-medium text-sm transition-all duration-300">Providers</a>
+      <a href="#services" class="nav-link-item font-sans font-medium text-sm transition-all duration-300">Services</a>
+      <a href="#tools" class="nav-link-item font-sans font-medium text-sm transition-all duration-300">Patient Tools</a>
+      <a href="#faqs" class="nav-link-item font-sans font-medium text-sm transition-all duration-300">FAQs</a>
+    </nav>
+
+    <!-- Right CTAs -->
+    <div class="hidden lg:flex items-center space-x-4">
+      <a href="https://www.healow.com" target="_blank" class="nav-cta-outline border font-sans font-semibold text-xs py-2.5 px-5 rounded-full transition-all duration-300">
+        Patient Login
+      </a>
+      <a href="#booking" class="bg-teal hover:bg-teal-mid text-white font-sans font-semibold text-xs py-2.5 px-5 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-teal">
+        Book Appointment
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Menu Button -->
+    <button id="hamburger" onclick="toggleMobileMenu()" class="lg:hidden flex flex-col justify-between w-6 h-4 z-50 relative focus:outline-none" aria-label="Toggle menu">
+      <span class="w-full h-0.5 transition-all duration-300 line-1"></span>
+      <span class="w-full h-0.5 transition-all duration-300 line-2"></span>
+      <span class="w-full h-0.5 transition-all duration-300 line-3"></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-navy/98 transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center">
+    <nav class="flex flex-col space-y-6 text-center">
+      <a href="#hero" class="mobile-link text-white text-2xl font-serif-cormorant font-semibold hover:text-teal transition-colors" onclick="toggleMobileMenu()">Home</a>
+      <a href="#about" class="mobile-link text-white text-2xl font-serif-cormorant font-semibold hover:text-teal transition-colors" onclick="toggleMobileMenu()">About Us</a>
+      <a href="#provider" class="mobile-link text-white text-2xl font-serif-cormorant font-semibold hover:text-teal transition-colors" onclick="toggleMobileMenu()">Providers</a>
+      <a href="#services" class="mobile-link text-white text-2xl font-serif-cormorant font-semibold hover:text-teal transition-colors" onclick="toggleMobileMenu()">Services</a>
+      <a href="#tools" class="mobile-link text-white text-2xl font-serif-cormorant font-semibold hover:text-teal transition-colors" onclick="toggleMobileMenu()">Patient Tools</a>
+      <a href="#faqs" class="mobile-link text-white text-2xl font-serif-cormorant font-semibold hover:text-teal transition-colors" onclick="toggleMobileMenu()">FAQs</a>
+      <a href="#contact" class="mobile-link text-white text-2xl font-serif-cormorant font-semibold hover:text-teal transition-colors" onclick="toggleMobileMenu()">Contact</a>
+    </nav>
+    <div class="mt-12 flex flex-col space-y-4 w-64">
+      <a href="#booking" class="mobile-link bg-teal text-white py-3.5 px-6 rounded-full text-center font-medium shadow-teal hover:scale-105 transition-all" onclick="toggleMobileMenu()">Book Appointment</a>
+      <a href="https://www.healow.com" target="_blank" class="mobile-link border border-teal text-teal py-3.5 px-6 rounded-full text-center font-medium hover:bg-teal/10 transition-all" onclick="toggleMobileMenu()">Patient Login</a>
+    </div>
+  </div>
+
+  <main id="content-start">
+    
+    <!-- SECTION 1 — HERO -->
+    <section id="hero" class="relative bg-navy text-white min-h-[90vh] flex flex-col lg:flex-row items-center overflow-hidden pt-20 lg:pt-0">
+      <!-- Gradient Mesh background -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_60%_50%,rgba(11,163,192,0.15)_0%,transparent_70%)] opacity-80 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_20%_80%,rgba(201,168,96,0.06)_0%,transparent_60%)] opacity-80 pointer-events-none"></div>
+      
+      <!-- Particle background container -->
+      <div class="particles absolute inset-0 overflow-hidden pointer-events-none z-10"></div>
+      
+      <!-- Heartbeat/ECG line -->
+      <svg class="absolute bottom-12 left-0 w-full h-24 overflow-visible pointer-events-none z-10" viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path class="ecg-line" d="M0,50 L400,50 L420,40 L430,60 L440,20 L455,90 L470,45 L480,55 L490,50 L800,50 L820,35 L830,65 L840,10 L855,95 L870,40 L880,60 L890,50 L1440,50" stroke="rgba(11, 163, 192, 0.35)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      
+      <!-- Left Content -->
+      <div class="w-full lg:w-1/2 px-6 md:px-12 py-16 lg:py-24 z-20 flex flex-col items-start relative">
+        <!-- Badge Pill -->
+        <span id="hero-badge" class="border border-gold text-gold font-sans font-medium text-xs py-1.5 px-4 rounded-full mb-6 inline-block uppercase tracking-wider">
+          Richmond, TX Family Medicine
+        </span>
+        
+        <!-- H1 -->
+        <h1 class="font-serif-cormorant font-bold text-5xl md:text-6xl lg:text-[72px] text-white leading-[1.1] mb-6 relative">
+          <span class="block overflow-hidden"><span class="block h1-line">Welcome to</span></span>
+          <span class="block overflow-hidden"><span class="block h1-line text-teal">High Five Care</span></span>
+          <span class="block overflow-hidden"><span class="block h1-line">Family Practice</span></span>
+          <svg class="w-48 h-3 text-teal mt-2" viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10C50 3 150 3 198 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </h1>
+        
+        <!-- Subheadline -->
+        <p id="hero-sub" class="font-sans font-medium text-teal-mid text-lg md:text-xl mb-4 leading-relaxed max-w-lg">
+          Comprehensive Care for Every Stage of Life
+        </p>
+        
+        <!-- Body Paragraph -->
+        <p id="hero-body" class="font-sans text-sm md:text-base text-text-light/85 font-light leading-relaxed mb-8 max-w-lg">
+          We offer a wide range of services to help manage your health and wellness, from routine screenings to specialized treatments.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div id="hero-ctas" class="flex flex-col sm:flex-row gap-4 mb-12 w-full sm:w-auto">
+          <a href="#booking" class="bg-teal hover:bg-teal-mid text-white font-sans font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:scale-[1.04] hover:shadow-teal text-center flex items-center justify-center">
+            Book an Appointment
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+          <a href="https://www.healow.com" target="_blank" class="border border-white hover:bg-white/10 text-white font-sans font-semibold py-4 px-8 rounded-full transition-all duration-300 text-center flex items-center justify-center">
+            Patient Portal Login
+          </a>
+        </div>
+        
+        <!-- Trust Badges -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 w-full">
+          <div class="trust-badge flex items-center space-x-3">
+            <div class="text-teal bg-teal/15 p-2 rounded-xl">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </div>
+            <span class="font-sans text-xs md:text-sm text-text-light/90 font-medium leading-tight">22+ Years Medical Exp.</span>
+          </div>
+          <div class="trust-badge flex items-center space-x-3">
+            <div class="text-gold bg-gold/15 p-2 rounded-xl">
+              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+            </div>
+            <span class="font-sans text-xs md:text-sm text-text-light/90 font-medium leading-tight">Top Doctor 2021 Award</span>
+          </div>
+          <div class="trust-badge flex items-center space-x-3">
+            <div class="text-teal bg-teal/15 p-2 rounded-xl">
+              <i data-lucide="stethoscope" class="w-5 h-5"></i>
+            </div>
+            <span class="font-sans text-xs md:text-sm text-text-light/90 font-medium leading-tight">Board Certified Practice</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Image -->
+      <div id="hero-image" class="w-full lg:w-1/2 h-[350px] lg:h-screen self-stretch lg:self-auto relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-navy via-navy/35 to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80" alt="Doctor with stethoscope consulting patient warmly" class="w-full h-full object-cover hero-clip" loading="eager" width="900" height="600">
+      </div>
+    </section>
+
+    <!-- SECTION 2 — STATS BAR -->
+    <section id="stats" class="bg-teal text-white py-12 relative z-20">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y-0 md:divide-x divide-white/20">
+          <div class="flex flex-col items-center justify-center text-center px-4">
+            <span class="font-serif-cormorant font-bold text-5xl md:text-6xl text-white block mb-2" id="stat-years">0+</span>
+            <span class="font-sans text-xs md:text-sm font-light uppercase tracking-widest text-white/90">Years of Experience</span>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center px-4">
+            <span class="font-serif-cormorant font-bold text-5xl md:text-6xl text-white block mb-2" id="stat-services">0</span>
+            <span class="font-sans text-xs md:text-sm font-light uppercase tracking-widest text-white/90">Services Offered</span>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center px-4">
+            <span class="font-serif-cormorant font-bold text-5xl md:text-6xl text-white block mb-2" id="stat-days">0</span>
+            <span class="font-sans text-xs md:text-sm font-light uppercase tracking-widest text-white/90">Days a Week Open</span>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center px-4">
+            <span class="font-serif-cormorant font-bold text-5xl md:text-6xl text-white block mb-2" id="stat-wellness">0%</span>
+            <span class="font-sans text-xs md:text-sm font-light uppercase tracking-widest text-white/90">Wellness Commitment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — ABOUT US -->
+    <section id="about" class="bg-off-white py-24 md:py-32 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          <!-- Left Content -->
+          <div class="w-full lg:w-1/2 flex flex-col items-start about-text">
+            <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4">About Our Practice</span>
+            <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-navy leading-tight mb-6">
+              Compassionate Care,<br>Right Here in Richmond
+            </h2>
+            <div class="font-sans text-sm md:text-base text-text-mid leading-relaxed space-y-4 mb-8 font-light">
+              <p>
+                Dr. Abdulla Abdula is a board-certified family medicine physician based in Richmond, Texas, affiliated with the Memorial Hermann Health System. With over 22 years of experience in the medical field, Dr. Abdulla earned his medical degree from the University of Al-Mustansiriyah College of Medicine in Iraq.
+              </p>
+              <p>
+                Dr. Abdulla specializes in managing chronic conditions such as hypertension, diabetes, heart failure, and thyroid disorders, as well as treating neck pain and spine-related issues. In addition to his primary care practice, he also serves as a hospitalist at Memorial Hermann in Cypress.
+              </p>
+              <p>
+                Dr. Abdulla is dedicated to providing compassionate, high-quality care — focusing on long-term health and wellness for every patient.
+              </p>
+            </div>
+            
+            <!-- Accreditation Badge -->
+            <div class="flex items-center bg-white p-4 rounded-xl border-l-4 border-teal shadow-sm mb-8 w-full max-w-md">
+              <div class="bg-teal-light text-teal p-2 rounded-full mr-4">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-sans font-semibold text-navy text-sm md:text-base">Board Certified Family Medicine</h4>
+                <p class="font-sans text-xs text-text-mid font-light">Affiliated with Memorial Hermann Health System</p>
+              </div>
+            </div>
+            
+            <a href="#provider" class="bg-transparent border border-teal text-teal hover:bg-teal hover:text-white px-8 py-3.5 rounded-full font-medium transition-all duration-300 hover:scale-105 flex items-center shadow-sm hover:shadow-teal">
+              Meet Dr. Abdulla
+              <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
+          </div>
+          
+          <!-- Right Images -->
+          <div class="w-full lg:w-1/2 relative about-images flex flex-col sm:flex-row gap-6">
+            <div class="w-full sm:w-1/2 flex flex-col gap-6">
+              <!-- Waiting Room -->
+              <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80" alt="Clinic waiting room" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="400">
+                <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+              <!-- Office Interior -->
+              <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Medical office interior" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="400">
+                <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+            </div>
+            
+            <div class="w-full sm:w-1/2 flex flex-col justify-center">
+              <!-- Main visual stacked slightly offset -->
+              <div class="relative rounded-2xl overflow-hidden shadow-lg group h-80 sm:h-96">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Doctor consulting" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="600">
+                <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                
+                <!-- Floating Location card -->
+                <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur shadow-md rounded-xl p-4 border border-teal/15 z-20 w-48 animate-bounce-slow">
+                  <div class="flex items-center space-x-2 text-teal mb-1">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    <span class="font-sans font-bold text-xs uppercase tracking-wider">Richmond, TX</span>
+                  </div>
+                  <p class="font-sans text-xs text-text-mid leading-snug">Serving Fort Bend County & Greater Houston</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — SERVICES -->
+    <section id="services" class="bg-white py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 services-header">
+          <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">What We Offer</span>
+          <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-navy mb-6">Services Offered by High Five Care</h2>
+          <p class="font-sans text-sm md:text-base text-text-mid font-light leading-relaxed">
+            We offer a wide range of services to help manage your health and wellness, from routine screenings to specialized treatments. Our goal is to provide personalized care that supports your well-being.
+          </p>
+        </div>
+        
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-center services-grid">
+          <!-- Card 1: Primary Care -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Primary Care</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Comprehensive healthcare for patients 6 years and older, addressing everyday health needs, annual check-ups, and coordination of care with specialists.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 2: Preventative Medicine -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Preventative Medicine</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Focused on early detection and disease prevention through screenings, immunizations, and personalized health risk assessments.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 3: Acute Disease Management -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="activity" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Acute Disease Management</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Timely diagnosis and treatment of sudden illnesses such as infections, minor injuries, and flu-like symptoms to help patients recover quickly.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 4: Chronic Disease Management -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="stethoscope" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Chronic Disease Management</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Ongoing care and support for conditions like diabetes, hypertension, and asthma, with personalized treatment plans to improve long-term health outcomes.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 5: Men's Care -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="user-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Men's Care</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Health services tailored for men, including testosterone screenings, prostate health, cardiovascular risk assessments, and lifestyle counseling.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 6: Women's Care -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="heart" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Women's Care</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Dedicated care for women's health needs, including gynecological screenings, hormone evaluations, and wellness planning through all life stages.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 7: IV + Nutritional Therapy -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="droplet" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">IV + Nutritional Therapy</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Custom IV infusions and nutritional support to boost energy, immunity, hydration, and overall well-being, administered in a comfortable setting.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 8: On-Site Testing -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="microscope" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">On-Site Testing</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Convenient in-house testing including blood work, rapid diagnostics, and screening panels for efficient and accurate results.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 9: Weight Loss Management -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between lg:col-start-2">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="trending-down" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Weight Loss Management</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Medically supervised weight loss programs tailored to individual needs, including nutrition guidance, metabolic support, and progress tracking.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Card 10: Sports Physicals -->
+          <div class="service-card bg-white border border-border rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal hover:shadow-teal group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                <i data-lucide="dumbbell" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-sans font-semibold text-navy text-lg mb-3">Sports Physicals</h3>
+              <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                Thorough physical exams for student and adult athletes to ensure they're healthy and ready for participation in sports and physical activities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — MEET THE PROVIDER -->
+    <section id="provider" class="bg-navy text-white py-24 md:py-32 relative overflow-hidden border-t border-gold/20">
+      <!-- Decorative Glow -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_600px_at_90%_0%,rgba(11,163,192,0.15),transparent)] pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          <!-- Left Photo -->
+          <div class="w-full lg:w-5/12 flex justify-center provider-photo">
+            <div class="relative w-full max-w-md">
+              <!-- Main Image -->
+              <div class="rounded-2xl overflow-hidden border-2 border-teal/20 shadow-lg h-[500px] lg:h-[600px] relative">
+                <img src="./dr-abdulla.jpg" alt="Dr. Abdulla H. Abdulla Professional Portrait" class="w-full h-full object-cover" loading="lazy" width="600" height="800">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+              </div>
+              
+              <!-- Floating Badge Top Left -->
+              <div class="absolute top-6 left-6 bg-teal text-white text-xs font-sans font-medium py-2 px-4 rounded-full shadow-md">
+                Board Certified Family Medicine
+              </div>
+              
+              <!-- Floating Award Card Bottom Right -->
+              <div class="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-lg w-64">
+                <div class="flex items-center space-x-2 text-gold mb-1">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <span class="font-sans font-bold text-xs uppercase tracking-wider text-gold">Top Doctor 2021</span>
+                </div>
+                <p class="font-sans text-[11px] text-text-light leading-snug">Recognized by Baltimore's Top Physicians Magazine</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Bio -->
+          <div class="w-full lg:w-7/12 provider-bio">
+            <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">Meet Our Provider</span>
+            <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-white mb-3">Dr. Abdulla H. Abdulla</h2>
+            <p class="font-sans text-teal text-sm md:text-base mb-6 font-medium">Family Medicine Physician · Memorial Hermann Health System</p>
+            
+            <!-- Gold Line -->
+            <div class="w-12 h-[2px] bg-gold mb-8"></div>
+            
+            <div class="font-sans text-sm md:text-base text-text-light/85 leading-relaxed space-y-4 mb-10 font-light">
+              <p>
+                Dr. Abdulla H. Abdulla is a board-certified Family Medicine physician with extensive experience practicing in the United States since 2015. He earned his medical degree from Al-Mustansiriyah School of Medicine in Baghdad, Iraq in 2002, completed his residency in Chicago at Swedish Covenant Hospital, and became board-certified in Family Medicine in 2015.
+              </p>
+              <p>
+                Following his residency, Dr. Abdulla joined the University of Maryland Upper Chesapeake Hospital as a full-time hospitalist. His passion for improving patient well-being and minimizing suffering led him to serve as Medical Director at Endings Hospice Care, where he worked to alleviate pain for patients with terminal illnesses.
+              </p>
+              <p>
+                After relocating to Houston, Texas, Dr. Abdulla joined Memorial Hermann Health System as a hospitalist at the Cypress campus — treating patients like family, providing follow-up care even after discharge, always going above and beyond in his personal time.
+              </p>
+              <p>
+                With a dream of establishing his own practice, Dr. Abdulla built High Five Care to create a space where he can not only provide high-quality care but build a team that educates, supports, and grows together. He looks forward to serving the community of Fort Bend County.
+              </p>
+            </div>
+            
+            <!-- Timeline Strip -->
+            <div class="grid grid-cols-3 gap-4 border-t border-b border-white/10 py-6 mb-10">
+              <div class="flex flex-col">
+                <span class="font-serif-cormorant text-2xl font-bold text-teal mb-1">2002</span>
+                <span class="font-sans text-xs text-text-light font-light leading-snug">Medical Degree, Baghdad</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-serif-cormorant text-2xl font-bold text-teal mb-1">2015</span>
+                <span class="font-sans text-xs text-text-light font-light leading-snug">Residency, Chicago</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-serif-cormorant text-2xl font-bold text-teal mb-1">2021</span>
+                <span class="font-sans text-xs text-text-light font-light leading-snug">Top Doctor Award</span>
+              </div>
+            </div>
+            
+            <a href="#booking" class="inline-flex items-center bg-teal hover:bg-teal-mid text-white font-medium py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-md hover:shadow-teal">
+              Book with Dr. Abdulla
+              <i data-lucide="calendar" class="w-4 h-4 ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — INSURANCE PLANS -->
+    <section id="insurance" class="bg-off-white py-16 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 text-center mb-12">
+        <h2 class="font-serif-cormorant font-semibold text-3xl md:text-4xl text-navy mb-4">Insurance Plans We Accept</h2>
+        <p class="font-sans text-text-mid text-sm md:text-base font-light max-w-2xl mx-auto">
+          We work with major insurance providers to make quality healthcare accessible. Contact us to verify your specific plan.
+        </p>
+      </div>
+      
+      <!-- Infinite Scrolling Marquee -->
+      <div class="relative w-full flex items-center overflow-hidden">
+        <div class="marquee-content flex space-x-6">
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-extrabold text-xl text-[#78BE20] tracking-tight">Humana.</span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-bold text-xl text-[#E84E1B] tracking-tight">imagine<span class="text-navy font-light">health</span></span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-serif text-lg font-bold text-[#005A9C] tracking-wide">MEDICARE</span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-bold text-lg text-[#1E4D8C] tracking-tighter">United<span class="text-teal">Healthcare</span></span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-black text-2xl text-[#D22630] italic tracking-tighter">aetna</span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-bold text-2xl text-[#007A87]">Cigna<span class="text-gold font-light">.</span></span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-extrabold text-lg text-[#007CC3] tracking-tight">BlueCross.</span>
+          </div>
+          <!-- Repeat for seamless scroll loop -->
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-extrabold text-xl text-[#78BE20] tracking-tight">Humana.</span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-bold text-xl text-[#E84E1B] tracking-tight">imagine<span class="text-navy font-light">health</span></span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-serif text-lg font-bold text-[#005A9C] tracking-wide">MEDICARE</span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-bold text-lg text-[#1E4D8C] tracking-tighter">United<span class="text-teal">Healthcare</span></span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-black text-2xl text-[#D22630] italic tracking-tighter">aetna</span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-bold text-2xl text-[#007A87]">Cigna<span class="text-gold font-light">.</span></span>
+          </div>
+          <div class="flex-shrink-0 bg-white rounded-xl shadow-sm border border-border px-12 py-6 flex items-center justify-center h-20 w-56">
+            <span class="font-sans font-extrabold text-lg text-[#007CC3] tracking-tight">BlueCross.</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8 px-6">
+        <p class="font-sans text-xs md:text-sm text-text-mid italic font-light">
+          Don't see your insurance? Call us at <a href="tel:3465466020" class="text-teal font-medium hover:underline">346-546-6020</a> — we may accept additional plans not listed.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — TESTIMONIALS -->
+    <section id="testimonials" class="py-24 md:py-32 relative overflow-hidden bg-[radial-gradient(circle_at_center,var(--teal-light),transparent_60%)]">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto mb-16 testimonials-header">
+          <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">Patient Stories</span>
+          <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-navy">What Our Patients Say</h2>
+        </div>
+        
+        <!-- Testimonial Carousel -->
+        <div class="relative max-w-3xl mx-auto testimonial-container min-h-[360px] md:min-h-[300px]">
+          
+          <!-- Slide 1 -->
+          <div class="testimonial-slide opacity-100 scale-100 transition-all duration-500 flex flex-col items-center" id="slide-0">
+            <div class="bg-white border border-teal/10 rounded-2xl p-8 md:p-12 shadow-md max-w-2xl relative w-full">
+              <span class="font-serif-cormorant text-8xl md:text-[120px] text-teal/15 absolute top-4 left-6 leading-none pointer-events-none">“</span>
+              
+              <div class="flex justify-center space-x-1 text-gold mb-6 relative z-10">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              </div>
+              
+              <p class="font-serif-cormorant italic text-lg md:text-xl text-text-dark leading-relaxed mb-6 px-4 relative z-10">
+                "I've had a great experience at High Five Care. From the moment I walked in, the staff was welcoming, organized, and respectful of my time. The check-in process was smooth, and the waiting area was clean and comfortable. Dr. Abdulla is attentive, knowledgeable, and truly listens."
+              </p>
+              
+              <div class="w-8 h-[2px] bg-teal mx-auto mb-6"></div>
+              
+              <h4 class="font-sans font-semibold text-navy text-base">Ali Hussam</h4>
+              <p class="font-sans text-xs md:text-sm text-text-mid font-light">Patient · Richmond, TX</p>
+            </div>
+          </div>
+          
+          <!-- Slide 2 -->
+          <div class="testimonial-slide hidden opacity-0 scale-95 transition-all duration-500 flex flex-col items-center" id="slide-1">
+            <div class="bg-white border border-teal/10 rounded-2xl p-8 md:p-12 shadow-md max-w-2xl relative w-full">
+              <span class="font-serif-cormorant text-8xl md:text-[120px] text-teal/15 absolute top-4 left-6 leading-none pointer-events-none">“</span>
+              
+              <div class="flex justify-center space-x-1 text-gold mb-6 relative z-10">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              </div>
+              
+              <p class="font-serif-cormorant italic text-lg md:text-xl text-text-dark leading-relaxed mb-6 px-4 relative z-10">
+                "Dr. Abdulla's clinic is top-tier. He took the time to answer all of my questions about my chronic hypertension and made me feel like family. The clinic is beautifully designed and very clean. I highly recommend him to anyone looking for a primary care doctor in Richmond."
+              </p>
+              
+              <div class="w-8 h-[2px] bg-teal mx-auto mb-6"></div>
+              
+              <h4 class="font-sans font-semibold text-navy text-base">Sarah Jenkins</h4>
+              <p class="font-sans text-xs md:text-sm text-text-mid font-light">Patient · Richmond, TX</p>
+            </div>
+          </div>
+          
+          <!-- Slide 3 -->
+          <div class="testimonial-slide hidden opacity-0 scale-95 transition-all duration-500 flex flex-col items-center" id="slide-2">
+            <div class="bg-white border border-teal/10 rounded-2xl p-8 md:p-12 shadow-md max-w-2xl relative w-full">
+              <span class="font-serif-cormorant text-8xl md:text-[120px] text-teal/15 absolute top-4 left-6 leading-none pointer-events-none">“</span>
+              
+              <div class="flex justify-center space-x-1 text-gold mb-6 relative z-10">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              </div>
+              
+              <p class="font-serif-cormorant italic text-lg md:text-xl text-text-dark leading-relaxed mb-6 px-4 relative z-10">
+                "A truly professional and modern experience. Booking an appointment was seamless, and using the healow app has made managing my family's health records so much easier. Dr. Abdulla is extremely knowledgeable and patient-centric."
+              </p>
+              
+              <div class="w-8 h-[2px] bg-teal mx-auto mb-6"></div>
+              
+              <h4 class="font-sans font-semibold text-navy text-base">Marcus Torres</h4>
+              <p class="font-sans text-xs md:text-sm text-text-mid font-light">Patient · Pecan Grove, TX</p>
+            </div>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <button onclick="prevTestimonial()" class="absolute left-0 md:-left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-teal/20 bg-white/80 hover:bg-teal hover:text-white text-teal flex items-center justify-center transition-all duration-300 shadow-sm z-20" aria-label="Previous Testimonial">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <button onclick="nextTestimonial()" class="absolute right-0 md:-right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-teal/20 bg-white/80 hover:bg-teal hover:text-white text-teal flex items-center justify-center transition-all duration-300 shadow-sm z-20" aria-label="Next Testimonial">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+          
+          <!-- Dots -->
+          <div class="flex justify-center space-x-2.5 mt-8">
+            <button onclick="goToTestimonial(0)" class="w-3 h-3 rounded-full bg-teal transition-all duration-300 testimonial-dot" id="dot-0" aria-label="Go to slide 1"></button>
+            <button onclick="goToTestimonial(1)" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 testimonial-dot" id="dot-1" aria-label="Go to slide 2"></button>
+            <button onclick="goToTestimonial(2)" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 testimonial-dot" id="dot-2" aria-label="Go to slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8 — PATIENT PORTAL & HEALOW -->
+    <section id="portal" class="bg-navy text-white py-24 md:py-32 relative border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          
+          <!-- Left Column: Patient Portal -->
+          <div class="portal-left">
+            <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">Your Health, Accessible 24/7</span>
+            <h2 class="font-serif-cormorant font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
+              Our Patient Portal gives you secure online access to your health information
+            </h2>
+            <p class="font-sans text-sm md:text-base text-text-light/80 font-light mb-8 leading-relaxed">
+              Patient Portal is a secure, convenient, and easy-to-use website that gives you round-the-clock access to your health information. View labs, medications, and immunization records. Get reminders. Exchange messages with your doctor. Stay informed and take charge of your health.
+            </p>
+            
+            <!-- Feature Checklist -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div class="flex items-center space-x-3">
+                <div class="text-teal bg-teal/10 p-1.5 rounded-full">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="font-sans text-sm md:text-base font-medium text-white/95">View lab results</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="text-teal bg-teal/10 p-1.5 rounded-full">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="font-sans text-sm md:text-base font-medium text-white/95">Book appointments online</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="text-teal bg-teal/10 p-1.5 rounded-full">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="font-sans text-sm md:text-base font-medium text-white/95">Send & receive messages</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="text-teal bg-teal/10 p-1.5 rounded-full">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="font-sans text-sm md:text-base font-medium text-white/95">Statements & receipts</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="text-teal bg-teal/10 p-1.5 rounded-full">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="font-sans text-sm md:text-base font-medium text-white/95">Access health records</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="text-teal bg-teal/10 p-1.5 rounded-full">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="font-sans text-sm md:text-base font-medium text-white/95">View doctors' notes</span>
+              </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <a href="https://www.healow.com" target="_blank" class="bg-teal hover:bg-teal-mid text-white font-medium py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 flex items-center shadow-md hover:shadow-teal w-full sm:w-auto justify-center">
+                Patient Portal Login
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              </a>
+              <span class="font-sans text-xs md:text-sm text-text-light/70">
+                Need help? Call <a href="tel:3465466020" class="text-teal font-medium hover:underline">346-546-6020</a>
+              </span>
+            </div>
+          </div>
+          
+          <!-- Right Column: Healow App -->
+          <div class="portal-right border-t border-white/10 lg:border-t-0 lg:border-l lg:border-white/10 lg:pl-16 pt-12 lg:pt-0 flex flex-col gap-8">
+            <!-- App Badge Card -->
+            <div class="bg-teal/5 backdrop-blur-sm border border-teal/15 rounded-2xl p-6 md:p-8">
+              <h3 class="font-sans font-semibold text-xl text-white mb-3 flex items-center">
+                <i data-lucide="smartphone" class="w-5 h-5 text-teal mr-2"></i>
+                Online health access on your smartphone
+              </h3>
+              <p class="font-sans text-sm text-text-light/85 leading-relaxed font-light mb-6">
+                Access your health record with the healow™ smartphone app. Along with the features you get with our Patient Portal, the healow app can manage multiple accounts for all family members, set medication and appointment reminders, and use trackers to help manage health.
+              </p>
+              
+              <!-- Practice Unique Code Card -->
+              <div class="bg-white/5 border border-gold/30 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                  <span class="font-sans font-semibold text-[11px] text-gold uppercase tracking-widest block mb-1">Practice Unique Code</span>
+                  <span class="font-mono font-bold text-4xl text-white tracking-widest leading-none">FJDGDD</span>
+                </div>
+                <p class="font-sans text-xs text-text-light/70 font-light leading-snug max-w-[200px]">
+                  Search for our practice using this code on the healow app.
+                </p>
+              </div>
+            </div>
+            
+            <!-- 4-Step Setup List -->
+            <div>
+              <h4 class="font-sans font-semibold text-white text-base mb-6">How to get started:</h4>
+              <ol class="space-y-4">
+                <li class="flex items-start space-x-4">
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-teal text-navy font-bold text-xs flex items-center justify-center font-sans mt-0.5">1</span>
+                  <p class="font-sans text-sm md:text-base text-text-light font-light">Download the free healow app from App Store or Google Play Store.</p>
+                </li>
+                <li class="flex items-start space-x-4">
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-teal text-navy font-bold text-xs flex items-center justify-center font-sans mt-0.5">2</span>
+                  <p class="font-sans text-sm md:text-base text-text-light font-light">Enter your portal username and password.</p>
+                </li>
+                <li class="flex items-start space-x-4">
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-teal text-navy font-bold text-xs flex items-center justify-center font-sans mt-0.5">3</span>
+                  <p class="font-sans text-sm md:text-base text-text-light font-light">Enter our unique practice code: <strong class="text-white font-mono font-normal">FJDGDD</strong>.</p>
+                </li>
+                <li class="flex items-start space-x-4">
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-teal text-navy font-bold text-xs flex items-center justify-center font-sans mt-0.5">4</span>
+                  <p class="font-sans text-sm md:text-base text-text-light font-light">Create a secure 4-digit PIN for easy subsequent logins.</p>
+                </li>
+              </ol>
+            </div>
+            
+            <!-- App Store Buttons -->
+            <div class="flex flex-wrap gap-4 mt-2">
+              <a href="https://apps.apple.com" target="_blank" class="flex items-center space-x-3 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all rounded-xl py-3 px-6 w-full sm:w-auto justify-center">
+                <i data-lucide="play" class="w-5 h-5 text-white"></i>
+                <div class="text-left">
+                  <span class="block text-[10px] text-text-light uppercase tracking-wider leading-none">Download on the</span>
+                  <span class="block text-sm font-semibold text-white leading-tight">App Store</span>
+                </div>
+              </a>
+              <a href="https://play.google.com" target="_blank" class="flex items-center space-x-3 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all rounded-xl py-3 px-6 w-full sm:w-auto justify-center">
+                <i data-lucide="play" class="w-5 h-5 text-white"></i>
+                <div class="text-left">
+                  <span class="block text-[10px] text-text-light uppercase tracking-wider leading-none">Get it on</span>
+                  <span class="block text-sm font-semibold text-white leading-tight">Google Play</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9 — PATIENT TOOLS -->
+    <section id="tools" class="bg-off-white py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 tools-header">
+          <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">Tools for Patients' Convenience</span>
+          <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-navy">Everything You Need, In One Place</h2>
+        </div>
+        
+        <!-- Tab Switcher Navigation -->
+        <div class="flex justify-center mb-12">
+          <div class="bg-white rounded-full p-1.5 shadow-sm border border-border flex space-x-1 relative">
+            <button onclick="switchTab(0)" class="tab-btn px-6 py-2.5 rounded-full font-sans font-medium text-sm transition-all duration-300 relative z-10 text-white bg-teal" id="tab-btn-0">
+              Easy Check-In
+            </button>
+            <button onclick="switchTab(1)" class="tab-btn px-6 py-2.5 rounded-full font-sans font-medium text-sm transition-all duration-300 relative z-10 text-text-mid hover:text-navy" id="tab-btn-1">
+              Reminders & Notifications
+            </button>
+            <button onclick="switchTab(2)" class="tab-btn px-6 py-2.5 rounded-full font-sans font-medium text-sm transition-all duration-300 relative z-10 text-text-mid hover:text-navy" id="tab-btn-2">
+              Virtual Visits
+            </button>
+          </div>
+        </div>
+        
+        <!-- Tab Contents Container -->
+        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-border min-h-[350px] relative overflow-hidden">
+          
+          <!-- Tab 1: Easy Check-In -->
+          <div class="tab-pane opacity-100 scale-100 transition-all duration-300 flex flex-col lg:flex-row items-center gap-12" id="tab-pane-0">
+            <!-- SVG illustration left -->
+            <div class="w-full lg:w-5/12 flex justify-center">
+              <svg viewBox="0 0 200 200" class="w-48 h-48 md:w-64 md:h-64 mx-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100" cy="170" rx="40" ry="12" fill="var(--navy-mid)" opacity="0.2" />
+                <path d="M96 110 L94 168 L106 168 L104 110 Z" fill="var(--text-light)" />
+                <rect x="52" y="32" width="96" height="76" rx="8" fill="var(--navy)" opacity="0.1" />
+                <rect x="50" y="30" width="96" height="76" rx="8" fill="var(--navy)" stroke="var(--teal)" stroke-width="3" />
+                <rect x="56" y="36" width="84" height="64" rx="4" fill="var(--white)" />
+                <rect x="64" y="46" width="40" height="6" rx="2" fill="var(--teal)" />
+                <rect x="64" y="56" width="68" height="4" rx="2" fill="var(--text-light)" />
+                <rect x="64" y="64" width="56" height="4" rx="2" fill="var(--text-light)" />
+                <circle cx="115" cy="49" r="8" fill="var(--gold)" />
+                <path d="M112 49 L114 51 L118 47" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M135 90 L120 75 C118 73 115 75 116 77 L122 83 L126 95 Z" fill="var(--teal)" opacity="0.75" />
+              </svg>
+            </div>
+            <!-- Right Content -->
+            <div class="w-full lg:w-7/12">
+              <h3 class="font-sans font-semibold text-navy text-2xl md:text-3xl mb-4">Our Kiosk App quickly and easily checks you in</h3>
+              <p class="font-sans text-sm md:text-base text-text-mid font-light leading-relaxed mb-6">
+                Minimize wait times and bypass the traditional clipboard check-in. Our digital check-in system allows you to complete pre-visit details from your smartphone or our clinic tablet kiosk securely.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Make copayments</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Pay balances securely</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Sign consent forms online</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Complete questionnaires</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tab 2: Reminders & Notifications -->
+          <div class="tab-pane hidden opacity-0 scale-95 transition-all duration-300 flex flex-col lg:flex-row items-center gap-12" id="tab-pane-1">
+            <!-- SVG illustration left -->
+            <div class="w-full lg:w-5/12 flex justify-center">
+              <svg viewBox="0 0 200 200" class="w-48 h-48 md:w-64 md:h-64 mx-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="var(--teal-light)" opacity="0.3" />
+                <rect x="70" y="30" width="60" height="120" rx="10" fill="var(--navy)" stroke="var(--teal)" stroke-width="3" />
+                <rect x="74" y="38" width="52" height="104" rx="6" fill="var(--white)" />
+                <circle cx="100" cy="75" r="16" fill="var(--gold)" />
+                <path d="M100 67 C97 67 96 69 96 72 L96 79 L104 79 L104 72 C104 69 103 67 100 67 Z M100 84 C98.5 84 98 83.5 98 82 L102 82 C102 83.5 101.5 84 100 84 Z" fill="white" />
+                <rect x="84" y="102" width="32" height="4" rx="2" fill="var(--teal)" />
+                <rect x="80" y="112" width="40" height="3" rx="1.5" fill="var(--text-light)" />
+                <rect x="88" y="120" width="24" height="3" rx="1.5" fill="var(--text-light)" />
+              </svg>
+            </div>
+            <!-- Right Content -->
+            <div class="w-full lg:w-7/12">
+              <h3 class="font-sans font-semibold text-navy text-2xl md:text-3xl mb-4">Never Miss an Appointment</h3>
+              <p class="font-sans text-sm md:text-base text-text-mid font-light leading-relaxed mb-6">
+                Receive automatic reminders for upcoming appointments, medication schedules, and important health updates directly to your phone via SMS, email, or through push notifications on the healow app.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Appointment reminders</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Medication schedule alerts</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Health update notifications</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Secure doctor messages</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tab 3: Virtual Visits -->
+          <div class="tab-pane hidden opacity-0 scale-95 transition-all duration-300 flex flex-col lg:flex-row items-center gap-12" id="tab-pane-2">
+            <!-- SVG illustration left -->
+            <div class="w-full lg:w-5/12 flex justify-center">
+              <svg viewBox="0 0 200 200" class="w-48 h-48 md:w-64 md:h-64 mx-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="var(--teal-light)" opacity="0.3" />
+                <rect x="50" y="50" width="100" height="66" rx="4" fill="var(--navy)" stroke="var(--teal)" stroke-width="2" />
+                <rect x="56" y="56" width="88" height="50" rx="2" fill="var(--white)" />
+                <path d="M40 116 L160 116 L165 124 L35 124 Z" fill="var(--text-light)" />
+                <rect x="90" y="118" width="20" height="3" rx="1.5" fill="var(--navy-mid)" />
+                <circle cx="100" cy="74" r="10" fill="var(--teal)" />
+                <path d="M86 98 C86 90 92 86 100 86 C108 86 114 90 114 98 Z" fill="var(--navy)" />
+                <circle cx="132" cy="66" r="3" fill="#EF4444" />
+              </svg>
+            </div>
+            <!-- Right Content -->
+            <div class="w-full lg:w-7/12">
+              <h3 class="font-sans font-semibold text-navy text-2xl md:text-3xl mb-4">See Your Doctor From Anywhere</h3>
+              <p class="font-sans text-sm md:text-base text-text-mid font-light leading-relaxed mb-6">
+                Access care from the comfort of your home with our virtual visit options. Secure video consultations with Dr. Abdulla for follow-ups, minor concerns, and care coordination.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Secure video consultations</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">No travel required</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Same-day appointments</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="text-teal bg-teal-light p-1 rounded-full">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <span class="font-sans text-sm md:text-base text-navy font-medium">Prescription refills</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10 — APPOINTMENT BOOKING WIZARD -->
+    <section id="booking" class="bg-white py-24 md:py-32 relative border-t border-border">
+      <div class="max-w-5xl mx-auto px-6 md:px-12">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 booking-header">
+          <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">Schedule a Visit</span>
+          <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-navy mb-4">Book Your Appointment</h2>
+          <p class="font-sans text-sm md:text-base text-text-mid font-light leading-relaxed">
+            Select your required service, choose an available date and time, and secure your slot instantly.
+          </p>
+        </div>
+
+        <!-- Wizard Container -->
+        <div class="bg-off-white border border-border rounded-2xl shadow-md p-6 md:p-10 relative overflow-hidden" id="booking-wizard">
+          <!-- Step Indicator Bar -->
+          <div class="flex items-center justify-between mb-10 border-b border-border pb-6">
+            <div class="flex items-center space-x-3 step-indicator" id="indicator-0">
+              <span class="w-8 h-8 rounded-full bg-teal text-white font-sans font-semibold text-sm flex items-center justify-center">1</span>
+              <span class="hidden md:inline font-sans text-sm font-semibold text-navy">Service</span>
+            </div>
+            <div class="h-[1px] flex-1 bg-border mx-4"></div>
+            <div class="flex items-center space-x-3 step-indicator opacity-40" id="indicator-1">
+              <span class="w-8 h-8 rounded-full bg-navy-mid text-text-light font-sans font-semibold text-sm flex items-center justify-center">2</span>
+              <span class="hidden md:inline font-sans text-sm font-semibold text-text-mid">Date & Time</span>
+            </div>
+            <div class="h-[1px] flex-1 bg-border mx-4"></div>
+            <div class="flex items-center space-x-3 step-indicator opacity-40" id="indicator-2">
+              <span class="w-8 h-8 rounded-full bg-navy-mid text-text-light font-sans font-semibold text-sm flex items-center justify-center">3</span>
+              <span class="hidden md:inline font-sans text-sm font-semibold text-text-mid">Details</span>
+            </div>
+            <div class="h-[1px] flex-1 bg-border mx-4"></div>
+            <div class="flex items-center space-x-3 step-indicator opacity-40" id="indicator-3">
+              <span class="w-8 h-8 rounded-full bg-navy-mid text-text-light font-sans font-semibold text-sm flex items-center justify-center">4</span>
+              <span class="hidden md:inline font-sans text-sm font-semibold text-text-mid">Confirmation</span>
+            </div>
+          </div>
+
+          <!-- STEP 1: SERVICE & PROVIDER SELECTION -->
+          <div class="wizard-step block" id="step-0">
+            <h3 class="font-sans font-semibold text-navy text-xl mb-6 flex items-center">
+              <i data-lucide="activity" class="w-5 h-5 text-teal mr-2"></i>
+              Select a Medical Service
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8" id="services-booking-list">
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="Primary Care" data-price="120" class="sr-only booking-service-radio" checked>
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Primary Care</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">General checkups and clinical consulting.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$120</span>
+              </label>
+              
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="Preventative Medicine" data-price="130" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Preventative Medicine</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Immunizations, screenings, risk checkups.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$130</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="Acute Disease Management" data-price="110" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Acute Management</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Timely diagnostics for sudden illnesses.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$110</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="Chronic Disease Management" data-price="140" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Chronic Management</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Ongoing care and support for diabetes or asthma.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$140</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="Men's Care" data-price="125" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Men's Care</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Health services tailored for men.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$125</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="Women's Care" data-price="125" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Women's Care</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Dedicated gynecological screenings & care.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$125</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="IV + Nutritional Therapy" data-price="175" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">IV Therapy</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Infusions to boost energy and immunity.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$175</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none">
+                <input type="radio" name="booking-service" value="On-Site Testing" data-price="80" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">On-Site Testing</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Efficient in-house rapid diagnostics.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$80</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none col-span-1 sm:col-span-2 lg:col-span-1">
+                <input type="radio" name="booking-service" value="Weight Loss Management" data-price="150" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Weight Management</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Supervised programs for metabolic support.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$150</span>
+              </label>
+
+              <label class="border border-border bg-white rounded-xl p-5 hover:border-teal hover:shadow-sm cursor-pointer transition-all flex justify-between items-start group select-none col-span-1 sm:col-span-2 lg:col-span-1">
+                <input type="radio" name="booking-service" value="Sports Physicals" data-price="60" class="sr-only booking-service-radio">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy group-hover:text-teal transition-colors">Sports Physicals</h4>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">Thorough physical exams clears for activities.</p>
+                </div>
+                <span class="font-mono text-teal font-semibold text-sm bg-teal-light px-2.5 py-1 rounded-lg shrink-0">$60</span>
+              </label>
+            </div>
+
+            <!-- Provider Selection Option -->
+            <h3 class="font-sans font-semibold text-navy text-lg mb-4">Select Medical Provider</h3>
+            <div class="bg-white border border-border rounded-xl p-4 flex items-center justify-between mb-8 max-w-md">
+              <div class="flex items-center space-x-3.5">
+                <img src="./dr-abdulla.jpg" alt="Dr. Abdulla" class="w-10 h-10 rounded-full object-cover border border-teal/20">
+                <div>
+                  <h4 class="font-sans font-semibold text-navy text-sm">Dr. Abdulla H. Abdulla</h4>
+                  <span class="font-sans text-xs text-teal font-medium">Board Certified Family Physician</span>
+                </div>
+              </div>
+              <div class="bg-teal/10 text-teal py-1 px-3 rounded-full text-xs font-semibold uppercase tracking-wider">Default</div>
+            </div>
+
+            <div class="flex justify-end">
+              <button onclick="goToStep(1)" class="bg-teal hover:bg-teal-mid text-white font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300 hover:scale-105 shadow-md">
+                Continue to Schedule
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: DATE & TIME SELECTION -->
+          <div class="wizard-step hidden opacity-0" id="step-1">
+            <div class="flex flex-col lg:flex-row gap-8 mb-8">
+              
+              <!-- Calendar selector column -->
+              <div class="w-full lg:w-7/12">
+                <div class="flex justify-between items-center mb-6">
+                  <h3 class="font-sans font-semibold text-navy text-lg flex items-center">
+                    <i data-lucide="calendar" class="w-5 h-5 text-teal mr-2"></i>
+                    Select Appointment Date
+                  </h3>
+                  <span class="font-sans font-medium text-xs text-gold uppercase tracking-wider bg-gold/10 px-3 py-1 rounded-full">Saturdays have +$25 surcharge</span>
+                </div>
+                
+                <!-- Calendar header -->
+                <div class="bg-navy text-white rounded-t-xl py-3 px-4 flex justify-between items-center">
+                  <span class="font-sans font-bold text-sm tracking-wide uppercase" id="calendar-month-year">June 2026</span>
+                  <div class="flex space-x-2">
+                    <button id="calendar-prev-btn" onclick="prevMonth()" class="text-white hover:text-teal transition-colors p-1" aria-label="Previous month"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                    <button onclick="nextMonth()" class="text-white hover:text-teal transition-colors p-1" aria-label="Next month"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                  </div>
+                </div>
+                <!-- Calendar Grid wrapper -->
+                <div class="bg-white border-l border-r border-b border-border rounded-b-xl p-4">
+                  <!-- Weekdays header labels -->
+                  <div class="grid grid-cols-7 text-center font-sans text-xs font-semibold text-text-mid uppercase mb-3">
+                    <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                  </div>
+                  <!-- Day Grid -->
+                  <div class="grid grid-cols-7 gap-1.5 text-center font-sans text-sm" id="calendar-days-grid">
+                    <!-- Loaded dynamically via JavaScript -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Time slots column -->
+              <div class="w-full lg:w-5/12 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-sans font-semibold text-navy text-lg mb-6 flex items-center">
+                    <i data-lucide="clock" class="w-5 h-5 text-teal mr-2"></i>
+                    Available Time Slots
+                  </h3>
+                  
+                  <div class="grid grid-cols-2 gap-3 mb-6 max-h-80 overflow-y-auto pr-2" id="booking-time-grid">
+                    <p class="col-span-2 text-center text-text-mid text-sm font-light italic py-12">Please select a date first to view slots.</p>
+                  </div>
+                </div>
+                
+                <!-- Pricing Alert Note -->
+                <div class="bg-teal-light/50 border border-teal/15 p-4 rounded-xl flex items-start space-x-3">
+                  <i data-lucide="info" class="w-4 h-4 text-teal mt-0.5 shrink-0"></i>
+                  <p class="font-sans text-xs text-text-mid font-light leading-relaxed">
+                    Closed Sundays. Saturdays display rate surcharges directly. Available slots map to clinic operational hours.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="flex justify-between border-t border-border pt-6">
+              <button onclick="goToStep(0)" class="border border-teal text-teal hover:bg-teal/5 font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300">
+                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Services
+              </button>
+              <button onclick="goToStep(2)" class="bg-teal hover:bg-teal-mid text-white font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300 hover:scale-105 shadow-md" id="date-time-continue-btn" disabled>
+                Continue to Details
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: PATIENT INFORMATION -->
+          <div class="wizard-step hidden opacity-0" id="step-2">
+            <h3 class="font-sans font-semibold text-navy text-xl mb-6 flex items-center">
+              <i data-lucide="user" class="w-5 h-5 text-teal mr-2"></i>
+              Enter Patient Information
+            </h3>
+            
+            <form id="booking-info-form" onsubmit="event.preventDefault(); return false;" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <!-- Name -->
+              <div>
+                <label for="patient-name" class="block font-sans font-medium text-xs text-navy uppercase tracking-wider mb-2">Patient Full Name *</label>
+                <input type="text" id="patient-name" required class="w-full bg-white border border-border rounded-xl py-3.5 px-4 font-sans text-sm focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal transition-all" placeholder="Enter your full name">
+              </div>
+              
+              <!-- Email -->
+              <div>
+                <label for="patient-email" class="block font-sans font-medium text-xs text-navy uppercase tracking-wider mb-2">Email Address *</label>
+                <input type="email" id="patient-email" required class="w-full bg-white border border-border rounded-xl py-3.5 px-4 font-sans text-sm focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal transition-all" placeholder="name@example.com">
+              </div>
+              
+              <!-- Phone -->
+              <div>
+                <label for="patient-phone" class="block font-sans font-medium text-xs text-navy uppercase tracking-wider mb-2">Phone Number *</label>
+                <input type="tel" id="patient-phone" required class="w-full bg-white border border-border rounded-xl py-3.5 px-4 font-sans text-sm focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal transition-all" placeholder="(346) 546-6020">
+              </div>
+              
+              <!-- DOB -->
+              <div>
+                <label for="patient-dob" class="block font-sans font-medium text-xs text-navy uppercase tracking-wider mb-2">Date of Birth *</label>
+                <input type="date" id="patient-dob" required class="w-full bg-white border border-border rounded-xl py-3.5 px-4 font-sans text-sm focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal transition-all">
+              </div>
+              
+              <!-- Reason for visit -->
+              <div class="col-span-1 md:col-span-2">
+                <label for="patient-reason" class="block font-sans font-medium text-xs text-navy uppercase tracking-wider mb-2">Reason for Appointment</label>
+                <textarea id="patient-reason" rows="3" class="w-full bg-white border border-border rounded-xl py-3.5 px-4 font-sans text-sm focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal transition-all" placeholder="Tell us briefly about your symptoms..."></textarea>
+              </div>
+            </form>
+
+            <div class="flex justify-between border-t border-border pt-6">
+              <button onclick="goToStep(1)" class="border border-teal text-teal hover:bg-teal/5 font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300">
+                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Calendar
+              </button>
+              <button onclick="submitBooking()" class="bg-teal hover:bg-teal-mid text-white font-medium py-3.5 px-8 rounded-full flex items-center transition-all duration-300 hover:scale-105 shadow-md">
+                Verify & Book
+                <i data-lucide="check" class="w-4 h-4 ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: BOOKING CONFIRMATION & INVOICE -->
+          <div class="wizard-step hidden opacity-0 text-center" id="step-3">
+            <div class="w-20 h-20 bg-teal-light text-teal rounded-full flex items-center justify-center mx-auto mb-8 success-checkmark-circle shadow-teal">
+              <i data-lucide="check" class="w-10 h-10 success-checkmark-icon"></i>
+            </div>
+            
+            <h3 class="font-serif-cormorant font-bold text-3xl text-navy mb-2 leading-tight">Appointment Secured Successfully!</h3>
+            <p class="font-sans text-sm text-text-mid font-light max-w-md mx-auto mb-8">
+              Thank you for trusting High Five Care. Your appointment details are registered below.
+            </p>
+            
+            <div class="bg-white border border-border rounded-2xl p-6 md:p-8 max-w-md mx-auto text-left shadow-sm mb-8 relative">
+              <div class="absolute -top-3.5 right-6 bg-gold text-white text-[10px] font-sans font-semibold py-1 px-3 rounded-full uppercase tracking-wider shadow-sm">Invoice Receipt</div>
+              
+              <div class="border-b border-border pb-4 mb-4">
+                <span class="font-sans font-semibold text-[10px] text-text-light uppercase tracking-wider block">Booking Reference Code</span>
+                <span class="font-mono font-bold text-2xl text-navy tracking-widest uppercase" id="receipt-booking-code">H5-XXXX</span>
+              </div>
+              
+              <table class="w-full font-sans text-sm leading-relaxed text-text-mid mb-6 border-collapse">
+                <tbody>
+                  <tr class="border-b border-border/50"><td class="py-2.5 font-medium text-navy">Patient Name</td><td class="py-2.5 text-right font-light" id="receipt-patient-name">-</td></tr>
+                  <tr class="border-b border-border/50"><td class="py-2.5 font-medium text-navy">Medical Service</td><td class="py-2.5 text-right font-light" id="receipt-service">-</td></tr>
+                  <tr class="border-b border-border/50"><td class="py-2.5 font-medium text-navy">Provider</td><td class="py-2.5 text-right font-light">Dr. Abdulla H. Abdulla</td></tr>
+                  <tr class="border-b border-border/50"><td class="py-2.5 font-medium text-navy">Date & Time</td><td class="py-2.5 text-right font-light text-teal font-medium" id="receipt-date-time">-</td></tr>
+                  
+                  <tr class="pt-3 block"><td class="pt-3 font-light text-xs">Service Base Rate</td><td class="pt-3 text-right font-mono text-xs" id="receipt-base-price">$0.00</td></tr>
+                  <tr id="receipt-surcharge-row" class="hidden">
+                    <td class="py-1.5 font-light text-xs flex items-center text-gold">Saturday Premium <i data-lucide="info" class="w-3.5 h-3.5 ml-1"></i></td>
+                    <td class="py-1.5 text-right font-mono text-xs text-gold">+$25.00</td>
+                  </tr>
+                  <tr class="border-t border-border mt-3 block"><td class="pt-3 font-semibold text-navy text-base">Total Charge</td><td class="pt-3 text-right font-mono font-bold text-teal text-base" id="receipt-total-price">$0.00</td></tr>
+                </tbody>
+              </table>
+              
+              <p class="font-sans text-[11px] text-text-mid/70 leading-relaxed font-light italic">
+                * We work with major insurance providers. Present your insurance card upon arrival to adjust co-pays.
+              </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <a href="https://calendar.google.com" target="_blank" class="bg-teal hover:bg-teal-mid text-white font-medium py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 shadow-md flex items-center justify-center w-full sm:w-auto">
+                <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+                Add to Google Calendar
+              </a>
+              <button onclick="resetBookingWizard()" class="border border-teal text-teal hover:bg-teal/5 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                Book Another Appointment
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11 — CONTACT & HOURS -->
+    <section id="contact" class="bg-white py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-stretch">
+          
+          <!-- Column 1: Contact Info -->
+          <div class="flex flex-col justify-between contact-col-1">
+            <div>
+              <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">Get In Touch</span>
+              <h2 class="font-serif-cormorant font-bold text-4xl text-navy mb-8">We're Here For You</h2>
+              
+              <div class="space-y-6 mb-8">
+                <!-- Address -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-sans font-semibold text-navy text-sm">Our Location</h4>
+                    <p class="font-sans text-sm text-text-mid font-light leading-relaxed">
+                      26200 Via Mazemi Way #270<br>Richmond, TX 77406
+                    </p>
+                  </div>
+                </div>
+                <!-- Phone -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-sans font-semibold text-navy text-sm">Phone Number</h4>
+                    <a href="tel:3465466020" class="font-sans text-sm text-text-mid hover:text-teal font-light transition-colors">
+                      346-546-6020
+                    </a>
+                  </div>
+                </div>
+                <!-- Fax -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="printer" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-sans font-semibold text-navy text-sm">Fax Number</h4>
+                    <p class="font-sans text-sm text-text-mid font-light">
+                      (866) 531-8156
+                    </p>
+                  </div>
+                </div>
+                <!-- Emails -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-sans font-semibold text-navy text-sm">Email Addresses</h4>
+                    <div class="flex flex-col space-y-0.5">
+                      <a href="mailto:frontdesk@primaryhighfivecare.com" class="font-sans text-sm text-text-mid hover:text-teal font-light transition-colors">
+                        frontdesk@primaryhighfivecare.com
+                      </a>
+                      <a href="mailto:info@primaryhighfivecare.com" class="font-sans text-sm text-text-mid hover:text-teal font-light transition-colors">
+                        info@primaryhighfivecare.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <!-- CTA buttons -->
+              <div class="flex flex-wrap gap-4 mb-6">
+                <a href="tel:3465466020" class="bg-teal hover:bg-teal-mid text-white font-medium py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 shadow-md flex items-center justify-center">
+                  <i data-lucide="phone-call" class="w-4 h-4 mr-2"></i>
+                  Call Us Now
+                </a>
+                <a href="mailto:info@primaryhighfivecare.com" class="border border-teal text-teal hover:bg-teal/5 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 flex items-center justify-center">
+                  <i data-lucide="send" class="w-4 h-4 mr-2"></i>
+                  Send Email
+                </a>
+              </div>
+              
+              <!-- Social links -->
+              <div class="flex space-x-3">
+                <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-teal text-white hover:bg-teal-mid flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm" aria-label="Facebook">
+                  <i data-lucide="facebook" class="w-5 h-5"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-teal text-white hover:bg-teal-mid flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm" aria-label="Instagram">
+                  <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Column 2: Office Hours -->
+          <div class="bg-off-white border border-border rounded-2xl p-8 flex flex-col justify-between contact-col-2">
+            <div>
+              <h3 class="font-sans font-semibold text-navy text-2xl mb-6 flex items-center">
+                <i data-lucide="clock" class="w-5 h-5 text-teal mr-2"></i>
+                Office Hours
+              </h3>
+              
+              <table class="w-full text-left font-sans text-sm md:text-base border-collapse">
+                <tbody>
+                  <tr class="hours-row border-b border-border transition-colors duration-300" id="day-1">
+                    <td class="py-3.5 font-medium text-navy">Monday</td>
+                    <td class="py-3.5 text-right text-text-mid font-light">8:00 AM – 5:00 PM</td>
+                  </tr>
+                  <tr class="hours-row border-b border-border transition-colors duration-300" id="day-2">
+                    <td class="py-3.5 font-medium text-navy">Tuesday</td>
+                    <td class="py-3.5 text-right text-text-mid font-light">8:00 AM – 5:00 PM</td>
+                  </tr>
+                  <tr class="hours-row border-b border-border transition-colors duration-300" id="day-3">
+                    <td class="py-3.5 font-medium text-navy">Wednesday</td>
+                    <td class="py-3.5 text-right text-text-mid font-light">8:00 AM – 5:00 PM</td>
+                  </tr>
+                  <tr class="hours-row border-b border-border transition-colors duration-300" id="day-4">
+                    <td class="py-3.5 font-medium text-navy">Thursday</td>
+                    <td class="py-3.5 text-right text-text-mid font-light">8:00 AM – 5:00 PM</td>
+                  </tr>
+                  <tr class="hours-row border-b border-border transition-colors duration-300" id="day-5">
+                    <td class="py-3.5 font-medium text-navy">Friday</td>
+                    <td class="py-3.5 text-right text-text-mid font-light">8:00 AM – 5:00 PM</td>
+                  </tr>
+                  <tr class="hours-row border-b border-border bg-teal-light/50 transition-colors duration-300" id="day-6">
+                    <td class="py-3.5 font-medium text-navy">Saturday</td>
+                    <td class="py-3.5 text-right text-text-mid font-light">9:00 AM – 1:00 PM</td>
+                  </tr>
+                  <tr class="hours-row transition-colors duration-300" id="day-0">
+                    <td class="py-3.5 font-medium text-navy/50">Sunday</td>
+                    <td class="py-3.5 text-right text-text-mid/50 font-light italic">Closed</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="mt-6 border-t border-border pt-4">
+              <p class="font-sans text-xs text-text-mid font-light leading-relaxed">
+                Note: Appointments are highly recommended. For walk-ins, please call ahead to confirm availability.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Column 3: Embedded Map -->
+          <div class="flex flex-col justify-between contact-col-3">
+            <!-- Map Embed -->
+            <div class="rounded-2xl overflow-hidden shadow-md h-64 md:h-80 lg:h-full border border-border group relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.439247653733!2d-95.7877546!3d29.648937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640df21d8b375b7%3A0xe21f000c010839!2s26200%20Via%20Mazemi%20Way%20%23270%2C%20Richmond%2C%20TX%2077406!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                class="w-full h-full border-0 transform group-hover:scale-[1.02] transition-transform duration-500" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="High Five Care Location Map">
+              </iframe>
+            </div>
+            
+            <!-- Info card below map -->
+            <div class="bg-white border border-border shadow-sm rounded-xl p-4 mt-4 flex items-center justify-between">
+              <div>
+                <h4 class="font-sans font-bold text-navy text-xs uppercase tracking-wider mb-0.5">High Five Care</h4>
+                <p class="font-sans text-xs text-text-mid font-light">26200 Via Mazemi Way #270</p>
+              </div>
+              <a href="https://maps.google.com/?q=26200+Via+Mazemi+Way+%23270,+Richmond,+TX+77406" target="_blank" class="text-teal font-sans font-semibold text-xs flex items-center hover:underline">
+                Get Directions
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-1"></i>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11 — FAQs -->
+    <section id="faqs" class="bg-off-white py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 faqs-header">
+          <span class="text-gold font-sans font-semibold uppercase tracking-widest text-xs md:text-sm mb-4 block">Common Questions</span>
+          <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-navy">Frequently Asked Questions</h2>
+        </div>
+        
+        <!-- FAQ Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start faqs-grid">
+          <!-- FAQ Left Col -->
+          <div class="space-y-6">
+            <!-- FAQ 1 -->
+            <div class="faq-item bg-white border border-border hover:border-teal/20 rounded-2xl shadow-sm transition-all duration-300">
+              <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq-ans-1">
+                <span class="font-sans font-semibold text-navy text-sm md:text-base pr-4">Do I have to pay to access the Patient Portal and healow app?</span>
+                <span class="faq-icon w-6 h-6 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </span>
+              </button>
+              <div id="faq-ans-1" class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                <p class="font-sans text-xs md:text-sm text-text-mid font-light leading-relaxed p-6 pt-0 border-t border-border/10">
+                  Access to our Portal and the healow app are completely free. We share this information with our patients to give them access to their health records and help them make better healthcare decisions.
+                </p>
+              </div>
+            </div>
+            
+            <!-- FAQ 2 -->
+            <div class="faq-item bg-white border border-border hover:border-teal/20 rounded-2xl shadow-sm transition-all duration-300">
+              <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq-ans-2">
+                <span class="font-sans font-semibold text-navy text-sm md:text-base pr-4">Is having online access secure?</span>
+                <span class="faq-icon w-6 h-6 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </span>
+              </button>
+              <div id="faq-ans-2" class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                <p class="font-sans text-xs md:text-sm text-text-mid font-light leading-relaxed p-6 pt-0 border-t border-border/10">
+                  Yes, the information is completely secure. It is protected with a username and password / PIN number of your choice and through SSL encryption.
+                </p>
+              </div>
+            </div>
+            
+            <!-- FAQ 3 -->
+            <div class="faq-item bg-white border border-border hover:border-teal/20 rounded-2xl shadow-sm transition-all duration-300">
+              <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq-ans-3">
+                <span class="font-sans font-semibold text-navy text-sm md:text-base pr-4">What can I access through the healow mobile app and Patient Portal?</span>
+                <span class="faq-icon w-6 h-6 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </span>
+              </button>
+              <div id="faq-ans-3" class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                <p class="font-sans text-xs md:text-sm text-text-mid font-light leading-relaxed p-6 pt-0 border-t border-border/10">
+                  We share information with our patients that we feel can help them and keep them informed. Every practice is different, and we try to provide patients with key information regarding their health. For a complete list of features, ask our friendly staff.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ Right Col -->
+          <div class="space-y-6">
+            <!-- FAQ 4 -->
+            <div class="faq-item bg-white border border-border hover:border-teal/20 rounded-2xl shadow-sm transition-all duration-300">
+              <button onclick="toggleFaq(4)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq-ans-4">
+                <span class="font-sans font-semibold text-navy text-sm md:text-base pr-4">How do I sign up?</span>
+                <span class="faq-icon w-6 h-6 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </span>
+              </button>
+              <div id="faq-ans-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                <p class="font-sans text-xs md:text-sm text-text-mid font-light leading-relaxed p-6 pt-0 border-t border-border/10">
+                  Sign-up is simple. You should receive a username and password from our practice via email that you can customize after your initial login. Access can be made via any web browser, or through the smartphone app.
+                </p>
+              </div>
+            </div>
+            
+            <!-- FAQ 5 -->
+            <div class="faq-item bg-white border border-border hover:border-teal/20 rounded-2xl shadow-sm transition-all duration-300">
+              <button onclick="toggleFaq(5)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq-ans-5">
+                <span class="font-sans font-semibold text-navy text-sm md:text-base pr-4">What if I forget my username and/or password?</span>
+                <span class="faq-icon w-6 h-6 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </span>
+              </button>
+              <div id="faq-ans-5" class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                <p class="font-sans text-xs md:text-sm text-text-mid font-light leading-relaxed p-6 pt-0 border-t border-border/10">
+                  The app and our Portal allow you to reset your username and/or password. You can also call the front desk at 346-546-6020 and we can reset it for you.
+                </p>
+              </div>
+            </div>
+            
+            <!-- FAQ 6 -->
+            <div class="faq-item bg-white border border-border hover:border-teal/20 rounded-2xl shadow-sm transition-all duration-300">
+              <button onclick="toggleFaq(6)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq-ans-6">
+                <span class="font-sans font-semibold text-navy text-sm md:text-base pr-4">What if I need technical assistance?</span>
+                <span class="faq-icon w-6 h-6 rounded-full bg-teal-light text-teal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </span>
+              </button>
+              <div id="faq-ans-6" class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                <p class="font-sans text-xs md:text-sm text-text-mid font-light leading-relaxed p-6 pt-0 border-t border-border/10">
+                  User support is built into the web portal and the app, or you can ask a member of our staff directly at the clinic.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 12 — FINAL CTA BANNER -->
+    <section id="cta-banner" class="bg-teal py-20 text-white relative overflow-hidden text-center">
+      <!-- Diagonal pattern texture -->
+      <div class="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0.1)_75%,transparent_75%,transparent)] bg-[length:40px_40px]"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 cta-banner-content">
+        <h2 class="font-serif-cormorant font-bold text-4xl md:text-5xl text-white mb-6 max-w-3xl mx-auto leading-tight">
+          Ready to Take Charge of Your Health?
+        </h2>
+        <p class="font-sans text-sm md:text-lg text-white/90 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+          Book an appointment with Dr. Abdulla today. Compassionate, expert care for your entire family — right here in Richmond.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#booking" class="bg-navy hover:bg-navy-mid text-white font-medium py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 flex items-center shadow-lg w-full sm:w-auto justify-center">
+            Book an Appointment
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+          <a href="tel:3465466020" class="border-2 border-white hover:bg-white hover:text-teal text-white font-medium py-3.5 px-8 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center flex items-center">
+            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+            Call 346-546-6020
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy text-white pt-16 pb-8 relative overflow-hidden border-t border-white/5">
+    <!-- Decorative Orb -->
+    <div class="absolute right-0 top-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_80%_20%,rgba(11,163,192,0.1),transparent_50%)] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Col 1: Logo & Tagline -->
+        <div class="flex flex-col items-start">
+          <div class="flex items-center mb-6">
+            <svg class="w-8 h-8 mr-2.5" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="30" stroke="url(#footer-grad)" stroke-width="3" fill="none" />
+              <path d="M22 38V26C22 24.3431 23.3431 23 25 23C26.6569 23 28 24.3431 28 26V32M28 32V20C28 18.3431 29.3431 17 31 17C32.6569 17 34 18.3431 34 20V32M34 32V18C34 16.3431 35.3431 15 37 15C38.6569 15 40 16.3431 40 18V32M40 32V22C40 20.3431 41.3431 19 43 19C44.6569 19 46 20.3431 46 22V38C46 44.0751 41.0751 49 35 49H33C26.9249 49 22 44.0751 22 38Z" stroke="#0BA3C0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="footer-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0BA3C0" />
+                  <stop offset="1" stop-color="#C9A860" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="flex flex-col">
+              <span class="font-serif-cormorant font-bold text-lg text-white leading-none tracking-wide"><span class="text-teal">HIGH FIVE</span> CARE</span>
+              <span class="font-sans text-[9px] text-text-light font-bold uppercase tracking-wider mt-0.5">Family Practice</span>
+            </div>
+          </div>
+          <p class="font-sans text-xs md:text-sm text-text-light/75 leading-relaxed font-light mb-6">
+            Providing compassionate, high-quality family medical care for Richmond and Fort Bend County.
+          </p>
+          <!-- Socials -->
+          <div class="flex space-x-3">
+            <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-full bg-teal text-white hover:bg-teal-mid flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm" aria-label="Facebook">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-teal text-white hover:bg-teal-mid flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="font-sans font-semibold text-white text-sm uppercase tracking-widest mb-6">Quick Links</h4>
+          <ul class="space-y-3 font-sans text-xs md:text-sm text-text-light/80 font-light">
+            <li><a href="#hero" class="hover:text-teal transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-teal transition-colors">About Us</a></li>
+            <li><a href="#provider" class="hover:text-teal transition-colors">Providers</a></li>
+            <li><a href="#services" class="hover:text-teal transition-colors">Services</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Patient Tools -->
+        <div>
+          <h4 class="font-sans font-semibold text-white text-sm uppercase tracking-widest mb-6">Patient Tools</h4>
+          <ul class="space-y-3 font-sans text-xs md:text-sm text-text-light/80 font-light">
+            <li><a href="#testimonials" class="hover:text-teal transition-colors">Testimonials</a></li>
+            <li><a href="#faqs" class="hover:text-teal transition-colors">FAQs</a></li>
+            <li><a href="#contact" class="hover:text-teal transition-colors">Contact Us</a></li>
+            <li><a href="#contact" class="hover:text-teal transition-colors">Book Appointment</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 4: Contact Block -->
+        <div class="font-sans text-xs md:text-sm text-text-light/80 font-light">
+          <h4 class="font-sans font-semibold text-white text-sm uppercase tracking-widest mb-6">Contact Info</h4>
+          <p class="mb-4 text-white font-medium">HIGH FIVE CARE FAMILY PRACTICE</p>
+          <p class="mb-4 leading-relaxed">
+            26200 Via Mazemi Way #270<br>Richmond, TX 77406
+          </p>
+          <p class="mb-2">Phone: <a href="tel:3465466020" class="hover:text-teal text-white transition-colors">346-546-6020</a></p>
+          <p class="mb-2">Fax: (866) 531-8156</p>
+          <p class="mb-1">Emails:</p>
+          <p class="pl-2 flex flex-col space-y-0.5">
+            <a href="mailto:frontdesk@primaryhighfivecare.com" class="hover:text-teal text-white/95 transition-colors">frontdesk@primaryhighfivecare.com</a>
+            <a href="mailto:info@primaryhighfivecare.com" class="hover:text-teal text-white/95 transition-colors">info@primaryhighfivecare.com</a>
+          </p>
+        </div>
+      </div>
+      
+      <!-- Gold Divider -->
+      <div class="w-full h-[1px] bg-gold/20 mb-8"></div>
+      
+      <!-- Bottom Bar -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-text-light/60 font-sans font-light">
+        <span>&copy; 2025 High Five Care Family Practice. All rights reserved.</span>
+        <span class="flex items-center text-teal-mid">
+          Powered by care.
+          <i data-lucide="heart" class="w-3.5 h-3.5 ml-1.5 text-gold fill-current"></i>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING UI ELEMENTS -->
+  <!-- Floating Mobile Appointment CTA -->
+  <a href="#booking" class="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-teal text-white rounded-full shadow-teal flex items-center justify-center z-50 hover:scale-105 active:scale-95 transition-all duration-300" aria-label="Book Appointment">
+    <i data-lucide="calendar-plus" class="w-6 h-6"></i>
+  </a>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scroll-to-top" onclick="scrollToTop()" class="hidden lg:flex fixed bottom-6 right-6 w-12 h-12 bg-white border border-teal/20 text-teal rounded-full shadow-md items-center justify-center z-45 opacity-0 pointer-events-none hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Scroll to top">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- Cookie / Portal Notice Banner -->
+  <div id="portal-notice" class="fixed bottom-6 left-6 right-6 md:right-auto md:w-96 bg-white border border-border rounded-2xl shadow-lg p-6 z-50 transform translate-y-24 opacity-0 transition-all duration-500 ease-out">
+    <div class="flex items-start space-x-3.5 mb-4">
+      <div class="text-teal bg-teal-light p-2 rounded-xl flex-shrink-0">
+        <i data-lucide="alert-circle" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h4 class="font-sans font-semibold text-navy text-sm">Patient Security Notice</h4>
+        <p class="font-sans text-xs text-text-mid font-light leading-relaxed mt-1">
+          Please use our secure patient portal for all clinical communications. <strong>For medical emergencies, call 911 immediately.</strong>
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-end space-x-3">
+      <button onclick="dismissPortalNotice()" class="font-sans font-semibold text-teal hover:text-teal-mid text-xs py-1.5 px-3 rounded-full hover:bg-teal-light/50 transition-all">
+        Understand & Dismiss
+      </button>
+    </div>
+  </div>
+
+  <!-- External JS Library CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Core Page Logic JS -->
+  <script type="text/javascript">
+    // Custom Cursor Setup
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorRing = document.querySelector('.custom-cursor-ring');
+
+    if (cursor && cursorRing) {
+      window.addEventListener('mousemove', (e) => {
+        if (cursor.style.display !== 'block') {
+          cursor.style.display = 'block';
+          cursorRing.style.display = 'block';
+        }
+        gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0 });
+        gsap.to(cursorRing, { x: e.clientX, y: e.clientY, duration: 0.15, ease: "power2.out" });
+      });
+
+      document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+        cursorRing.style.opacity = '0';
+      });
+      document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+        cursorRing.style.opacity = '1';
+      });
+
+      // Expand ring on clickables
+      const clickables = document.querySelectorAll('a, button, [role="button"], input, select, textarea');
+      clickables.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursorRing.style.width = '48px';
+          cursorRing.style.height = '48px';
+          cursorRing.style.borderColor = 'rgba(11, 163, 192, 0.8)';
+          cursor.style.backgroundColor = '#C9A860';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursorRing.style.width = '32px';
+          cursorRing.style.height = '32px';
+          cursorRing.style.borderColor = 'rgba(11, 163, 192, 0.3)';
+          cursor.style.backgroundColor = '#0BA3C0';
+        });
+      });
+    }
+
+    // Dismissable Emergency Banner
+    function dismissEmergencyBanner() {
+      const banner = document.getElementById('emergency-banner');
+      if (banner) {
+        banner.style.marginTop = `-${banner.offsetHeight}px`;
+        document.documentElement.style.setProperty('--banner-height', '0px');
+        setTimeout(() => {
+          banner.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    // Responsive Sticky Navigation Bar scroll triggers
+    let lastScrollY = window.scrollY;
+    let menuOpen = false;
+
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburger = document.getElementById('hamburger');
+      menuOpen = !menuOpen;
+      
+      if (menuOpen) {
+        mobileMenu.classList.remove('translate-x-full');
+        hamburger.classList.add('hamburger-active');
+        gsap.fromTo('.mobile-link', 
+          { x: 50, opacity: 0 }, 
+          { x: 0, opacity: 1, duration: 0.4, stagger: 0.08, delay: 0.2, ease: "power2.out" }
+        );
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+        hamburger.classList.remove('hamburger-active');
+      }
+      updateNav();
+    }
+
+    function updateNav() {
+      const scrollY = window.scrollY;
+      const nav = document.getElementById('main-nav');
+      
+      if (scrollY > 80 || menuOpen) {
+        nav.classList.remove('nav-dark-mode');
+        nav.classList.add('nav-light-mode');
+      } else {
+        nav.classList.remove('nav-light-mode');
+        nav.classList.add('nav-dark-mode');
+      }
+
+      // Hide / Show nav based on scroll direction
+      if (scrollY > 80) {
+        if (scrollY > lastScrollY && scrollY > 300 && !menuOpen) {
+          nav.style.transform = 'translateY(-100%)';
+        } else {
+          nav.style.transform = 'translateY(0)';
+        }
+      } else {
+        nav.style.transform = 'translateY(0)';
+      }
+      
+      // Show/Hide scroll-to-top button
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+      if (scrollY > 400) {
+        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+
+      lastScrollY = scrollY;
+    }
+
+    window.addEventListener('scroll', updateNav);
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Portal Notice Banner Show/Hide
+    function dismissPortalNotice() {
+      const notice = document.getElementById('portal-notice');
+      if (notice) {
+        notice.classList.add('translate-y-24', 'opacity-0');
+        localStorage.setItem('highFivePortalNoticeDismissed', 'true');
+        setTimeout(() => {
+          notice.classList.add('hidden');
+        }, 500);
+      }
+    }
+
+    // Highlight Office Hours Today
+    function highlightTodayHours() {
+      const today = new Date().getDay(); // 0 is Sunday, 1 is Monday, etc.
+      const todayRow = document.getElementById(`day-${today}`);
+      if (todayRow) {
+        todayRow.classList.remove('bg-teal-light/50');
+        todayRow.classList.add('bg-teal/15', 'border-l-4', 'border-teal', 'pl-3');
+      }
+    }
+
+    // Testimonials Carousel Logic
+    let currentTestimonial = 0;
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    let testimonialInterval;
+
+    function showTestimonial(index) {
+      testimonialSlides.forEach((slide, idx) => {
+        if (idx === index) {
+          slide.classList.remove('hidden');
+          setTimeout(() => {
+            slide.classList.remove('opacity-0', 'scale-95');
+            slide.classList.add('opacity-100', 'scale-100');
+          }, 50);
+        } else {
+          slide.classList.add('hidden', 'opacity-0', 'scale-95');
+          slide.classList.remove('opacity-100', 'scale-100');
+        }
+      });
+
+      testimonialDots.forEach((dot, idx) => {
+        if (idx === index) {
+          dot.classList.add('bg-teal');
+          dot.classList.remove('bg-gray-300');
+        } else {
+          dot.classList.remove('bg-teal');
+          dot.classList.add('bg-gray-300');
+        }
+      });
+      currentTestimonial = index;
+    }
+
+    function nextTestimonial() {
+      let nextIdx = (currentTestimonial + 1) % testimonialSlides.length;
+      showTestimonial(nextIdx);
+    }
+
+    function prevTestimonial() {
+      let prevIdx = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+      showTestimonial(prevIdx);
+    }
+
+    function goToTestimonial(index) {
+      showTestimonial(index);
+      resetTestimonialTimer();
+    }
+
+    function startTestimonialTimer() {
+      testimonialInterval = setInterval(nextTestimonial, 5000);
+    }
+
+    function resetTestimonialTimer() {
+      clearInterval(testimonialInterval);
+      startTestimonialTimer();
+    }
+
+    const tContainer = document.querySelector('.testimonial-container');
+    if (tContainer) {
+      tContainer.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
+      tContainer.addEventListener('mouseleave', startTestimonialTimer);
+    }
+
+    // Tab Switcher Logic
+    function switchTab(index) {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+      
+      tabBtns.forEach((btn, idx) => {
+        if (idx === index) {
+          btn.classList.add('text-white', 'bg-teal');
+          btn.classList.remove('text-text-mid', 'hover:text-navy');
+        } else {
+          btn.classList.remove('text-white', 'bg-teal');
+          btn.classList.add('text-text-mid', 'hover:text-navy');
+        }
+      });
+
+      tabPanes.forEach((pane, idx) => {
+        if (idx === index) {
+          pane.classList.remove('hidden');
+          setTimeout(() => {
+            pane.classList.remove('opacity-0', 'scale-95');
+            pane.classList.add('opacity-100', 'scale-100');
+          }, 50);
+        } else {
+          pane.classList.add('hidden', 'opacity-0', 'scale-95');
+          pane.classList.remove('opacity-100', 'scale-100');
+        }
+      });
+    }
+
+    // Interactive Booking System Logic
+    let currentYear = 2026;
+    let currentMonth = 5; // June (0-indexed)
+    let selectedDate = null;
+    let selectedTime = null;
+    let baseServicePrice = 120;
+    let serviceName = "Primary Care";
+    let activeStep = 0;
+
+    const monthsList = [
+      "January", "February", "March", "April", "May", "June", 
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    function renderCalendar() {
+      const monthYearLabel = document.getElementById('calendar-month-year');
+      const daysGrid = document.getElementById('calendar-days-grid');
+      if (!monthYearLabel || !daysGrid) return;
+
+      monthYearLabel.innerText = `${monthsList[currentMonth]} ${currentYear}`;
+      daysGrid.innerHTML = '';
+
+      // Disable/enable previous month button
+      const prevBtn = document.getElementById('calendar-prev-btn');
+      if (prevBtn) {
+        if (currentYear === 2026 && currentMonth === 5) {
+          prevBtn.classList.add('opacity-30', 'pointer-events-none');
+        } else {
+          prevBtn.classList.remove('opacity-30', 'pointer-events-none');
+        }
+      }
+
+      const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+      const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+      const prevLastDay = new Date(currentYear, currentMonth, 0).getDate();
+
+      // Days from previous month
+      for (let x = firstDayIndex; x > 0; x--) {
+        const dayBtn = document.createElement('div');
+        dayBtn.classList.add('py-2.5', 'text-text-light/40', 'font-sans', 'text-xs', 'pointer-events-none');
+        dayBtn.innerText = prevLastDay - x + 1;
+        daysGrid.appendChild(dayBtn);
+      }
+
+      // Days of current month
+      for (let i = 1; i <= lastDay; i++) {
+        const dayBtn = document.createElement('button');
+        dayBtn.type = 'button';
+        dayBtn.classList.add('py-2', 'rounded-lg', 'font-sans', 'text-xs', 'font-medium', 'transition-all', 'duration-200', 'flex', 'flex-col', 'items-center', 'justify-center', 'relative');
+        
+        const dayOfWeek = new Date(currentYear, currentMonth, i).getDay();
+        const isPast = new Date(currentYear, currentMonth, i) < new Date(2026, 5, 7); // base date June 7, 2026
+
+        if (dayOfWeek === 0) {
+          // Sunday - Closed
+          dayBtn.classList.add('text-text-light/40', 'bg-gray-100', 'cursor-not-allowed', 'pointer-events-none');
+          dayBtn.innerHTML = `<span>${i}</span><span class="text-[9px] text-red-400 font-light block">Closed</span>`;
+        } else if (isPast) {
+          // Past days
+          dayBtn.classList.add('text-text-light/30', 'cursor-not-allowed', 'pointer-events-none');
+          dayBtn.innerHTML = `<span>${i}</span>`;
+        } else {
+          // Active days
+          let rate = baseServicePrice;
+          let extraClass = 'text-text-dark hover:bg-teal-light/50 hover:text-teal';
+          let badgeHtml = '';
+
+          if (dayOfWeek === 6) {
+            // Saturday - premium
+            rate += 25;
+            extraClass = 'text-gold hover:bg-gold/10';
+            badgeHtml = `<span class="text-[8px] text-gold font-mono font-medium leading-none mt-0.5">$${rate}</span>`;
+          } else {
+            // Weekday
+            badgeHtml = `<span class="text-[8px] text-teal font-mono font-light leading-none mt-0.5">$${rate}</span>`;
+          }
+
+          // Check if selected
+          if (selectedDate && selectedDate.getDate() === i && selectedDate.getMonth() === currentMonth && selectedDate.getFullYear() === currentYear) {
+            if (dayOfWeek === 6) {
+              dayBtn.classList.add('bg-gold', 'text-white', 'hover:bg-gold');
+              dayBtn.innerHTML = `<span>${i}</span><span class="text-[8px] text-white/90 font-mono font-medium leading-none mt-0.5">$${rate}</span>`;
+            } else {
+              dayBtn.classList.add('bg-teal', 'text-white', 'hover:bg-teal');
+              dayBtn.innerHTML = `<span>${i}</span><span class="text-[8px] text-white/90 font-mono font-medium leading-none mt-0.5">$${rate}</span>`;
+            }
+          } else {
+            dayBtn.className += ` ${extraClass}`;
+            dayBtn.innerHTML = `<span>${i}</span>${badgeHtml}`;
+          }
+
+          dayBtn.onclick = () => selectDate(i, dayOfWeek, rate);
+        }
+
+        daysGrid.appendChild(dayBtn);
+      }
+    }
+
+    function selectDate(day, dayOfWeek, price) {
+      selectedDate = new Date(currentYear, currentMonth, day);
+      selectedTime = null; // reset selected time
+      document.getElementById('date-time-continue-btn').disabled = true;
+      
+      // Re-render calendar to highlight selection
+      renderCalendar();
+      
+      // Render time slots based on dayOfWeek
+      renderTimeSlots(dayOfWeek, price);
+    }
+
+    function prevMonth() {
+      if (currentYear === 2026 && currentMonth === 5) {
+        return;
+      }
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar();
+    }
+
+    // Nav navigation months
+    function nextMonth() {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      renderCalendar();
+    }
+
+    function renderTimeSlots(dayOfWeek, totalPrice) {
+      const timeGrid = document.getElementById('booking-time-grid');
+      if (!timeGrid) return;
+      timeGrid.innerHTML = '';
+
+      let slots = [];
+      if (dayOfWeek === 6) {
+        // Saturday slots
+        slots = ["9:00 AM", "9:45 AM", "10:30 AM", "11:15 AM", "12:00 PM"];
+      } else {
+        // Weekday slots
+        slots = [
+          "8:00 AM", "8:45 AM", "9:30 AM", "10:15 AM", "11:00 AM", 
+          "1:00 PM", "1:45 PM", "2:30 PM", "3:15 PM", "4:00 PM"
+        ];
+      }
+
+      slots.forEach(slot => {
+        const slotBtn = document.createElement('button');
+        slotBtn.type = 'button';
+        slotBtn.className = 'py-3 px-4 rounded-xl border border-border bg-white text-navy font-sans text-xs md:text-sm font-medium transition-all duration-200 hover:border-teal hover:bg-teal-light/20 focus:outline-none';
+        slotBtn.innerText = slot;
+
+        if (selectedTime === slot) {
+          slotBtn.classList.add('bg-teal', 'text-white', 'border-teal', 'hover:bg-teal');
+        }
+
+        slotBtn.onclick = () => {
+          document.querySelectorAll('#booking-time-grid button').forEach(b => {
+            b.classList.remove('bg-teal', 'text-white', 'border-teal');
+          });
+          slotBtn.classList.add('bg-teal', 'text-white', 'border-teal');
+          selectedTime = slot;
+          document.getElementById('date-time-continue-btn').disabled = false;
+        };
+
+        timeGrid.appendChild(slotBtn);
+      });
+    }
+
+    function goToStep(stepIndex) {
+      const steps = document.querySelectorAll('.wizard-step');
+      const indicators = document.querySelectorAll('.step-indicator');
+      
+      if (stepIndex === activeStep) return;
+
+      const currentStepEl = document.getElementById(`step-${activeStep}`);
+      const nextStepEl = document.getElementById(`step-${stepIndex}`);
+
+      if (prefersReducedMotion) {
+        currentStepEl.classList.add('hidden');
+        currentStepEl.classList.remove('block');
+        nextStepEl.classList.remove('hidden');
+        nextStepEl.classList.add('block');
+        
+        indicators.forEach((ind, idx) => {
+          if (idx <= stepIndex) {
+            ind.classList.remove('opacity-40');
+            ind.querySelector('span').classList.add('bg-teal');
+            ind.querySelector('span').classList.remove('bg-navy-mid');
+          } else {
+            ind.classList.add('opacity-40');
+            ind.querySelector('span').classList.remove('bg-teal');
+            ind.querySelector('span').classList.add('bg-navy-mid');
+          }
+        });
+
+        activeStep = stepIndex;
+        return;
+      }
+
+      gsap.timeline()
+        .to(currentStepEl, {
+          opacity: 0,
+          x: -30,
+          duration: 0.3,
+          onComplete: () => {
+            currentStepEl.classList.add('hidden');
+            currentStepEl.classList.remove('block');
+            nextStepEl.classList.remove('hidden');
+            nextStepEl.classList.add('block');
+          }
+        })
+        .fromTo(nextStepEl, 
+          { opacity: 0, x: 30 },
+          { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }
+        );
+
+      indicators.forEach((ind, idx) => {
+        if (idx <= stepIndex) {
+          ind.classList.remove('opacity-40');
+          const circle = ind.querySelector('span');
+          circle.classList.add('bg-teal');
+          circle.classList.remove('bg-navy-mid');
+        } else {
+          ind.classList.add('opacity-40');
+          const circle = ind.querySelector('span');
+          circle.classList.remove('bg-teal');
+          circle.classList.add('bg-navy-mid');
+        }
+      });
+
+      activeStep = stepIndex;
+    }
+
+    function submitBooking() {
+      const form = document.getElementById('booking-info-form');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const name = document.getElementById('patient-name').value;
+      const email = document.getElementById('patient-email').value;
+      const phone = document.getElementById('patient-phone').value;
+      const dob = document.getElementById('patient-dob').value;
+
+      document.getElementById('receipt-patient-name').innerText = name;
+      document.getElementById('receipt-service').innerText = serviceName;
+      
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = selectedDate.toLocaleDateString('en-US', options);
+      document.getElementById('receipt-date-time').innerText = `${formattedDate} @ ${selectedTime}`;
+      
+      const isSaturday = selectedDate.getDay() === 6;
+      const basePriceVal = baseServicePrice;
+      const surchargeVal = isSaturday ? 25 : 0;
+      const totalVal = basePriceVal + surchargeVal;
+
+      document.getElementById('receipt-base-price').innerText = `$${basePriceVal.toFixed(2)}`;
+      if (isSaturday) {
+        document.getElementById('receipt-surcharge-row').classList.remove('hidden');
+      } else {
+        document.getElementById('receipt-surcharge-row').classList.add('hidden');
+      }
+      document.getElementById('receipt-total-price').innerText = `$${totalVal.toFixed(2)}`;
+
+      const bookingCode = `H5-${Math.floor(100000 + Math.random() * 900000)}`;
+      document.getElementById('receipt-booking-code').innerText = bookingCode;
+
+      goToStep(3);
+    }
+
+    function resetBookingWizard() {
+      selectedDate = null;
+      selectedTime = null;
+      document.getElementById('patient-name').value = '';
+      document.getElementById('patient-email').value = '';
+      document.getElementById('patient-phone').value = '';
+      document.getElementById('patient-dob').value = '';
+      document.getElementById('patient-reason').value = '';
+      document.getElementById('date-time-continue-btn').disabled = true;
+      
+      const firstRadio = document.querySelector('.booking-service-radio');
+      if (firstRadio) {
+        firstRadio.checked = true;
+        firstRadio.dispatchEvent(new Event('change'));
+      }
+      
+      currentYear = 2026;
+      currentMonth = 5;
+      renderCalendar();
+      
+      const timeGrid = document.getElementById('booking-time-grid');
+      if (timeGrid) {
+        timeGrid.innerHTML = '<p class="col-span-2 text-center text-text-mid text-sm font-light italic py-12">Please select a date first to view slots.</p>';
+      }
+
+      goToStep(0);
+    }
+
+    // GSAP page load / scroll triggers init
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      highlightTodayHours();
+      startTestimonialTimer();
+      renderCalendar();
+
+      // Service radio change listener setup
+      const serviceRadios = document.querySelectorAll('.booking-service-radio');
+      serviceRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          baseServicePrice = parseFloat(e.target.dataset.price);
+          serviceName = e.target.value;
+          
+          document.querySelectorAll('#services-booking-list label').forEach(label => {
+            label.classList.remove('border-teal', 'bg-teal-light/10');
+            label.classList.add('border-border', 'bg-white');
+          });
+          const selectedLabel = e.target.closest('label');
+          selectedLabel.classList.add('border-teal', 'bg-teal-light/10');
+          selectedLabel.classList.remove('border-border', 'bg-white');
+
+          // Reset selections
+          selectedDate = null;
+          selectedTime = null;
+          document.getElementById('date-time-continue-btn').disabled = true;
+          const timeGrid = document.getElementById('booking-time-grid');
+          if (timeGrid) {
+            timeGrid.innerHTML = '<p class="col-span-2 text-center text-text-mid text-sm font-light italic py-12">Please select a date first to view slots.</p>';
+          }
+
+          renderCalendar();
+        });
+      });
+
+      // Set banner height CSS variable
+      const banner = document.getElementById('emergency-banner');
+      if (banner) {
+        document.documentElement.style.setProperty('--banner-height', `${banner.offsetHeight}px`);
+      }
+
+      // Show Portal Notice after 2 seconds on first visit
+      if (!localStorage.getItem('highFivePortalNoticeDismissed')) {
+        setTimeout(() => {
+          const notice = document.getElementById('portal-notice');
+          if (notice) {
+            notice.classList.remove('translate-y-24', 'opacity-0');
+            notice.classList.add('translate-y-0', 'opacity-100');
+          }
+        }, 2000);
+      }
+
+      if (prefersReducedMotion) {
+        gsap.set(".h1-line, #hero-badge, #hero-sub, #hero-body, #hero-ctas, .trust-badge, #hero-image, .ecg-line", {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          scale: 1,
+          strokeDashoffset: 0
+        });
+        return;
+      }
+
+      // Page Load Timeline
+      const tl = gsap.timeline();
+      
+      tl.from("#main-nav", {
+        y: -50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      tl.from("#hero-badge", {
+        y: 30,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out"
+      }, "-=0.4");
+
+      tl.from(".h1-line", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out"
+      }, "-=0.3");
+
+      tl.from(["#hero-sub", "#hero-body"], {
+        y: 30,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out"
+      }, "-=0.3");
+
+      tl.from("#hero-ctas", {
+        scale: 0.95,
+        y: 20,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.out"
+      }, "-=0.2");
+
+      tl.from(".trust-badge", {
+        y: 20,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: "power2.out"
+      }, "-=0.2");
+
+      tl.from("#hero-image", {
+        x: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=1.2");
+
+      // Draw ECG Line loop
+      gsap.fromTo(".ecg-line", 
+        { strokeDashoffset: 2000 }, 
+        { strokeDashoffset: 0, duration: 8, ease: "none", repeat: -1 }
+      );
+
+      // Hero Particles floating
+      const particlesContainer = document.querySelector('.particles');
+      if (particlesContainer) {
+        for (let i = 0; i < 15; i++) {
+          const p = document.createElement('div');
+          p.classList.add('absolute', 'rounded-full', 'bg-teal/20');
+          const size = Math.random() * 6 + 3;
+          p.style.width = `${size}px`;
+          p.style.height = `${size}px`;
+          p.style.left = `${Math.random() * 100}%`;
+          p.style.top = `${Math.random() * 100}%`;
+          particlesContainer.appendChild(p);
+
+          gsap.to(p, {
+            y: -100 - Math.random() * 200,
+            x: (Math.random() - 0.5) * 50,
+            opacity: 0,
+            duration: Math.random() * 6 + 4,
+            repeat: -1,
+            ease: "power1.out",
+            delay: Math.random() * 5
+          });
+        }
+      }
+
+      // GSAP ScrollTrigger Configurations
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Stats Count-Up triggers
+      const statsSection = document.getElementById('stats');
+      const statsElements = [
+        { id: 'stat-years', target: 22, suffix: '+' },
+        { id: 'stat-services', target: 10, suffix: '' },
+        { id: 'stat-days', target: 6, suffix: '' },
+        { id: 'stat-wellness', target: 100, suffix: '%' }
+      ];
+
+      statsElements.forEach(stat => {
+        const el = document.getElementById(stat.id);
+        const obj = { val: 0 };
+        gsap.to(obj, {
+          val: stat.target,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: statsSection,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          onUpdate: function() {
+            el.innerText = Math.floor(obj.val) + stat.suffix;
+          }
+        });
+      });
+
+      // About section slide reveals
+      gsap.from(".about-text", {
+        x: -50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 80%"
+        }
+      });
+
+      gsap.from(".about-images", {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 80%"
+        }
+      });
+
+      // Services Cards stagger reveal
+      gsap.from(".service-card", {
+        y: 40,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#services",
+          start: "top 75%"
+        }
+      });
+
+      // Provider Bio scale and slide
+      gsap.from(".provider-photo", {
+        scale: 0.95,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#provider",
+          start: "top 80%"
+        }
+      });
+
+      gsap.from(".provider-bio", {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#provider",
+          start: "top 80%"
+        }
+      });
+
+      // Insurance accepted plans
+      gsap.from("#insurance", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: "#insurance",
+          start: "top 85%"
+        }
+      });
+
+      // Testimonials container fade scale
+      gsap.from(".testimonial-container", {
+        scale: 0.97,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#testimonials",
+          start: "top 80%"
+        }
+      });
+
+      // Portal access layout elements
+      gsap.from(".portal-left", {
+        x: -50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#portal",
+          start: "top 80%"
+        }
+      });
+      
+      gsap.from(".portal-right", {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#portal",
+          start: "top 80%"
+        }
+      });
+
+      // Patient Tools section entrance
+      gsap.from("#tools", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: "#tools",
+          start: "top 80%"
+        }
+      });
+
+      // Booking section entrance
+      gsap.from("#booking", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: "#booking",
+          start: "top 80%"
+        }
+      });
+
+      // Contact column blocks stagger reveal
+      gsap.from(".contact-col-1", {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 80%"
+        }
+      });
+      gsap.from(".contact-col-2", {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.1,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 80%"
+        }
+      });
+      gsap.from(".contact-col-3", {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 80%"
+        }
+      });
+
+      // FAQ accordion list stagger reveal
+      gsap.from(".faq-item", {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#faqs",
+          start: "top 80%"
+        }
+      });
+
+      // CTA booking banner slide/fade
+      gsap.from(".cta-banner-content", {
+        y: 30,
+        scale: 0.96,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#cta-banner",
+          start: "top 85%"
+        }
+      });
+    });
+  </script>
+</body>
+</html>
