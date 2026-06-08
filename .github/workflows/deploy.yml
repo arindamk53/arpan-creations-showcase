@@ -39,8 +39,13 @@ jobs:
       - name: Copy static sites to output
         run: |
           # Copy any static site folders (non-Next.js) to out directory
+          # Exclude 'out' directory itself and hidden directories
           for dir in */; do
-            if [ -f "${dir}index.html" ] && [ ! -f "${dir}package.json" ]; then
+            dir=${dir%/}
+            if [ "$dir" = "out" ] || [ "$dir" = ".git" ] || [ "$dir" = ".github" ] || [ "$dir" = "node_modules" ]; then
+              continue
+            fi
+            if [ -f "${dir}/index.html" ] && [ ! -f "${dir}/package.json" ]; then
               echo "Copying static site: $dir"
               cp -r "$dir" out/
             fi
