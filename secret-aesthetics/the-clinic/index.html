@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — The Clinic | Secret Aesthetics Birmingham | Harvey Nichols</title>
+  <meta name="description" content="Learn about Secret Aesthetics — Birmingham's premier doctor-led aesthetic clinic at Harvey Nichols. Founded by Dr Naqvi and Dr Zoya. CQC-regulated. Over 30,000 procedures performed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/cookie-banner.css">
+  <style>
+    .clinic-hero { height:55vh; min-height:400px; position:relative; display:flex; align-items:flex-end; padding-bottom:60px; }
+    .clinic-hero__bg { position:absolute; inset:0; }
+    .clinic-hero__bg img { width:100%; height:100%; object-fit:cover; }
+    .clinic-hero__bg::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); }
+
+    .clinic-values { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-24); }
+    .clinic-value { background:var(--color-bg-card); border:1px solid rgba(200,169,110,0.15); border-radius:var(--radius-md); padding:var(--space-32); }
+    .clinic-value__icon { font-size:28px; margin-bottom:var(--space-16); display:block; }
+    .clinic-value__title { font-family:var(--font-feature); font-size:20px; margin-bottom:8px; }
+    .clinic-value__body { font-size:var(--text-sm); color:var(--color-text-70); line-height:1.7; }
+
+    .milestones { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-24); text-align:center; }
+    .milestone__value { font-family:var(--font-display); font-size:52px; font-weight:300; color:var(--color-gold); line-height:1; }
+    .milestone__label { font-size:11px; text-transform:uppercase; letter-spacing:0.2em; color:var(--color-text-50); margin-top:4px; }
+
+    .team-section { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-24); }
+    .team-card { border-radius:var(--radius-md); overflow:hidden; position:relative; }
+    .team-card img { width:100%; height:420px; object-fit:cover; transition:transform var(--transition-slow); }
+    .team-card:hover img { transform:scale(1.04); }
+    .team-card__overlay { position:absolute; bottom:0; left:0; right:0; padding:var(--space-24); background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); }
+    .team-card__name { font-family:var(--font-feature); font-size:24px; margin-bottom:4px; }
+    .team-card__role { font-size:12px; text-transform:uppercase; letter-spacing:0.15em; color:var(--color-gold); }
+
+    .about-split { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-64); align-items:center; }
+    .about-split__image img { width:100%; height:480px; object-fit:cover; border-radius:var(--radius-lg); }
+
+    @media(max-width:900px) { .clinic-values { grid-template-columns:1fr; } .milestones { grid-template-columns:repeat(2,1fr); } .team-section { grid-template-columns:1fr; } .about-split { grid-template-columns:1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "Secret Aesthetics",
+    "url": "https://secretaesthetics.co.uk",
+    "foundingDate": "2019",
+    "description": "Birmingham's premier doctor-led luxury aesthetic clinic at Harvey Nichols, The Mailbox.",
+    "telephone": "+441216166023",
+    "address": { "@type": "PostalAddress", "streetAddress": "Harvey Nichols, The Mailbox, 65 Wharfside Street", "addressLocality": "Birmingham", "postalCode": "B1 1RE", "addressCountry": "GB" }
+  }
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="page-transition" aria-hidden="true"></div>
+<a href="../book-online/index.html" class="floating-cta-mobile"><span class="btn-float-mobile">Book Now →</span></a>
+<div class="floating-cta-desktop" id="floating-desk"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="2" width="22" height="22"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+<div class="press-bar" aria-hidden="true"><div class="press-bar__inner"><span class="press-bar__label">As seen in</span><div class="press-bar__track-wrap"><div class="press-bar__track"><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Telegraph</span><span class="press-bar__sep">·</span><span class="press-bar__item">Tatler</span></div></div></div></div>
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="../index.html" class="site-logo"><span class="site-logo__text">Secret Aesthetics</span><span class="site-logo__sub">Birmingham · Harvey Nichols</span></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-item"><a href="../the-clinic/index.html" class="nav-link active">About</a></div>
+      <div class="nav-item"><a href="../treatments/index.html" class="nav-link">Treatments</a></div>
+      <div class="nav-item"><a href="../conditions/index.html" class="nav-link">Conditions</a></div>
+      <div class="nav-item"><a href="../prices/index.html" class="nav-link">Prices</a></div>
+      <div class="nav-item"><a href="../gallery/index.html" class="nav-link">Gallery</a></div>
+      <div class="nav-item"><a href="../blog/index.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="../contact/index.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="header-actions"><a href="tel:01216166023" class="header-phone">0121 616 6023</a><a href="../book-online/index.html" class="header-book">BOOK NOW →</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mobile-nav-overlay__header"><a href="../index.html" class="site-logo"><span class="site-logo__text" style="color:var(--color-gold);">Secret Aesthetics</span></a><button class="mobile-nav-close" id="mobile-nav-close" style="color:var(--color-gold);font-size:24px;background:none;border:none;cursor:pointer;">✕</button></div>
+  <div class="mobile-nav-overlay__body"><a href="../treatments/index.html" class="mobile-nav-link">Treatments</a><a href="../prices/index.html" class="mobile-nav-link">Prices</a><a href="../gallery/index.html" class="mobile-nav-link">Gallery</a><a href="../contact/index.html" class="mobile-nav-link">Contact</a></div>
+  <div class="mobile-nav-overlay__footer"><a href="../book-online/index.html" class="mobile-book-btn">Book Consultation</a><a href="tel:01216166023" class="mobile-phone-link">0121 616 6023</a></div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="clinic-hero">
+    <div class="clinic-hero__bg"><img src="../assets/images/clinic-interior.png" alt="Secret Aesthetics clinic interior" loading="eager"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px;"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>The Clinic</span></nav>
+      <span class="section-label hero-anim-1">ABOUT US</span>
+      <h1 class="section-headline hero-anim-2" style="font-size:clamp(48px,7vw,80px);">The Clinic</h1>
+      <p class="hero-anim-3" style="font-size:17px;color:var(--color-text-70);max-width:560px;line-height:1.6;">Birmingham's most exclusive doctor-led aesthetic clinic. Precision medicine. Luxury setting. Real results.</p>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="section" style="background:var(--color-bg);">
+    <div class="container">
+      <div class="about-split">
+        <div>
+          <span class="section-label fade-up">OUR STORY</span>
+          <h2 class="section-headline fade-up stagger-1">Born from a Vision,<br><em>Built on Excellence.</em></h2>
+          <p class="section-body fade-up stagger-2">Secret Aesthetics was founded in 2019 by Dr Naqvi and Dr Zoya — two NHS physicians who shared an uncompromising vision: to create Birmingham's most clinically rigorous, aesthetically refined aesthetic clinic. Not a beauty salon with a laser machine. Not a chain franchise. A genuine medical environment, staffed exclusively by physicians, delivering results that match and exceed those of London's Harley Street.</p>
+          <p class="section-body fade-up stagger-3">Every treatment is performed personally by our founding doctors. Every consultation is conducted with the thoroughness of a medical appointment. Every outcome is measured against the highest standards of evidence-based aesthetic medicine.</p>
+          <p class="section-body fade-up stagger-4">Our exclusive location within Harvey Nichols at The Mailbox reflects our position as Birmingham's most premium aesthetic clinic — and our commitment to providing an exceptional patient experience from the moment you arrive.</p>
+        </div>
+        <div class="about-split__image fade-in stagger-2">
+          <img src="../assets/images/harvey-nichols.png" alt="Harvey Nichols, The Mailbox — home of Secret Aesthetics" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MILESTONES -->
+  <section class="section section--sm" style="background:var(--color-bg-card);">
+    <div class="container">
+      <div class="milestones">
+        <div class="fade-up">
+          <div class="milestone__value" data-count="30000" data-suffix="+">30,000+</div>
+          <div class="milestone__label">Procedures Performed</div>
+        </div>
+        <div class="fade-up stagger-1">
+          <div class="milestone__value">7★</div>
+          <div class="milestone__label">National Awards</div>
+        </div>
+        <div class="fade-up stagger-2">
+          <div class="milestone__value">4.9</div>
+          <div class="milestone__label">Google Rating</div>
+        </div>
+        <div class="fade-up stagger-3">
+          <div class="milestone__value">40+</div>
+          <div class="milestone__label">Treatments Offered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section" style="background:var(--color-bg);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:var(--space-48);">
+        <span class="section-label fade-up">OUR PRINCIPLES</span>
+        <h2 class="section-headline fade-up stagger-1">What Sets Us Apart</h2>
+      </div>
+      <div class="clinic-values">
+        <div class="clinic-value fade-up">
+          <span class="clinic-value__icon">🩺</span>
+          <h3 class="clinic-value__title">Doctor-Led Only</h3>
+          <p class="clinic-value__body">Every treatment at Secret Aesthetics is performed personally by Dr Naqvi or Dr Zoya — both MBBS graduates with specialist postgraduate training. We do not employ beauticians, nurses or therapists to administer injectables or laser treatments.</p>
+        </div>
+        <div class="clinic-value fade-up stagger-1">
+          <span class="clinic-value__icon">🛡️</span>
+          <h3 class="clinic-value__title">CQC Regulated</h3>
+          <p class="clinic-value__body">We are registered with and regulated by the Care Quality Commission — the independent regulator of health and social care in England. This is the mark of a genuine medical facility and is a legal requirement for the procedures we perform.</p>
+        </div>
+        <div class="clinic-value fade-up stagger-2">
+          <span class="clinic-value__icon">🔬</span>
+          <h3 class="clinic-value__title">Evidence-Based Medicine</h3>
+          <p class="clinic-value__body">We never offer treatments that lack clinical evidence. Our protocols are based on peer-reviewed research, international consensus guidelines, and manufacturer-authorised techniques. We are proud Galderma UK Faculty members.</p>
+        </div>
+        <div class="clinic-value fade-up stagger-3">
+          <span class="clinic-value__icon">✦</span>
+          <h3 class="clinic-value__title">Birmingham Exclusive</h3>
+          <p class="clinic-value__body">We are the only clinic in Birmingham and the West Midlands certified to offer Endolift® laser lifting. We invested heavily in acquiring this technology and the specialist training to offer it — because our patients deserve access to world-leading treatments.</p>
+        </div>
+        <div class="clinic-value fade-up stagger-4">
+          <span class="clinic-value__icon">🏆</span>
+          <h3 class="clinic-value__title">Multi Award Winning</h3>
+          <p class="clinic-value__body">Secret Aesthetics has been recognised at 7 national awards ceremonies including the Aesthetics Awards, the MyFaceMyBody Awards, and the Prestige Practitioners Awards — recognising clinical excellence, patient satisfaction, and innovation.</p>
+        </div>
+        <div class="clinic-value fade-up stagger-5">
+          <span class="clinic-value__icon">💙</span>
+          <h3 class="clinic-value__title">Pro Bono Programme</h3>
+          <p class="clinic-value__body">We run the UK's first doctor-led pro bono aesthetic programme — providing complimentary treatments to patients whose confidence has been impacted by medical conditions, domestic abuse, scarring or significant life events. Beauty, for everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE DOCTORS -->
+  <section class="section" id="team" style="background:var(--color-bg-card);" aria-labelledby="team-heading">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:var(--space-48);">
+        <span class="section-label fade-up">THE PHYSICIANS</span>
+        <h2 id="team-heading" class="section-headline fade-up stagger-1">Meet Your Doctors</h2>
+      </div>
+      <div class="team-section">
+        <div class="team-card fade-up">
+          <img src="../assets/images/dr-naqvi.png" alt="Dr Naqvi — Co-Founder Secret Aesthetics" loading="lazy">
+          <div class="team-card__overlay">
+            <p class="team-card__name">Dr Naqvi</p>
+            <p class="team-card__role">Co-Founder & Lead Clinician</p>
+            <a href="../dr-naqvi/index.html" class="btn-text" style="font-size:12px;margin-top:8px;display:inline-flex;align-items:center;gap:6px;">Full Profile <span class="arrow">→</span></a>
+          </div>
+        </div>
+        <div class="team-card fade-up stagger-2">
+          <img src="../assets/images/dr-zoya.png" alt="Dr Zoya — Co-Founder Secret Aesthetics" loading="lazy">
+          <div class="team-card__overlay">
+            <p class="team-card__name">Dr Zoya</p>
+            <p class="team-card__role">Co-Founder & Aesthetic Doctor</p>
+            <a href="../dr-zoya/index.html" class="btn-text" style="font-size:12px;margin-top:8px;display:inline-flex;align-items:center;gap:6px;">Full Profile <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section" style="background:var(--color-bg);">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-split__image fade-in">
+          <img src="../assets/images/harvey-nichols.png" alt="Harvey Nichols Birmingham exterior" loading="lazy">
+        </div>
+        <div>
+          <span class="section-label fade-up">OUR LOCATION</span>
+          <h2 class="section-headline fade-up stagger-1">Harvey Nichols,<br><em>The Mailbox.</em></h2>
+          <p class="section-body fade-up stagger-2">We are proudly housed within the luxury Harvey Nichols department store at The Mailbox — Birmingham's most prestigious retail and lifestyle destination. Our private clinical suite offers complete discretion, luxury surroundings and the world-class service our patients expect.</p>
+          <div class="fade-up stagger-3" style="margin-top:var(--space-24);">
+            <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:var(--text-base);color:var(--color-text-70);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" width="18" height="18" style="flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Harvey Nichols, The Mailbox, 65 Wharfside Street, Birmingham, B1 1RE</div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:var(--text-base);color:var(--color-text-70);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg><a href="tel:01216166023" style="color:var(--color-gold);">0121 616 6023</a></div>
+            <div style="font-size:var(--text-sm);color:var(--color-text-70);line-height:1.8;margin-bottom:var(--space-24);">Tue – Thu: 10am – 6pm &nbsp;·&nbsp; Fri – Sat: 10am – 7pm<br><span style="font-size:12px;color:var(--color-text-50);">Complimentary parking · Level 1, Mailbox Car Park</span></div>
+          </div>
+          <div class="cta-row fade-up stagger-4">
+            <a href="../book-online/index.html" class="btn btn-primary">Book Consultation →</a>
+            <a href="../contact/index.html" class="btn btn-secondary">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-col"><a href="../index.html" class="footer-logo">Secret Aesthetics</a><p class="footer-tagline">"Your Beauty. Our Secret."™</p><p class="footer-desc">Birmingham's premier doctor-led luxury aesthetic clinic at Harvey Nichols.</p><div class="footer-credentials"><span class="footer-cred-badge"><span>✦</span> CQC Regulated</span><span class="footer-cred-badge"><span>✦</span> Galderma Faculty</span></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">Treatments</span></button><div class="footer-links"><a href="../treatments/index.html" class="footer-link">All Treatments</a><a href="../treatment/endolift/index.html" class="footer-link">Endolift®</a><a href="../treatments/index.html" class="footer-link">Anti-Wrinkle</a></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">The Clinic</span></button><div class="footer-links"><a href="../the-clinic/index.html" class="footer-link">About</a><a href="../dr-naqvi/index.html" class="footer-link">Dr Naqvi</a><a href="../dr-zoya/index.html" class="footer-link">Dr Zoya</a><a href="../faq/index.html" class="footer-link">FAQ</a></div></div>
+      <div class="footer-col"><span class="footer-col-label">Visit Us</span><p class="footer-visit-text">Harvey Nichols, The Mailbox<br>Birmingham, B1 1RE</p><div class="footer-hours"><strong>Opening Hours</strong>Tue – Thu: 10am – 6pm<br>Fri – Sat: 10am – 7pm</div><a href="../book-online/index.html" class="footer-book-btn">Book Consultation</a></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2026 Secret Aesthetics. All rights reserved.</p><nav class="footer-legal-links" aria-label="Legal"><a href="../privacy/index.html">Privacy</a><a href="../terms/index.html">Terms</a><a href="../cookies/index.html">Cookies</a></nav><p class="footer-credit">Website by <a href="https://arpancreations.com" target="_blank" rel="noopener">Arpan Creations</a></p></div>
+  </div>
+</footer>
+
+<script defer src="../js/main.js"></script>
+<script defer src="../js/animations.js"></script>
+<script defer src="../js/micro.js"></script>
+<script defer src="../js/cookies.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fd = document.getElementById('floating-desk');
+    window.addEventListener('scroll', () => { if(fd) fd.classList.toggle('visible', window.scrollY > 500); }, {passive:true});
+  });
+</script>
+</body>
+</html>

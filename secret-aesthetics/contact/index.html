@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Secret Aesthetics Birmingham — Harvey Nichols</title>
+  <meta name="description" content="Contact Secret Aesthetics at Harvey Nichols, The Mailbox, Birmingham. Call 0121 616 6023, email info@secretaesthetics.co.uk or send an enquiry online. Tue–Sat appointments available.">
+  <meta name="theme-color" content="#080808">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | Secret Aesthetics Birmingham">
+  <meta property="og:description" content="Get in touch with Secret Aesthetics at Harvey Nichols, The Mailbox, Birmingham.">
+  <meta property="og:image" content="../assets/images/og-card.png">
+  <meta property="og:url" content="https://secretaesthetics.co.uk/contact/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/cookie-banner.css">
+  <style>
+    .contact-hero { height:35vh; min-height:280px; position:relative; display:flex; align-items:flex-end; padding-bottom:60px; }
+    .contact-hero__bg { position:absolute; inset:0; }
+    .contact-hero__bg img { width:100%; height:100%; object-fit:cover; }
+    .contact-hero__bg::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.7); }
+    .contact-hero__content { position:relative; z-index:2; }
+
+    .contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-64); align-items:start; }
+
+    .contact-info-card {
+      background:var(--color-bg-card); border-left:3px solid var(--color-gold);
+      border-radius:var(--radius-md); padding:var(--space-32); margin-bottom:var(--space-24);
+    }
+    .contact-info-item { display:flex; align-items:flex-start; gap:16px; margin-bottom:var(--space-24); }
+    .contact-info-item:last-child { margin-bottom:0; }
+    .contact-info-icon { width:18px; height:18px; color:var(--color-gold); flex-shrink:0; margin-top:3px; }
+    .contact-info-text { font-size:var(--text-base); color:var(--color-text-70); line-height:1.6; }
+    .contact-info-text a { color:var(--color-gold); transition:color var(--transition-fast); }
+    .contact-info-text a:hover { text-decoration:underline; }
+    .contact-info-label { display:block; font-size:10px; text-transform:uppercase; letter-spacing:0.2em; color:var(--color-gold); font-weight:600; margin-bottom:4px; }
+
+    .hours-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px 24px; font-size:var(--text-sm); color:var(--color-text-70); line-height:1.6; }
+    .hours-closed { color:var(--color-text-50); font-style:italic; }
+
+    .form-card { background:var(--color-bg-card); border:1px solid rgba(200,169,110,0.15); border-radius:var(--radius-md); padding:var(--space-40); }
+    .form-card h2 { font-family:var(--font-feature); font-size:28px; margin-bottom:8px; }
+    .form-card p { font-size:var(--text-sm); color:var(--color-text-60); margin-bottom:var(--space-32); }
+
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-16); }
+    .form-success-msg { display:none; text-align:center; padding:var(--space-32); }
+    .form-success-msg .check { font-size:40px; color:var(--color-gold); display:block; margin-bottom:12px; animation:fadeIn 0.5s ease; }
+
+    .map-wrap { border-radius:var(--radius-md); overflow:hidden; margin-top:var(--space-24); border:1px solid rgba(200,169,110,0.1); }
+    .map-wrap iframe { display:block; width:100%; height:300px; border:none; filter:grayscale(1) invert(0.9) hue-rotate(170deg) brightness(0.65) contrast(1.1); }
+
+    .social-contact { display:flex; gap:var(--space-16); margin-top:var(--space-24); }
+    .social-contact a { display:flex; align-items:center; gap:8px; font-size:var(--text-sm); color:var(--color-text-70); transition:color var(--transition-fast); }
+    .social-contact a:hover { color:var(--color-gold); }
+
+    @media(max-width:900px) { .contact-layout { grid-template-columns:1fr; } .form-row { grid-template-columns:1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "Secret Aesthetics",
+    "url": "https://secretaesthetics.co.uk",
+    "telephone": "+441216166023",
+    "email": "info@secretaesthetics.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Harvey Nichols, The Mailbox, 65 Wharfside Street",
+      "addressLocality": "Birmingham",
+      "postalCode": "B1 1RE",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"10:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"10:00","closes":"19:00"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="page-transition" aria-hidden="true"></div>
+<a href="../book-online/index.html" class="floating-cta-mobile"><span class="btn-float-mobile">Book Now →</span></a>
+<div class="floating-cta-desktop" id="floating-desk" aria-label="Book"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="2" width="22" height="22"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+
+<div class="press-bar" aria-hidden="true"><div class="press-bar__inner"><span class="press-bar__label">As seen in</span><div class="press-bar__track-wrap"><div class="press-bar__track"><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Telegraph</span><span class="press-bar__sep">·</span><span class="press-bar__item">Tatler</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Times</span><span class="press-bar__sep">·</span><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Telegraph</span></div></div></div></div>
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="../index.html" class="site-logo" aria-label="Secret Aesthetics — Home"><span class="site-logo__text">Secret Aesthetics</span><span class="site-logo__sub">Birmingham · Harvey Nichols</span></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-item"><a href="../the-clinic/index.html" class="nav-link">About <span class="chevron">▾</span></a>
+        <div class="dropdown-panel dropdown-panel--about">
+          <div><span class="dropdown-col-label">The Doctors</span><a href="../dr-naqvi/index.html" class="dropdown-link">Dr Naqvi</a><a href="../dr-zoya/index.html" class="dropdown-link">Dr Zoya</a></div>
+          <div><span class="dropdown-col-label">The Clinic</span><a href="../the-clinic/index.html" class="dropdown-link">About the Clinic</a><a href="../faq/index.html" class="dropdown-link">FAQ</a></div>
+          <div class="dropdown-feature"><p class="dropdown-feature__title">Doctor-Led Since Day One</p><p class="dropdown-feature__body">Every treatment performed by our founding physicians.</p><a href="../book-online/index.html" class="btn-text" style="font-size:12px;">Book Now <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="../the-clinic/index.html" class="nav-link">The Clinic</a></div>
+      <div class="nav-item"><a href="../treatments/index.html" class="nav-link">Treatments</a></div>
+      <div class="nav-item"><a href="../conditions/index.html" class="nav-link">Conditions</a></div>
+      <div class="nav-item"><a href="../prices/index.html" class="nav-link">Prices</a></div>
+      <div class="nav-item"><a href="../gallery/index.html" class="nav-link">Gallery</a></div>
+      <div class="nav-item"><a href="../blog/index.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="../contact/index.html" class="nav-link active">Contact</a></div>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:01216166023" class="header-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg>0121 616 6023</a>
+      <a href="../book-online/index.html" class="header-book">BOOK NOW <span class="arrow">→</span></a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mobile-nav-overlay__header"><a href="../index.html" class="site-logo"><span class="site-logo__text" style="color:var(--color-gold);">Secret Aesthetics</span></a><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close" style="color:var(--color-gold);font-size:24px;background:none;border:none;cursor:pointer;">✕</button></div>
+  <div class="mobile-nav-overlay__body">
+    <a href="../the-clinic/index.html" class="mobile-nav-link">About</a>
+    <a href="../treatments/index.html" class="mobile-nav-link">Treatments</a>
+    <a href="../prices/index.html" class="mobile-nav-link">Prices</a>
+    <a href="../gallery/index.html" class="mobile-nav-link">Gallery</a>
+    <a href="../contact/index.html" class="mobile-nav-link">Contact</a>
+  </div>
+  <div class="mobile-nav-overlay__footer"><a href="../book-online/index.html" class="mobile-book-btn">Book Consultation</a><a href="tel:01216166023" class="mobile-phone-link">0121 616 6023</a></div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <div class="contact-hero__bg"><img src="../assets/images/clinic-interior.png" alt="Secret Aesthetics clinic" loading="eager"></div>
+    <div class="container contact-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px;"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>Contact</span></nav>
+      <span class="section-label hero-anim-1">GET IN TOUCH</span>
+      <h1 class="section-headline hero-anim-2" style="font-size:clamp(44px,6vw,72px);">Contact Us</h1>
+      <p class="hero-anim-3" style="font-size:17px;color:var(--color-text-70);max-width:480px;line-height:1.6;">Our team is here to answer your questions and help you begin your journey.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT LAYOUT -->
+  <section class="section" style="background:var(--color-bg);">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- LEFT — Details & Map -->
+        <div>
+          <div class="contact-info-card fade-in">
+            <div class="contact-info-item">
+              <svg class="contact-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="contact-info-text">
+                <span class="contact-info-label">Address</span>
+                Harvey Nichols, The Mailbox<br>65 Wharfside Street<br>Birmingham, B1 1RE
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <svg class="contact-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg>
+              <div class="contact-info-text">
+                <span class="contact-info-label">Telephone</span>
+                <a href="tel:01216166023">0121 616 6023</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <svg class="contact-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div class="contact-info-text">
+                <span class="contact-info-label">Email</span>
+                <a href="mailto:info@secretaesthetics.co.uk">info@secretaesthetics.co.uk</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-card fade-in stagger-2">
+            <span class="contact-info-label" style="margin-bottom:16px;display:block;">Opening Hours</span>
+            <div class="hours-grid">
+              <span>Tuesday – Thursday</span><span>10:00am – 6:00pm</span>
+              <span>Friday – Saturday</span><span>10:00am – 7:00pm</span>
+              <span class="hours-closed">Sunday – Monday</span><span class="hours-closed">Closed</span>
+            </div>
+          </div>
+
+          <div class="contact-info-card fade-in stagger-3">
+            <span class="contact-info-label" style="margin-bottom:12px;display:block;">
+              <svg style="width:14px;height:14px;display:inline;margin-right:6px;vertical-align:middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M9 8h4a2 2 0 010 4H9z"/></svg>
+              Parking
+            </span>
+            <p style="font-size:13px;color:var(--color-text-60);line-height:1.6;">Complimentary Harvey Nichols concierge parking available for all patients. Level 1, Mailbox Car Park.</p>
+          </div>
+
+          <div class="social-contact fade-in stagger-4">
+            <a href="https://www.instagram.com/secretaesthetics/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              @secretaesthetics
+            </a>
+            <a href="https://en-gb.facebook.com/secretaesthetics/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              /secretaesthetics
+            </a>
+          </div>
+
+          <!-- MAP -->
+          <div class="map-wrap fade-in stagger-5">
+            <iframe
+              title="Secret Aesthetics location — Harvey Nichols, The Mailbox, Birmingham"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.194929484!2d-1.910!3d52.476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc7e61a2e4d9%3A0xde9b6d0e8f1c7e3a!2sHarvey%20Nichols%20Birmingham!5e0!3m2!1sen!2suk!4v1620000000000"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              aria-label="Map showing Secret Aesthetics at Harvey Nichols, The Mailbox, Birmingham">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- RIGHT — Enquiry Form -->
+        <div>
+          <div class="form-card fade-in stagger-1">
+            <h2>Send an Enquiry</h2>
+            <p>We aim to respond within 24 hours.</p>
+
+            <form class="sa-form" id="contact-form" novalidate aria-label="Enquiry form" data-success-redirect="../thank-you/">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="full-name">Full Name <span class="req">*</span></label>
+                  <input class="form-field" type="text" id="full-name" name="full_name" placeholder="Your full name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address <span class="req">*</span></label>
+                  <input class="form-field" type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone Number</label>
+                  <input class="form-field" type="tel" id="phone" name="phone" placeholder="07xxx xxxxxx" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="subject">Subject <span class="req">*</span></label>
+                  <select class="form-field" id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a topic</option>
+                    <option value="general">General Enquiry</option>
+                    <option value="consultation">Book a Consultation</option>
+                    <option value="treatment">Treatment Question</option>
+                    <option value="assessment">Clinical Photo Assessment</option>
+                    <option value="finance">Finance Enquiry</option>
+                    <option value="probono">Pro Bono Application</option>
+                    <option value="complaint">Complaint</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message <span class="req">*</span></label>
+                <textarea class="form-field" id="message" name="message" rows="5" placeholder="Tell us how we can help…" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <div class="file-upload" onclick="document.getElementById('photo-upload').click()" role="button" tabindex="0" aria-label="Attach a clinical photo">
+                  <input type="file" id="photo-upload" name="photo" accept="image/*" aria-hidden="true">
+                  <div class="file-upload__icon">📎</div>
+                  <p class="file-upload__text">Attach a photo for clinical assessment <span style="display:block;font-size:11px;margin-top:4px;color:var(--color-text-50);">(Optional — JPG/PNG, max 10MB)</span></p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-checkbox">
+                  <input type="checkbox" class="consent-checkbox" required aria-required="true">
+                  <span>I agree to the <a href="../privacy/index.html">Privacy Policy</a> and consent to being contacted by Secret Aesthetics regarding my enquiry.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:18px;">Send Enquiry</button>
+
+              <div class="form-success-msg" role="alert" aria-live="polite">
+                <span class="check">✓</span>
+                <p style="font-family:var(--font-feature);font-size:20px;margin-bottom:8px;">Thank you — we'll be in touch within 24 hours.</p>
+                <p style="font-size:13px;color:var(--color-text-60);">Our clinical team will review your enquiry and respond personally.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK BOOK -->
+  <section class="section section--sm" style="background:var(--color-bg-card);text-align:center;">
+    <div class="container">
+      <p class="fade-up" style="font-size:var(--text-base);color:var(--color-text-70);margin-bottom:var(--space-24);">Prefer to book directly? Schedule your consultation online.</p>
+      <a href="../book-online/index.html" class="btn btn-primary fade-up stagger-1">Book Consultation Online →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-col"><a href="../index.html" class="footer-logo">Secret Aesthetics</a><p class="footer-tagline">"Your Beauty. Our Secret."™</p><p class="footer-desc">Birmingham's premier doctor-led luxury aesthetic clinic. Located within Harvey Nichols at The Mailbox.</p><div class="footer-credentials"><span class="footer-cred-badge"><span>✦</span> CQC Regulated</span><span class="footer-cred-badge"><span>✦</span> Galderma Faculty</span></div><div class="footer-socials"><a href="https://en-gb.facebook.com/secretaesthetics/" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="https://www.instagram.com/secretaesthetics/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">Treatments</span></button><div class="footer-links"><a href="../treatments/index.html" class="footer-link">Anti-Wrinkle</a><a href="../treatments/index.html" class="footer-link">Dermal Fillers</a><a href="../treatment/endolift/index.html" class="footer-link">Endolift®</a><a href="../treatments/index.html" class="footer-link">IV Vitamin Bar</a><a href="../treatments/index.html" class="footer-link footer-link--arrow">View All</a></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">The Clinic</span></button><div class="footer-links"><a href="../the-clinic/index.html" class="footer-link">About Us</a><a href="../dr-naqvi/index.html" class="footer-link">Dr Naqvi</a><a href="../dr-zoya/index.html" class="footer-link">Dr Zoya</a><a href="../gallery/index.html" class="footer-link">Gallery</a><a href="../prices/index.html" class="footer-link">Prices</a></div></div>
+      <div class="footer-col"><span class="footer-col-label">Visit Us</span><div class="footer-visit-item"><svg class="footer-visit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><p class="footer-visit-text">Harvey Nichols, The Mailbox<br>65 Wharfside Street, Birmingham B1 1RE</p></div><div class="footer-visit-item"><svg class="footer-visit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg><p class="footer-visit-text"><a href="tel:01216166023">0121 616 6023</a></p></div><div class="footer-hours"><strong>Opening Hours</strong>Tue – Thu: 10am – 6pm<br>Fri – Sat: 10am – 7pm</div><a href="../book-online/index.html" class="footer-book-btn">Book Consultation</a></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2026 Secret Aesthetics. All rights reserved.</p><nav class="footer-legal-links" aria-label="Legal"><a href="../privacy/index.html">Privacy Policy</a><a href="../terms/index.html">Terms & Conditions</a><a href="../cookies/index.html">Cookie Policy</a></nav><p class="footer-credit">Website by <a href="https://arpancreations.com" target="_blank" rel="noopener">Arpan Creations</a></p></div>
+  </div>
+</footer>
+
+<script defer src="../js/main.js"></script>
+<script defer src="../js/animations.js"></script>
+<script defer src="../js/micro.js"></script>
+<script defer src="../js/cookies.js"></script>
+<script defer src="../js/form.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', () => {
+      const d = document.getElementById('floating-desk');
+      if (d) d.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+    const fu = document.querySelector('.file-upload');
+    const fi = document.getElementById('photo-upload');
+    if (fu && fi) {
+      fu.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') fi.click(); });
+      fi.addEventListener('change', () => {
+        const fn = fi.files[0]?.name || '';
+        fu.querySelector('.file-upload__text').textContent = fn || 'No file selected';
+      });
+    }
+  });
+</script>
+</body>
+</html>

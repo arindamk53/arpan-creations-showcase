@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expert Aesthetics Blog | Secret Aesthetics Birmingham — Doctor Insights</title>
+  <meta name="description" content="Expert aesthetic medicine articles from Dr Naqvi and Dr Zoya at Secret Aesthetics Birmingham. Treatments explained, skincare science, and patient guides.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/cookie-banner.css">
+  <style>
+    .blog-hero { height:40vh; min-height:300px; position:relative; display:flex; align-items:flex-end; padding-bottom:60px; }
+    .blog-hero__bg { position:absolute; inset:0; }
+    .blog-hero__bg img { width:100%; height:100%; object-fit:cover; }
+    .blog-hero__bg::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.72); }
+    .blog-grid-full { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-24); }
+    .blog-cat-pills { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:var(--space-40); }
+    .blog-cat-pill { font-size:11px; text-transform:uppercase; letter-spacing:0.15em; padding:8px 16px; border:1px solid rgba(200,169,110,0.2); border-radius:var(--radius-full); color:var(--color-text-60); cursor:pointer; transition:all var(--transition-fast); background:transparent; }
+    .blog-cat-pill:hover, .blog-cat-pill.active { border-color:var(--color-gold); color:var(--color-gold); background:rgba(200,169,110,0.06); }
+    @media(max-width:900px) { .blog-grid-full { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:640px) { .blog-grid-full { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="page-transition" aria-hidden="true"></div>
+<a href="../book-online/index.html" class="floating-cta-mobile"><span class="btn-float-mobile">Book Now →</span></a>
+<div class="floating-cta-desktop" id="floating-desk"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="2" width="22" height="22"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+<div class="press-bar" aria-hidden="true"><div class="press-bar__inner"><span class="press-bar__label">As seen in</span><div class="press-bar__track-wrap"><div class="press-bar__track"><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span></div></div></div></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="../index.html" class="site-logo"><span class="site-logo__text">Secret Aesthetics</span><span class="site-logo__sub">Birmingham · Harvey Nichols</span></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-item"><a href="../the-clinic/index.html" class="nav-link">About</a></div>
+      <div class="nav-item"><a href="../treatments/index.html" class="nav-link">Treatments</a></div>
+      <div class="nav-item"><a href="../prices/index.html" class="nav-link">Prices</a></div>
+      <div class="nav-item"><a href="../gallery/index.html" class="nav-link">Gallery</a></div>
+      <div class="nav-item"><a href="../blog/index.html" class="nav-link active">Blog</a></div>
+      <div class="nav-item"><a href="../contact/index.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="header-actions"><a href="tel:01216166023" class="header-phone">0121 616 6023</a><a href="../book-online/index.html" class="header-book">BOOK NOW →</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mobile-nav-overlay__header"><a href="../index.html" class="site-logo"><span class="site-logo__text" style="color:var(--color-gold);">Secret Aesthetics</span></a><button class="mobile-nav-close" id="mobile-nav-close" style="color:var(--color-gold);font-size:24px;background:none;border:none;cursor:pointer;">✕</button></div>
+  <div class="mobile-nav-overlay__body"><a href="../treatments/index.html" class="mobile-nav-link">Treatments</a><a href="../prices/index.html" class="mobile-nav-link">Prices</a><a href="../gallery/index.html" class="mobile-nav-link">Gallery</a><a href="../contact/index.html" class="mobile-nav-link">Contact</a></div>
+  <div class="mobile-nav-overlay__footer"><a href="../book-online/index.html" class="mobile-book-btn">Book Consultation</a><a href="tel:01216166023" class="mobile-phone-link">0121 616 6023</a></div>
+</div>
+
+<main id="main">
+  <section class="blog-hero">
+    <div class="blog-hero__bg"><img src="../assets/images/clinic-interior.png" alt="Secret Aesthetics clinic" loading="eager"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px;"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>Blog</span></nav>
+      <span class="section-label hero-anim-1">EXPERT INSIGHTS</span>
+      <h1 class="section-headline hero-anim-2" style="font-size:clamp(44px,6vw,72px);">From The Doctors</h1>
+      <p class="hero-anim-3" style="font-size:17px;color:var(--color-text-70);max-width:480px;line-height:1.6;">Clinical knowledge. Honest advice. Real science — written by our founding physicians.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--color-bg);">
+    <div class="container">
+      <div class="blog-cat-pills">
+        <button class="blog-cat-pill active">All Articles</button>
+        <button class="blog-cat-pill">Procedures</button>
+        <button class="blog-cat-pill">Skin Health</button>
+        <button class="blog-cat-pill">IV Therapy</button>
+        <button class="blog-cat-pill">Injectables</button>
+        <button class="blog-cat-pill">Laser</button>
+        <button class="blog-cat-pill">Patient Guides</button>
+      </div>
+
+      <div class="blog-grid-full">
+
+        <article class="blog-card fade-up">
+          <a href="../blog/index.html" class="blog-card__image-link">
+            <div class="blog-card__image-wrap"><img src="../assets/images/cat-endolift.png" alt="Endolift vs facelift" class="blog-card__image" loading="lazy"></div>
+          </a>
+          <div class="blog-card__content">
+            <span class="blog-card__category">Procedures</span>
+            <h2 class="blog-card__title" style="font-size:20px;"><a href="#">Endolift® vs Traditional Facelift: A Doctor's Honest Guide</a></h2>
+            <p class="blog-card__excerpt">Dr Naqvi compares the revolutionary Endolift® laser lift with traditional surgical facelift — costs, recovery, results, and who is the right candidate for each.</p>
+            <div class="blog-card__meta"><span>Dr Naqvi</span><span>·</span><span>12 min read</span><span>·</span><span>June 2026</span></div>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up stagger-1">
+          <a href="../blog/index.html" class="blog-card__image-link">
+            <div class="blog-card__image-wrap"><img src="../assets/images/cat-skin-boosters.png" alt="Profhilo vs fillers" class="blog-card__image" loading="lazy"></div>
+          </a>
+          <div class="blog-card__content">
+            <span class="blog-card__category">Skin Health</span>
+            <h2 class="blog-card__title" style="font-size:20px;"><a href="#">Profhilo vs Dermal Fillers: Which Is Right For You?</a></h2>
+            <p class="blog-card__excerpt">Two of the most popular injectable treatments — but they do completely different things. Dr Zoya explains the clinical difference and how to choose.</p>
+            <div class="blog-card__meta"><span>Dr Zoya</span><span>·</span><span>8 min read</span><span>·</span><span>May 2026</span></div>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up stagger-2">
+          <a href="../blog/index.html" class="blog-card__image-link">
+            <div class="blog-card__image-wrap"><img src="../assets/images/cat-iv-bar.png" alt="IV Vitamin Bar guide" class="blog-card__image" loading="lazy"></div>
+          </a>
+          <div class="blog-card__content">
+            <span class="blog-card__category">IV Therapy</span>
+            <h2 class="blog-card__title" style="font-size:20px;"><a href="#">Inside Our IV Vitamin Bar: A Guide to All 11 Drips</a></h2>
+            <p class="blog-card__excerpt">From NAD+ longevity to beauty enhancement and immunity boosting — Dr Naqvi breaks down every drip we offer and who each one is designed for.</p>
+            <div class="blog-card__meta"><span>Dr Naqvi</span><span>·</span><span>10 min read</span><span>·</span><span>May 2026</span></div>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up stagger-3">
+          <a href="../blog/index.html" class="blog-card__image-link">
+            <div class="blog-card__image-wrap"><img src="../assets/images/cat-injectables.png" alt="Anti-wrinkle guide" class="blog-card__image" loading="lazy"></div>
+          </a>
+          <div class="blog-card__content">
+            <span class="blog-card__category">Patient Guide</span>
+            <h2 class="blog-card__title" style="font-size:20px;"><a href="#">First-Time Botox: What to Expect, Honestly</a></h2>
+            <p class="blog-card__excerpt">If you're considering anti-wrinkle treatment for the first time, this guide answers every question — from what it actually feels like, to how long it lasts.</p>
+            <div class="blog-card__meta"><span>Dr Zoya</span><span>·</span><span>7 min read</span><span>·</span><span>April 2026</span></div>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up stagger-4">
+          <a href="../blog/index.html" class="blog-card__image-link">
+            <div class="blog-card__image-wrap"><img src="../assets/images/cat-laser.png" alt="Halo laser guide" class="blog-card__image" loading="lazy"></div>
+          </a>
+          <div class="blog-card__content">
+            <span class="blog-card__category">Laser</span>
+            <h2 class="blog-card__title" style="font-size:20px;"><a href="#">Halo Laser vs BBL Hero: Which Should You Choose?</a></h2>
+            <p class="blog-card__excerpt">Both are world-class laser treatments — but they target different concerns. We break down the clinical differences to help you decide which is right for your skin.</p>
+            <div class="blog-card__meta"><span>Dr Naqvi</span><span>·</span><span>9 min read</span><span>·</span><span>April 2026</span></div>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up stagger-5">
+          <a href="../blog/index.html" class="blog-card__image-link">
+            <div class="blog-card__image-wrap"><img src="../assets/images/cat-dermatology.png" alt="Acne treatment guide" class="blog-card__image" loading="lazy"></div>
+          </a>
+          <div class="blog-card__content">
+            <span class="blog-card__category">Skin Health</span>
+            <h2 class="blog-card__title" style="font-size:20px;"><a href="#">AviClear: The Doctor's Answer to Adult Acne</a></h2>
+            <p class="blog-card__excerpt">AviClear is the world's first FDA-approved laser treatment for acne — and we have it. Dr Zoya explains how it works, who it's for, and why it's different from everything else.</p>
+            <div class="blog-card__meta"><span>Dr Zoya</span><span>·</span><span>8 min read</span><span>·</span><span>March 2026</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="text-align:center;margin-top:var(--space-48);" class="fade-up">
+        <a href="../book-online/index.html" class="btn btn-primary">Book a Consultation →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-col"><a href="../index.html" class="footer-logo">Secret Aesthetics</a><p class="footer-tagline">"Your Beauty. Our Secret."™</p><div class="footer-credentials"><span class="footer-cred-badge"><span>✦</span> CQC Regulated</span><span class="footer-cred-badge"><span>✦</span> Galderma Faculty</span></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">Treatments</span></button><div class="footer-links"><a href="../treatments/index.html" class="footer-link">All Treatments</a><a href="../treatment/endolift/index.html" class="footer-link">Endolift®</a></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">The Clinic</span></button><div class="footer-links"><a href="../the-clinic/index.html" class="footer-link">About</a><a href="../faq/index.html" class="footer-link">FAQ</a><a href="../prices/index.html" class="footer-link">Prices</a></div></div>
+      <div class="footer-col"><a href="../book-online/index.html" class="footer-book-btn">Book Consultation</a></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2026 Secret Aesthetics. All rights reserved.</p><nav class="footer-legal-links"><a href="../privacy/index.html">Privacy</a><a href="../terms/index.html">Terms</a><a href="../cookies/index.html">Cookies</a></nav><p class="footer-credit">Website by <a href="https://arpancreations.com" target="_blank" rel="noopener">Arpan Creations</a></p></div>
+  </div>
+</footer>
+
+<script defer src="../js/main.js"></script>
+<script defer src="../js/animations.js"></script>
+<script defer src="../js/micro.js"></script>
+<script defer src="../js/cookies.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fd = document.getElementById('floating-desk');
+    window.addEventListener('scroll', () => { if(fd) fd.classList.toggle('visible', window.scrollY > 500); }, {passive:true});
+    document.querySelectorAll('.blog-cat-pill').forEach(pill => {
+      pill.addEventListener('click', () => { document.querySelectorAll('.blog-cat-pill').forEach(p => p.classList.remove('active')); pill.classList.add('active'); });
+    });
+  });
+</script>
+</body>
+</html>

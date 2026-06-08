@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endolift® Laser Lifting | Birmingham Exclusive | Secret Aesthetics</title>
+  <meta name="description" content="Endolift® — Birmingham's only certified provider of the world's most advanced non-surgical face and neck lifting laser. Doctor-led. Zero downtime. Results lasting 3–5 years. From £1,500.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Endolift® Laser Face & Neck Lifting — Secret Aesthetics Birmingham">
+  <meta property="og:description" content="Birmingham's exclusive non-surgical face lifting laser. Zero downtime, 3-5 year results.">
+  <meta property="og:image" content="../../assets/images/cat-endolift.png">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/cookie-banner.css">
+  <style>
+    .tx-hero { height:80vh; min-height:560px; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .tx-hero__bg { position:absolute; inset:0; }
+    .tx-hero__bg img { width:100%; height:120%; object-fit:cover; top:-10%; position:absolute; }
+    .tx-hero__bg::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%); }
+    .tx-hero__content { position:relative; z-index:2; text-align:center; max-width:800px; padding:0 var(--section-pad-x); }
+    .tx-hero__headline { font-family:var(--font-display); font-style:italic; font-size:clamp(56px,10vw,110px); color:var(--color-text); line-height:0.95; margin-bottom:var(--space-16); }
+    .tx-hero__sub { font-size:18px; color:var(--color-text-70); max-width:580px; margin:0 auto var(--space-40); line-height:1.6; }
+
+    .tx-sticky-bar { position:sticky; top:88px; z-index:var(--z-sticky); background:rgba(8,8,8,0.95); border-bottom:1px solid rgba(200,169,110,0.2); backdrop-filter:blur(16px); padding:0 var(--section-pad-x); display:flex; align-items:center; gap:24px; overflow-x:auto; }
+    .tx-sticky-link { font-family:var(--font-body); font-size:11px; text-transform:uppercase; letter-spacing:0.2em; color:var(--color-text-50); padding:16px 0; white-space:nowrap; border-bottom:2px solid transparent; transition:all var(--transition-base); cursor:pointer; background:none; border-top:none; border-left:none; border-right:none; }
+    .tx-sticky-link:hover, .tx-sticky-link.active { color:var(--color-gold); border-bottom-color:var(--color-gold); }
+
+    .tx-key-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-24); margin:var(--space-48) 0; }
+    .tx-key-fact { background:var(--color-bg-card); border:1px solid rgba(200,169,110,0.15); border-radius:var(--radius-md); padding:var(--space-24); text-align:center; }
+    .tx-key-fact__value { font-family:var(--font-display); font-size:40px; font-weight:300; color:var(--color-gold); line-height:1; margin-bottom:4px; }
+    .tx-key-fact__label { font-size:12px; text-transform:uppercase; letter-spacing:0.15em; color:var(--color-text-60); }
+
+    .tx-how-it-works { counter-reset:steps; }
+    .tx-step { display:grid; grid-template-columns:auto 1fr; gap:var(--space-24); padding:var(--space-24) 0; border-bottom:1px solid rgba(200,169,110,0.1); }
+    .tx-step:last-child { border-bottom:none; }
+    .tx-step__num { width:48px; height:48px; border-radius:50%; border:2px solid var(--color-gold); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:20px; color:var(--color-gold); flex-shrink:0; }
+    .tx-step__title { font-family:var(--font-feature); font-size:20px; margin-bottom:8px; }
+    .tx-step__body { font-size:var(--text-sm); color:var(--color-text-70); line-height:1.7; }
+
+    .tx-pricing-table { background:var(--color-bg-card); border:1px solid rgba(200,169,110,0.2); border-radius:var(--radius-lg); overflow:hidden; }
+    .tx-pricing-row { display:flex; align-items:center; justify-content:space-between; padding:20px var(--space-32); border-bottom:1px solid rgba(200,169,110,0.1); gap:16px; }
+    .tx-pricing-row:last-child { border-bottom:none; }
+    .tx-pricing-row:first-child { background:rgba(200,169,110,0.05); }
+    .tx-pricing-name { font-family:var(--font-feature); font-size:18px; }
+    .tx-pricing-name small { display:block; font-family:var(--font-body); font-size:12px; color:var(--color-text-60); font-style:normal; margin-top:2px; }
+    .tx-pricing-amount { font-family:var(--font-display); font-size:28px; color:var(--color-gold); text-align:right; flex-shrink:0; }
+    .tx-pricing-amount small { display:block; font-family:var(--font-body); font-size:11px; color:var(--color-text-50); text-transform:uppercase; letter-spacing:0.1em; }
+
+    .tx-faq { max-width:720px; margin:0 auto; }
+
+    .tx-layout { display:grid; grid-template-columns:1fr 340px; gap:var(--space-64); align-items:start; }
+    .tx-sidebar { position:sticky; top:120px; }
+    .tx-sidebar-card { background:var(--color-bg-card); border:1px solid rgba(200,169,110,0.2); border-radius:var(--radius-lg); padding:var(--space-32); }
+    .tx-sidebar-card h3 { font-family:var(--font-feature); font-size:22px; margin-bottom:var(--space-16); }
+    .tx-sidebar-item { display:flex; align-items:center; gap:12px; margin-bottom:12px; font-size:13px; color:var(--color-text-70); }
+    .tx-sidebar-item svg { width:16px; height:16px; color:var(--color-gold); flex-shrink:0; }
+
+    @media(max-width:1024px) { .tx-layout { grid-template-columns:1fr; } .tx-sidebar { position:static; } .tx-key-facts { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:640px) { .tx-key-facts { grid-template-columns:1fr 1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Endolift® Laser Face & Neck Lifting",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "description": "Non-surgical laser face and neck lifting treatment using sub-dermal laser fibres to contract tissue and stimulate collagen. Birmingham exclusive.",
+    "provider": {
+      "@type": "MedicalOrganization",
+      "name": "Secret Aesthetics",
+      "url": "https://secretaesthetics.co.uk"
+    },
+    "bodyLocation": "Face and Neck",
+    "preparation": "Medical consultation required. Avoid blood-thinning medications.",
+    "howPerformed": "Micro-laser fibres inserted sub-dermally under local anaesthetic to contract tissue and stimulate collagen production."
+  }
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="page-transition" aria-hidden="true"></div>
+<a href="../../book-online/index.html" class="floating-cta-mobile"><span class="btn-float-mobile">Book Now →</span></a>
+<div class="floating-cta-desktop" id="floating-desk"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="2" width="22" height="22"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+
+<div class="press-bar" aria-hidden="true"><div class="press-bar__inner"><span class="press-bar__label">As seen in</span><div class="press-bar__track-wrap"><div class="press-bar__track"><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Telegraph</span><span class="press-bar__sep">·</span><span class="press-bar__item">Tatler</span><span class="press-bar__sep">·</span><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span></div></div></div></div>
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="../../index.html" class="site-logo"><span class="site-logo__text">Secret Aesthetics</span><span class="site-logo__sub">Birmingham · Harvey Nichols</span></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-item"><a href="../../the-clinic/index.html" class="nav-link">About</a></div>
+      <div class="nav-item"><a href="../../treatments/index.html" class="nav-link active">Treatments</a></div>
+      <div class="nav-item"><a href="../../conditions/index.html" class="nav-link">Conditions</a></div>
+      <div class="nav-item"><a href="../../prices/index.html" class="nav-link">Prices</a></div>
+      <div class="nav-item"><a href="../../gallery/index.html" class="nav-link">Gallery</a></div>
+      <div class="nav-item"><a href="../../blog/index.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="../../contact/index.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:01216166023" class="header-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg>0121 616 6023</a>
+      <a href="../../book-online/index.html" class="header-book">BOOK NOW →</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mobile-nav-overlay__header"><a href="../../index.html" class="site-logo"><span class="site-logo__text" style="color:var(--color-gold);">Secret Aesthetics</span></a><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close" style="color:var(--color-gold);font-size:24px;background:none;border:none;cursor:pointer;">✕</button></div>
+  <div class="mobile-nav-overlay__body"><a href="../../treatments/index.html" class="mobile-nav-link">All Treatments</a><a href="../../prices/index.html" class="mobile-nav-link">Prices</a><a href="../../gallery/index.html" class="mobile-nav-link">Gallery</a><a href="../../contact/index.html" class="mobile-nav-link">Contact</a></div>
+  <div class="mobile-nav-overlay__footer"><a href="../../book-online/index.html" class="mobile-book-btn">Book Consultation</a><a href="tel:01216166023" class="mobile-phone-link">0121 616 6023</a></div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="tx-hero" aria-labelledby="endolift-heading">
+    <div class="tx-hero__bg">
+      <img src="../../assets/images/cat-endolift.png" alt="Endolift laser treatment" loading="eager">
+    </div>
+    <div class="tx-hero__content">
+      <span class="badge badge--gold" style="margin-bottom:24px;display:inline-block;">BIRMINGHAM EXCLUSIVE ✦</span>
+      <h1 id="endolift-heading" class="tx-hero__headline">Endolift®</h1>
+      <p class="tx-hero__sub">The world's most advanced non-surgical face and neck lifting laser. Zero downtime. Doctor-led. Available exclusively at Secret Aesthetics, Birmingham.</p>
+      <div class="cta-row" style="justify-content:center;">
+        <a href="../../book-online/index.html" class="btn btn-primary">Book Free Consultation →</a>
+        <a href="#how-it-works" class="btn btn-ghost">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY NAV -->
+  <div class="tx-sticky-bar" role="navigation" aria-label="Treatment sections">
+    <nav class="breadcrumb" style="flex-shrink:0;"><a href="../../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../../treatments/index.html">Treatments</a><span class="breadcrumb-sep">/</span><span>Endolift®</span></nav>
+    <div style="width:1px;height:20px;background:rgba(200,169,110,0.15);flex-shrink:0;"></div>
+    <a href="#overview" class="tx-sticky-link">Overview</a>
+    <a href="#how-it-works" class="tx-sticky-link">How It Works</a>
+    <a href="#results" class="tx-sticky-link">Results</a>
+    <a href="#pricing" class="tx-sticky-link">Pricing</a>
+    <a href="#faq" class="tx-sticky-link">FAQ</a>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="section" style="background:var(--color-bg);">
+    <div class="container">
+      <div class="tx-layout">
+
+        <!-- MAIN CONTENT -->
+        <div>
+          <span class="section-label fade-up">THE TREATMENT</span>
+          <h2 class="section-headline fade-up stagger-1" style="font-size:clamp(36px,4vw,52px);">What Is Endolift®?</h2>
+          <p class="section-body fade-up stagger-2">Endolift® is a revolutionary laser technology developed in Italy, using ultra-fine flexible fibres to deliver laser energy directly beneath the skin. Unlike traditional skin tightening treatments that work from the outside, Endolift® targets the deep dermis and subcutaneous tissue from within — delivering precise, controlled contraction and collagen stimulation at exactly the right depth.</p>
+          <p class="section-body fade-up stagger-3">As the only certified Endolift® providers in Birmingham and the West Midlands, Dr Naqvi and Dr Zoya offer patients access to this world-class technology in a luxury, doctor-led setting — without the risks, scarring, or lengthy recovery of traditional surgery.</p>
+
+          <!-- Key Facts -->
+          <div class="tx-key-facts fade-up stagger-4">
+            <div class="tx-key-fact">
+              <div class="tx-key-fact__value">0</div>
+              <div class="tx-key-fact__label">Days Downtime</div>
+            </div>
+            <div class="tx-key-fact">
+              <div class="tx-key-fact__value">90</div>
+              <div class="tx-key-fact__label">Min Procedure</div>
+            </div>
+            <div class="tx-key-fact">
+              <div class="tx-key-fact__value">3–5</div>
+              <div class="tx-key-fact__label">Years Results</div>
+            </div>
+            <div class="tx-key-fact">
+              <div class="tx-key-fact__value">1</div>
+              <div class="tx-key-fact__label">Session Required</div>
+            </div>
+          </div>
+
+          <h2 id="how-it-works" class="section-headline fade-up" style="font-size:clamp(30px,3vw,44px);margin-top:var(--space-64);">How Endolift® Works</h2>
+          <p class="section-body fade-up stagger-1">The Endolift® procedure uses a proprietary 1470nm laser wavelength delivered through an ultra-fine flexible optical fibre, inserted via a micro-puncture in the skin — no incisions, no stitching required.</p>
+
+          <div class="tx-how-it-works fade-up stagger-2">
+            <div class="tx-step">
+              <div class="tx-step__num" aria-hidden="true">1</div>
+              <div>
+                <h3 class="tx-step__title">Consultation & Mapping</h3>
+                <p class="tx-step__body">Dr Naqvi conducts a detailed facial assessment, identifying areas of laxity, volume loss, and structural concerns. An individualised treatment map is created for your anatomy.</p>
+              </div>
+            </div>
+            <div class="tx-step">
+              <div class="tx-step__num" aria-hidden="true">2</div>
+              <div>
+                <h3 class="tx-step__title">Local Anaesthetic Applied</h3>
+                <p class="tx-step__body">Topical and localised anaesthetic is administered to ensure complete comfort throughout the procedure. Most patients feel minimal sensation.</p>
+              </div>
+            </div>
+            <div class="tx-step">
+              <div class="tx-step__num" aria-hidden="true">3</div>
+              <div>
+                <h3 class="tx-step__title">Laser Fibre Insertion</h3>
+                <p class="tx-step__body">Ultra-thin optical fibres are inserted sub-dermally through a micro-puncture (smaller than a needle). The laser energy is delivered precisely beneath the skin surface.</p>
+              </div>
+            </div>
+            <div class="tx-step">
+              <div class="tx-step__num" aria-hidden="true">4</div>
+              <div>
+                <h3 class="tx-step__title">Tissue Contraction & Collagen Induction</h3>
+                <p class="tx-step__body">The laser causes immediate tissue contraction (visible tightening) and initiates a prolonged collagen remodelling cascade — with further improvement occurring over 3–6 months.</p>
+              </div>
+            </div>
+            <div class="tx-step">
+              <div class="tx-step__num" aria-hidden="true">5</div>
+              <div>
+                <h3 class="tx-step__title">Immediate Recovery</h3>
+                <p class="tx-step__body">Micro-punctures close within hours. Mild redness and swelling is normal for 24–48 hours. Most patients return to work the same day or the following morning.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Who is suitable -->
+          <h2 id="results" class="section-headline fade-up" style="font-size:clamp(30px,3vw,44px);margin-top:var(--space-64);">Who Is Endolift® For?</h2>
+          <p class="section-body fade-up stagger-1">Endolift® is ideal for patients who:</p>
+          <ul class="fade-up stagger-2" style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin-bottom:var(--space-32);">
+            <li style="display:flex;gap:12px;align-items:flex-start;font-size:var(--text-base);color:var(--color-text-70);line-height:1.6;"><span style="color:var(--color-gold);margin-top:2px;flex-shrink:0;">✦</span>Are aged 35–65 with early-to-moderate skin laxity in the face, jawline, jowls or neck</li>
+            <li style="display:flex;gap:12px;align-items:flex-start;font-size:var(--text-base);color:var(--color-text-70);line-height:1.6;"><span style="color:var(--color-gold);margin-top:2px;flex-shrink:0;">✦</span>Want surgical-quality lifting results without surgery, general anaesthetic or weeks of downtime</li>
+            <li style="display:flex;gap:12px;align-items:flex-start;font-size:var(--text-base);color:var(--color-text-70);line-height:1.6;"><span style="color:var(--color-gold);margin-top:2px;flex-shrink:0;">✦</span>Have good overall skin health and realistic expectations</li>
+            <li style="display:flex;gap:12px;align-items:flex-start;font-size:var(--text-base);color:var(--color-text-70);line-height:1.6;"><span style="color:var(--color-gold);margin-top:2px;flex-shrink:0;">✦</span>Have been assessed as not yet requiring full surgical facelift intervention</li>
+            <li style="display:flex;gap:12px;align-items:flex-start;font-size:var(--text-base);color:var(--color-text-70);line-height:1.6;"><span style="color:var(--color-gold);margin-top:2px;flex-shrink:0;">✦</span>Wish to treat the abdomen, inner arm, or knee laxity (body applications available)</li>
+          </ul>
+
+          <!-- Pricing -->
+          <h2 id="pricing" class="section-headline fade-up" style="font-size:clamp(30px,3vw,44px);margin-top:var(--space-64);">Pricing</h2>
+          <p class="section-body fade-up stagger-1">All prices include full medical consultation, procedure, and 6-week review appointment.</p>
+
+          <div class="tx-pricing-table fade-up stagger-2">
+            <div class="tx-pricing-row">
+              <div class="tx-pricing-name">Full Face & Neck<small>Most popular — complete facial lifting and neck tightening</small></div>
+              <div class="tx-pricing-amount">£1,500<small>RRP £2,000</small></div>
+            </div>
+            <div class="tx-pricing-row">
+              <div class="tx-pricing-name">Lower Face & Neck<small>Jowls, jawline, submental and upper neck</small></div>
+              <div class="tx-pricing-amount">£1,200<small>RRP £1,600</small></div>
+            </div>
+            <div class="tx-pricing-row">
+              <div class="tx-pricing-name">Neck Only<small>Isolated neck laxity and platysmal bands</small></div>
+              <div class="tx-pricing-amount">£900</div>
+            </div>
+            <div class="tx-pricing-row">
+              <div class="tx-pricing-name">Body Area (per area)<small>Abdomen, inner arm, knee, décolletage</small></div>
+              <div class="tx-pricing-amount">£700</div>
+            </div>
+          </div>
+
+          <p style="font-size:12px;color:var(--color-text-50);margin-top:12px;font-style:italic;">0% finance available. Free consultation included. Prices subject to clinical assessment. RRP shown where promotional pricing applies.</p>
+
+          <!-- FAQ -->
+          <h2 id="faq" class="section-headline fade-up" style="font-size:clamp(30px,3vw,44px);margin-top:var(--space-64);">Frequently Asked Questions</h2>
+          <div class="accordion tx-faq fade-up stagger-1" aria-label="Endolift FAQ">
+
+            <div class="accordion-item">
+              <button class="accordion-header" tabindex="0">Is Endolift® painful?</button>
+              <div class="accordion-body"><div class="accordion-content">Most patients report mild pressure or warmth rather than pain. Local anaesthetic is applied prior to the procedure, and most describe the experience as 'comfortable'. Post-procedure, mild tenderness lasting 24–72 hours is common.</div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" tabindex="0">How soon will I see results?</button>
+              <div class="accordion-body"><div class="accordion-content">Some lifting effect is visible immediately. The full result develops over 3–6 months as collagen remodelling completes. Most patients see the peak of their result at around 3 months.</div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" tabindex="0">How long do results last?</button>
+              <div class="accordion-body"><div class="accordion-content">Clinical data shows results lasting 3–5 years in most patients. The procedure can be repeated after this period. Maintaining a good skincare regimen and skin-boosting treatments (such as Profhilo) can extend longevity.</div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" tabindex="0">What is the downtime?</button>
+              <div class="accordion-body"><div class="accordion-content">Most patients experience mild redness and slight swelling for 24–48 hours. Micro-puncture marks (if any) resolve within hours. Most patients return to work the same day or the following morning. No bandaging or dressings required.</div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" tabindex="0">How does Endolift® compare to a surgical facelift?</button>
+              <div class="accordion-body"><div class="accordion-content">A surgical facelift produces more dramatic results but carries significant risks — general anaesthetic, scarring, weeks of downtime, and surgical complications. Endolift® offers comparable lifting for patients with mild-to-moderate laxity, with zero scarring, no general anaesthetic, and immediate recovery. For more advanced laxity, surgery may still be recommended.</div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" tabindex="0">Why is Secret Aesthetics Birmingham's only provider?</button>
+              <div class="accordion-body"><div class="accordion-content">Endolift® requires specialist laser certification and physician-level training. Dr Naqvi obtained his Endolift® certification from the Italian Academy and is the only certified provider in the West Midlands. The procedure is only legally performed by medical doctors.</div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="tx-sidebar">
+          <div class="tx-sidebar-card">
+            <h3>Book Endolift®</h3>
+            <p style="font-size:13px;color:var(--color-text-60);margin-bottom:var(--space-24);line-height:1.5;">Includes free medical consultation, full facial assessment, and treatment plan.</p>
+            <a href="../../book-online/index.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:12px;">Book Free Consultation →</a>
+            <a href="tel:01216166023" class="btn btn-secondary" style="width:100%;justify-content:center;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg>
+              0121 616 6023
+            </a>
+
+            <div style="border-top:1px solid rgba(200,169,110,0.15);margin:var(--space-24) 0;padding-top:var(--space-24);">
+              <div class="tx-sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>BIRMINGHAM EXCLUSIVE</div>
+              <div class="tx-sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Doctor-led procedure</div>
+              <div class="tx-sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Zero downtime</div>
+              <div class="tx-sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Local anaesthetic</div>
+              <div class="tx-sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Results 3–5 years</div>
+              <div class="tx-sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>0% finance available</div>
+            </div>
+
+            <div style="border-top:1px solid rgba(200,169,110,0.15);padding-top:var(--space-24);">
+              <p style="font-size:11px;color:var(--color-text-50);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:8px;">Starting From</p>
+              <p style="font-family:var(--font-display);font-size:40px;color:var(--color-gold);">£1,500</p>
+              <p style="font-size:12px;color:var(--color-text-50);">Full Face & Neck · Includes consultation</p>
+            </div>
+          </div>
+
+          <div class="tx-sidebar-card" style="margin-top:16px;">
+            <p style="font-size:12px;color:var(--color-text-60);line-height:1.6;">Performed exclusively by <strong style="color:var(--color-text);">Dr Naqvi</strong> — Endolift® certified, Galderma Faculty member, and co-founder of Secret Aesthetics.</p>
+            <a href="../../dr-naqvi/index.html" class="btn-text" style="font-size:12px;margin-top:12px;display:inline-flex;align-items:center;gap:6px;">View Dr Naqvi's Profile <span class="arrow">→</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--sm" style="background:var(--color-bg-card);text-align:center;">
+    <div class="container">
+      <span class="section-label fade-up">YOUR JOURNEY BEGINS</span>
+      <h2 class="section-headline fade-up stagger-1"><em>Ready to Transform?</em></h2>
+      <p class="section-body fade-up stagger-2" style="max-width:480px;margin:0 auto var(--space-40);">Book your free medical consultation with Dr Naqvi. We'll assess your suitability, discuss your goals, and build a personalised treatment plan.</p>
+      <div class="cta-row fade-up stagger-3" style="justify-content:center;">
+        <a href="../../book-online/index.html" class="btn btn-primary">Book Free Consultation →</a>
+        <a href="../../gallery/index.html" class="btn btn-ghost">View Real Results</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-col"><a href="../../index.html" class="footer-logo">Secret Aesthetics</a><p class="footer-tagline">"Your Beauty. Our Secret."™</p><p class="footer-desc">Birmingham's premier doctor-led luxury aesthetic clinic. Located within Harvey Nichols at The Mailbox.</p><div class="footer-credentials"><span class="footer-cred-badge"><span>✦</span> CQC Regulated</span><span class="footer-cred-badge"><span>✦</span> Galderma Faculty</span></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">Treatments</span></button><div class="footer-links"><a href="../../treatments/index.html" class="footer-link">All Treatments</a><a href="../../treatment/endolift/index.html" class="footer-link">Endolift®</a><a href="../../treatments/index.html" class="footer-link">Anti-Wrinkle</a><a href="../../treatments/index.html" class="footer-link">Laser</a></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">The Clinic</span></button><div class="footer-links"><a href="../../the-clinic/index.html" class="footer-link">About</a><a href="../../dr-naqvi/index.html" class="footer-link">Dr Naqvi</a><a href="../../prices/index.html" class="footer-link">Prices</a><a href="../../gallery/index.html" class="footer-link">Gallery</a></div></div>
+      <div class="footer-col"><span class="footer-col-label">Book</span><a href="../../book-online/index.html" class="footer-book-btn" style="margin-bottom:12px;">Book Free Consultation</a><a href="tel:01216166023" style="font-size:13px;color:var(--color-gold);display:block;text-align:center;">0121 616 6023</a></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2026 Secret Aesthetics. All rights reserved.</p><nav class="footer-legal-links" aria-label="Legal"><a href="../../privacy/index.html">Privacy</a><a href="../../terms/index.html">Terms</a><a href="../../cookies/index.html">Cookies</a></nav><p class="footer-credit">Website by <a href="https://arpancreations.com" target="_blank" rel="noopener">Arpan Creations</a></p></div>
+  </div>
+</footer>
+
+<script defer src="../../js/main.js"></script>
+<script defer src="../../js/animations.js"></script>
+<script defer src="../../js/micro.js"></script>
+<script defer src="../../js/cookies.js"></script>
+<script defer src="../../js/accordion.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fd = document.getElementById('floating-desk');
+    window.addEventListener('scroll', () => { if(fd) fd.classList.toggle('visible', window.scrollY > 500); }, {passive:true});
+    // Sticky nav active states
+    const sections = document.querySelectorAll('[id]');
+    const links = document.querySelectorAll('.tx-sticky-link[href^="#"]');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(s => obs.observe(s));
+  });
+</script>
+</body>
+</html>

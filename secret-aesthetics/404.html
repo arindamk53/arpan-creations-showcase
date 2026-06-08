@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Secret Aesthetics Birmingham</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Secret Aesthetics Birmingham's homepage or browse our treatments.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cookie-banner.css">
+  <style>
+    .notfound { min-height:calc(100vh - 88px); display:flex; align-items:center; justify-content:center; text-align:center; padding:var(--section-pad-x); background:var(--color-bg); position:relative; overflow:hidden; }
+    .notfound::before { content:'404'; position:absolute; font-family:var(--font-display); font-size:40vw; font-weight:300; color:rgba(200,169,110,0.04); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; white-space:nowrap; line-height:1; }
+    .notfound__inner { position:relative; z-index:2; max-width:600px; }
+    .notfound__code { font-family:var(--font-display); font-size:clamp(80px,15vw,160px); font-weight:300; color:var(--color-gold); line-height:1; margin-bottom:var(--space-16); }
+    .notfound__title { font-family:var(--font-display); font-style:italic; font-size:clamp(32px,5vw,56px); margin-bottom:var(--space-16); }
+    .notfound__body { font-size:var(--text-base); color:var(--color-text-70); margin-bottom:var(--space-40); line-height:1.6; }
+    .notfound__links { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:var(--space-32); }
+    .notfound__link { font-size:13px; color:var(--color-text-60); transition:color var(--transition-fast); }
+    .notfound__link:hover { color:var(--color-gold); }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="skip-link">Skip to main content</a>
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-logo"><span class="site-logo__text">Secret Aesthetics</span><span class="site-logo__sub">Birmingham · Harvey Nichols</span></a>
+    <div class="header-actions"><a href="tel:01216166023" class="header-phone">0121 616 6023</a><a href="book-online/index.html" class="header-book">BOOK NOW →</a></div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="notfound" role="main">
+    <div class="notfound__inner">
+      <div class="notfound__code" aria-hidden="true">404</div>
+      <h1 class="notfound__title">Page Not Found</h1>
+      <p class="notfound__body">We couldn't find the page you were looking for. Perhaps it was moved, or the URL was mistyped. Let us help you find your way back.</p>
+      <div class="cta-row" style="justify-content:center;flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-primary">← Return Home</a>
+        <a href="book-online/index.html" class="btn btn-ghost">Book a Consultation</a>
+      </div>
+      <div class="notfound__links">
+        <a href="treatments/index.html" class="notfound__link">All Treatments</a>
+        <span style="color:rgba(200,169,110,0.3);">·</span>
+        <a href="prices/index.html" class="notfound__link">Prices</a>
+        <span style="color:rgba(200,169,110,0.3);">·</span>
+        <a href="gallery/index.html" class="notfound__link">Gallery</a>
+        <span style="color:rgba(200,169,110,0.3);">·</span>
+        <a href="the-clinic/index.html" class="notfound__link">About Us</a>
+        <span style="color:rgba(200,169,110,0.3);">·</span>
+        <a href="contact/index.html" class="notfound__link">Contact</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-bottom"><p class="footer-copyright">© 2026 Secret Aesthetics. All rights reserved.</p><nav class="footer-legal-links"><a href="privacy/index.html">Privacy</a><a href="terms/index.html">Terms</a><a href="cookies/index.html">Cookies</a></nav></div>
+  </div>
+</footer>
+
+<script defer src="js/main.js"></script>
+<script defer src="js/cookies.js"></script>
+</body>
+</html>

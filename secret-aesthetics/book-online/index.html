@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Online | Secret Aesthetics Birmingham — Consultation Booking</title>
+  <meta name="description" content="Book your consultation at Secret Aesthetics, Harvey Nichols Birmingham. Select your treatment, preferred doctor, and appointment time. Secure online booking available 24/7.">
+  <meta name="theme-color" content="#080808">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Book a Consultation | Secret Aesthetics">
+  <meta property="og:description" content="Schedule your appointment at Secret Aesthetics, Harvey Nichols Birmingham.">
+  <meta property="og:image" content="../assets/images/og-card.png">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/cookie-banner.css">
+  <style>
+    /* ── BOOKING WIZARD ── */
+    .booking-page { min-height: 100vh; padding-top: 122px; background: var(--color-bg); }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: var(--space-64);
+      align-items: start;
+    }
+
+    /* Stepper */
+    .booking-stepper {
+      display: flex; align-items: center; gap: var(--space-8);
+      margin-bottom: var(--space-48);
+    }
+    .booking-step {
+      display: flex; align-items: center; gap: var(--space-8);
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 2px solid rgba(200,169,110,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 600; color: var(--color-text-50);
+      transition: all var(--transition-base); flex-shrink: 0;
+    }
+    .booking-step.active .step-num { border-color: var(--color-gold); color: var(--color-gold); background: rgba(200,169,110,0.08); }
+    .booking-step.done .step-num { background: var(--color-gold); border-color: var(--color-gold); color: var(--color-bg); }
+    .step-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-50); white-space: nowrap; }
+    .booking-step.active .step-label, .booking-step.done .step-label { color: var(--color-text-70); }
+    .step-connector { flex: 1; height: 1px; background: rgba(200,169,110,0.2); min-width: 24px; }
+
+    /* Steps */
+    .booking-panel { display: none; }
+    .booking-panel.active { display: block; animation: fadeInUp 0.4s ease-out; }
+
+    .booking-panel h2 {
+      font-family: var(--font-feature); font-size: 28px; margin-bottom: 8px;
+    }
+    .booking-panel > p { font-size: var(--text-sm); color: var(--color-text-60); margin-bottom: var(--space-32); }
+
+    /* Treatment select grid */
+    .treatment-select-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-12); }
+    .treatment-select-item {
+      padding: 16px 20px; border: 1px solid rgba(200,169,110,0.2); border-radius: var(--radius-md);
+      cursor: pointer; transition: all var(--transition-base); display: flex; align-items: center; gap: 12px;
+    }
+    .treatment-select-item:hover { border-color: var(--color-gold); background: rgba(200,169,110,0.04); }
+    .treatment-select-item.selected { border-color: var(--color-gold); background: rgba(200,169,110,0.08); }
+    .treatment-select-item .item-icon { font-size: 20px; flex-shrink: 0; }
+    .treatment-select-item .item-name { font-size: 13px; font-weight: 500; color: var(--color-text); display: block; }
+    .treatment-select-item .item-price { font-size: 11px; color: var(--color-gold); }
+    input[type="radio"].sr-only { position:absolute;opacity:0;width:0;height:0; }
+
+    /* Doctor select */
+    .doctor-select-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-16); }
+    .doctor-select-card {
+      border: 2px solid rgba(200,169,110,0.2); border-radius: var(--radius-md); overflow: hidden;
+      cursor: pointer; transition: all var(--transition-base);
+    }
+    .doctor-select-card:hover, .doctor-select-card.selected { border-color: var(--color-gold); }
+    .doctor-select-card .doc-img { height: 220px; overflow: hidden; }
+    .doctor-select-card .doc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+    .doctor-select-card:hover .doc-img img, .doctor-select-card.selected .doc-img img { transform: scale(1.04); }
+    .doctor-select-card .doc-info { padding: 16px; }
+    .doctor-select-card .doc-name { font-family: var(--font-feature); font-size: 18px; margin-bottom: 4px; }
+    .doctor-select-card .doc-spec { font-size: 12px; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; }
+
+    /* Date/time grid */
+    .date-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: var(--space-24); }
+    .date-btn {
+      aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      border: 1px solid rgba(200,169,110,0.15); border-radius: var(--radius-sm); cursor: pointer;
+      font-size: 12px; color: var(--color-text-70); transition: all var(--transition-fast);
+      background: transparent;
+    }
+    .date-btn:hover:not(:disabled) { border-color: var(--color-gold); color: var(--color-gold); }
+    .date-btn.selected { background: var(--color-gold); border-color: var(--color-gold); color: var(--color-bg); }
+    .date-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+    .date-day { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
+    .date-num { font-size: 16px; font-weight: 600; }
+
+    .time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .time-btn {
+      padding: 10px; border: 1px solid rgba(200,169,110,0.15); border-radius: var(--radius-sm);
+      font-size: 13px; color: var(--color-text-70); cursor: pointer; transition: all var(--transition-fast);
+      text-align: center; background: transparent;
+    }
+    .time-btn:hover:not(:disabled) { border-color: var(--color-gold); color: var(--color-gold); }
+    .time-btn.selected { background: var(--color-gold); border-color: var(--color-gold); color: var(--color-bg); }
+    .time-btn:disabled { opacity: 0.25; cursor: not-allowed; text-decoration: line-through; }
+
+    /* Nav buttons */
+    .booking-nav { display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-40); }
+
+    /* Summary card */
+    .booking-summary {
+      position: sticky; top: 120px;
+      background: var(--color-bg-card); border: 1px solid rgba(200,169,110,0.2);
+      border-radius: var(--radius-lg); padding: var(--space-32);
+    }
+    .booking-summary h3 { font-family: var(--font-feature); font-size: 20px; margin-bottom: var(--space-24); border-bottom: 1px solid rgba(200,169,110,0.15); padding-bottom: 16px; }
+    .summary-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
+    .summary-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-50); flex-shrink: 0; }
+    .summary-value { font-size: 13px; color: var(--color-text-70); text-align: right; }
+    .summary-value.empty { color: var(--color-text-30); font-style: italic; }
+    .summary-total { border-top: 1px solid rgba(200,169,110,0.2); margin-top: var(--space-16); padding-top: var(--space-16); }
+    .summary-total .summary-value { font-size: 22px; font-family: var(--font-feature); color: var(--color-gold); }
+
+    .consultation-note {
+      margin-top: var(--space-24); padding: 16px; background: rgba(200,169,110,0.06);
+      border-radius: var(--radius-sm); font-size: 12px; color: var(--color-text-60); line-height: 1.6;
+    }
+
+    .booking-trust { display: flex; flex-direction: column; gap: 8px; margin-top: var(--space-24); }
+    .booking-trust-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--color-text-50); }
+    .booking-trust-item svg { width: 14px; height: 14px; color: var(--color-gold); flex-shrink: 0; }
+
+    /* Fresha embed placeholder */
+    .fresha-embed {
+      background: #111; border: 1px solid rgba(200,169,110,0.15);
+      border-radius: var(--radius-md); padding: var(--space-48);
+      text-align: center; margin-top: var(--space-24);
+    }
+
+    @media(max-width:1024px) { .booking-layout { grid-template-columns:1fr; } .booking-summary { position:static; } }
+    @media(max-width:640px) { .treatment-select-grid { grid-template-columns:1fr; } .doctor-select-grid { grid-template-columns:1fr; } .time-grid { grid-template-columns: repeat(3,1fr); } .date-grid { grid-template-columns: repeat(7,1fr); } }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="page-transition" aria-hidden="true"></div>
+
+<div class="press-bar" aria-hidden="true"><div class="press-bar__inner"><span class="press-bar__label">As seen in</span><div class="press-bar__track-wrap"><div class="press-bar__track"><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Telegraph</span><span class="press-bar__sep">·</span><span class="press-bar__item">Tatler</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Times</span><span class="press-bar__sep">·</span><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Telegraph</span></div></div></div></div>
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="../index.html" class="site-logo"><span class="site-logo__text">Secret Aesthetics</span><span class="site-logo__sub">Birmingham · Harvey Nichols</span></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-item"><a href="../the-clinic/index.html" class="nav-link">About</a></div>
+      <div class="nav-item"><a href="../treatments/index.html" class="nav-link">Treatments</a></div>
+      <div class="nav-item"><a href="../prices/index.html" class="nav-link">Prices</a></div>
+      <div class="nav-item"><a href="../gallery/index.html" class="nav-link">Gallery</a></div>
+      <div class="nav-item"><a href="../contact/index.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:01216166023" class="header-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg>0121 616 6023</a>
+      <a href="../book-online/index.html" class="header-book" aria-current="page">BOOK NOW <span class="arrow">→</span></a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mobile-nav-overlay__header"><a href="../index.html" class="site-logo"><span class="site-logo__text" style="color:var(--color-gold);">Secret Aesthetics</span></a><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close" style="color:var(--color-gold);font-size:24px;background:none;border:none;cursor:pointer;">✕</button></div>
+  <div class="mobile-nav-overlay__body"><a href="../treatments/index.html" class="mobile-nav-link">Treatments</a><a href="../prices/index.html" class="mobile-nav-link">Prices</a><a href="../gallery/index.html" class="mobile-nav-link">Gallery</a><a href="../contact/index.html" class="mobile-nav-link">Contact</a></div>
+  <div class="mobile-nav-overlay__footer"><a href="../book-online/index.html" class="mobile-book-btn">Book Consultation</a><a href="tel:01216166023" class="mobile-phone-link">0121 616 6023</a></div>
+</div>
+
+<main id="main">
+  <div class="booking-page">
+    <div class="container">
+
+      <!-- Page Header -->
+      <div style="text-align:center;margin-bottom:var(--space-48);">
+        <nav class="breadcrumb" aria-label="Breadcrumb" style="justify-content:center;margin-bottom:20px;"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>Book Online</span></nav>
+        <span class="section-label">BOOK YOUR CONSULTATION</span>
+        <h1 style="font-family:var(--font-display);font-style:italic;font-size:clamp(40px,5vw,64px);margin:16px 0 12px;">Begin Your Journey</h1>
+        <p style="font-size:var(--text-base);color:var(--color-text-70);max-width:520px;margin:0 auto;">Complete the form below to request your consultation with one of our founding doctors. We'll confirm your appointment within 2 hours.</p>
+      </div>
+
+      <!-- Stepper -->
+      <div class="booking-stepper" role="progressbar" aria-label="Booking progress" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4">
+        <div class="booking-step active" id="step-indicator-1">
+          <div class="step-num" aria-hidden="true">1</div>
+          <span class="step-label">Treatment</span>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="booking-step" id="step-indicator-2">
+          <div class="step-num" aria-hidden="true">2</div>
+          <span class="step-label">Doctor</span>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="booking-step" id="step-indicator-3">
+          <div class="step-num" aria-hidden="true">3</div>
+          <span class="step-label">Date & Time</span>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="booking-step" id="step-indicator-4">
+          <div class="step-num" aria-hidden="true">4</div>
+          <span class="step-label">Details</span>
+        </div>
+      </div>
+
+      <div class="booking-layout">
+
+        <!-- WIZARD PANELS -->
+        <div>
+
+          <!-- STEP 1 — Treatment -->
+          <div class="booking-panel active" id="booking-step-1" role="group" aria-labelledby="step1-title">
+            <h2 id="step1-title">Which treatment are you interested in?</h2>
+            <p>Select your primary area of interest — you can discuss all concerns in your consultation.</p>
+
+            <div class="treatment-select-grid">
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="anti-wrinkle" data-price="From £199">
+                <span class="item-icon" aria-hidden="true">✨</span>
+                <span><span class="item-name">Anti-Wrinkle (Botox)</span><span class="item-price">From £199</span></span>
+              </label>
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="dermal-fillers" data-price="From £300">
+                <span class="item-icon" aria-hidden="true">💉</span>
+                <span><span class="item-name">Dermal Fillers</span><span class="item-price">From £300</span></span>
+              </label>
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="endolift" data-price="From £1,500">
+                <span class="item-icon" aria-hidden="true">✦</span>
+                <span><span class="item-name">Endolift® (Exclusive)</span><span class="item-price">From £1,500</span></span>
+              </label>
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="skin-boosters" data-price="From £300">
+                <span class="item-icon" aria-hidden="true">💧</span>
+                <span><span class="item-name">Skin Boosters (Profhilo)</span><span class="item-price">From £300</span></span>
+              </label>
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="laser" data-price="From £400">
+                <span class="item-icon" aria-hidden="true">⚡</span>
+                <span><span class="item-name">Laser Treatments</span><span class="item-price">From £400</span></span>
+              </label>
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="iv-therapy" data-price="From £99">
+                <span class="item-icon" aria-hidden="true">🩸</span>
+                <span><span class="item-name">IV Vitamin Bar</span><span class="item-price">From £99</span></span>
+              </label>
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="hydrafacial" data-price="From £120">
+                <span class="item-icon" aria-hidden="true">🌊</span>
+                <span><span class="item-name">HydraFacial</span><span class="item-price">From £120</span></span>
+              </label>
+              <label class="treatment-select-item">
+                <input type="radio" class="sr-only" name="treatment" value="consultation-only" data-price="From £75">
+                <span class="item-icon" aria-hidden="true">🩺</span>
+                <span><span class="item-name">Consultation Only</span><span class="item-price">£75</span></span>
+              </label>
+            </div>
+
+            <div class="booking-nav">
+              <span></span>
+              <button class="btn btn-primary" id="next-1" disabled>Continue <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 2 — Doctor -->
+          <div class="booking-panel" id="booking-step-2" role="group" aria-labelledby="step2-title">
+            <h2 id="step2-title">Select your doctor</h2>
+            <p>Both of our founding doctors are highly experienced. You may have a preference based on your chosen treatment.</p>
+
+            <div class="doctor-select-grid">
+              <div class="doctor-select-card" data-doctor="Dr Naqvi" role="radio" aria-checked="false" tabindex="0">
+                <div class="doc-img">
+                  <img src="../assets/images/dr-naqvi.png" alt="Dr Naqvi" loading="lazy">
+                </div>
+                <div class="doc-info">
+                  <p class="doc-name">Dr Naqvi</p>
+                  <p class="doc-spec">Co-Founder & Lead Clinician</p>
+                  <p style="font-size:12px;color:var(--color-text-60);margin-top:8px;line-height:1.5;">Specialist in facial aesthetics, Endolift® & surgical-grade results. Galderma UK Faculty member.</p>
+                </div>
+              </div>
+              <div class="doctor-select-card" data-doctor="Dr Zoya" role="radio" aria-checked="false" tabindex="0">
+                <div class="doc-img">
+                  <img src="../assets/images/dr-zoya.png" alt="Dr Zoya" loading="lazy">
+                </div>
+                <div class="doc-info">
+                  <p class="doc-name">Dr Zoya</p>
+                  <p class="doc-spec">Co-Founder & Aesthetic Doctor</p>
+                  <p style="font-size:12px;color:var(--color-text-60);margin-top:8px;line-height:1.5;">Expert in natural-looking enhancement, lip artistry & skin health. Known for her warm, empathetic approach.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align:center;margin-top:16px;">
+              <button class="btn-text" data-doctor="No preference" id="no-pref-btn" style="font-size:13px;">No preference — book with next available</button>
+            </div>
+
+            <div class="booking-nav">
+              <button class="btn btn-secondary" id="back-2">← Back</button>
+              <button class="btn btn-primary" id="next-2" disabled>Continue <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 3 — Date & Time -->
+          <div class="booking-panel" id="booking-step-3" role="group" aria-labelledby="step3-title">
+            <h2 id="step3-title">Choose a date & time</h2>
+            <p>All consultations are 30 minutes. Appointments available Tuesday – Saturday.</p>
+
+            <p style="font-size:12px;color:var(--color-text-50);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.15em;">June 2026</p>
+            <div class="date-grid" role="group" aria-label="Select appointment date">
+              <button class="date-btn" disabled><span class="date-day">Sun</span><span class="date-num">8</span></button>
+              <button class="date-btn" disabled><span class="date-day">Mon</span><span class="date-num">9</span></button>
+              <button class="date-btn" data-date="2026-06-10"><span class="date-day">Tue</span><span class="date-num">10</span></button>
+              <button class="date-btn" data-date="2026-06-11"><span class="date-day">Wed</span><span class="date-num">11</span></button>
+              <button class="date-btn" data-date="2026-06-12"><span class="date-day">Thu</span><span class="date-num">12</span></button>
+              <button class="date-btn" data-date="2026-06-13"><span class="date-day">Fri</span><span class="date-num">13</span></button>
+              <button class="date-btn" data-date="2026-06-14"><span class="date-day">Sat</span><span class="date-num">14</span></button>
+              <button class="date-btn" disabled><span class="date-day">Sun</span><span class="date-num">15</span></button>
+              <button class="date-btn" disabled><span class="date-day">Mon</span><span class="date-num">16</span></button>
+              <button class="date-btn" data-date="2026-06-17"><span class="date-day">Tue</span><span class="date-num">17</span></button>
+              <button class="date-btn" data-date="2026-06-18"><span class="date-day">Wed</span><span class="date-num">18</span></button>
+              <button class="date-btn" data-date="2026-06-19"><span class="date-day">Thu</span><span class="date-num">19</span></button>
+              <button class="date-btn" data-date="2026-06-20"><span class="date-day">Fri</span><span class="date-num">20</span></button>
+              <button class="date-btn" data-date="2026-06-21"><span class="date-day">Sat</span><span class="date-num">21</span></button>
+            </div>
+
+            <p style="font-size:12px;color:var(--color-text-50);margin:24px 0 12px;text-transform:uppercase;letter-spacing:0.15em;">Available Times</p>
+            <div class="time-grid" role="group" aria-label="Select appointment time">
+              <button class="time-btn" data-time="10:00">10:00am</button>
+              <button class="time-btn" data-time="10:30">10:30am</button>
+              <button class="time-btn" data-time="11:00" disabled aria-disabled="true">11:00am</button>
+              <button class="time-btn" data-time="11:30">11:30am</button>
+              <button class="time-btn" data-time="12:00">12:00pm</button>
+              <button class="time-btn" data-time="12:30" disabled>12:30pm</button>
+              <button class="time-btn" data-time="13:00">1:00pm</button>
+              <button class="time-btn" data-time="14:00">2:00pm</button>
+              <button class="time-btn" data-time="14:30">2:30pm</button>
+              <button class="time-btn" data-time="15:00" disabled>3:00pm</button>
+              <button class="time-btn" data-time="15:30">3:30pm</button>
+              <button class="time-btn" data-time="16:00">4:00pm</button>
+            </div>
+
+            <div class="booking-nav">
+              <button class="btn btn-secondary" id="back-3">← Back</button>
+              <button class="btn btn-primary" id="next-3" disabled>Continue <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 4 — Personal Details -->
+          <div class="booking-panel" id="booking-step-4" role="group" aria-labelledby="step4-title">
+            <h2 id="step4-title">Your details</h2>
+            <p>Almost done! We need a few details to confirm your appointment.</p>
+
+            <form class="sa-form" id="booking-form" novalidate aria-label="Booking details form">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="b-first">First Name <span class="req">*</span></label>
+                  <input class="form-field" type="text" id="b-first" name="first_name" required autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-last">Last Name <span class="req">*</span></label>
+                  <input class="form-field" type="text" id="b-last" name="last_name" required autocomplete="family-name">
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="b-email">Email Address <span class="req">*</span></label>
+                  <input class="form-field" type="email" id="b-email" name="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-phone">Phone Number <span class="req">*</span></label>
+                  <input class="form-field" type="tel" id="b-phone" name="phone" required autocomplete="tel">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="b-notes">Anything you'd like us to know?</label>
+                <textarea class="form-field" id="b-notes" name="notes" rows="3" placeholder="Medical history, concerns, areas of interest…"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-checkbox">
+                  <input type="checkbox" class="consent-checkbox" required>
+                  <span>I agree to the <a href="../privacy/index.html">Privacy Policy</a> and consent to be contacted regarding my appointment.</span>
+                </label>
+              </div>
+              <div class="booking-nav">
+                <button type="button" class="btn btn-secondary" id="back-4">← Back</button>
+                <button type="submit" class="btn btn-primary">Confirm Booking →</button>
+              </div>
+            </form>
+
+            <div class="form-success-msg" id="booking-success" role="alert">
+              <span class="check">✓</span>
+              <p style="font-family:var(--font-feature);font-size:22px;margin-bottom:8px;">Booking Request Received</p>
+              <p style="font-size:13px;color:var(--color-text-60);line-height:1.6;">Our team will confirm your appointment within 2 hours via email or phone. We look forward to welcoming you.</p>
+              <a href="../index.html" class="btn btn-secondary" style="margin-top:24px;display:inline-flex;">← Return Home</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR SUMMARY -->
+        <div>
+          <div class="booking-summary">
+            <h3>Booking Summary</h3>
+            <div class="summary-row">
+              <span class="summary-label">Treatment</span>
+              <span class="summary-value empty" id="sum-treatment">Not selected</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Doctor</span>
+              <span class="summary-value empty" id="sum-doctor">Not selected</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Date</span>
+              <span class="summary-value empty" id="sum-date">Not selected</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Time</span>
+              <span class="summary-value empty" id="sum-time">Not selected</span>
+            </div>
+            <div class="summary-row summary-total">
+              <span class="summary-label">Starting From</span>
+              <span class="summary-value" id="sum-price" style="color:var(--color-gold);font-family:var(--font-feature);font-size:22px;">—</span>
+            </div>
+
+            <div class="consultation-note">
+              <strong style="display:block;margin-bottom:4px;color:var(--color-text-70);">Free Medical Consultation Included</strong>
+              Your appointment includes a full medical assessment and personalised treatment plan — no obligation to proceed.
+            </div>
+
+            <div class="booking-trust">
+              <div class="booking-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                CQC-regulated clinic
+              </div>
+              <div class="booking-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Doctor-only treatments
+              </div>
+              <div class="booking-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Free cancellation 24hrs prior
+              </div>
+              <div class="booking-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                0% finance available
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;text-align:center;">
+            <p style="font-size:12px;color:var(--color-text-50);margin-bottom:12px;">Prefer to book by phone?</p>
+            <a href="tel:01216166023" class="btn btn-secondary" style="width:100%;justify-content:center;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 16 19.79 19.79 0 011.61 7.5 2 2 0 013.6 5.28h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 13a16 16 0 006.06 6.06l1.06-1.06a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 20.17z"/></svg>
+              Call 0121 616 6023
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<script defer src="../js/main.js"></script>
+<script defer src="../js/animations.js"></script>
+<script defer src="../js/micro.js"></script>
+<script defer src="../js/cookies.js"></script>
+<script>
+'use strict';
+document.addEventListener('DOMContentLoaded', () => {
+  let currentStep = 1;
+  const state = { treatment: null, doctor: null, date: null, time: null, price: null };
+
+  function showStep(n) {
+    document.querySelectorAll('.booking-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`booking-step-${n}`)?.classList.add('active');
+
+    document.querySelectorAll('.booking-step').forEach((s, i) => {
+      s.classList.remove('active', 'done');
+      if (i + 1 < n) s.classList.add('done');
+      if (i + 1 === n) s.classList.add('active');
+    });
+
+    document.querySelector('.booking-stepper')?.setAttribute('aria-valuenow', n);
+    currentStep = n;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Treatment select
+  document.querySelectorAll('input[name="treatment"]').forEach(radio => {
+    const item = radio.closest('.treatment-select-item');
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.treatment-select-item').forEach(i => i.classList.remove('selected'));
+      item.classList.add('selected');
+      radio.checked = true;
+      state.treatment = item.querySelector('.item-name')?.textContent;
+      state.price = radio.dataset.price;
+      document.getElementById('sum-treatment').textContent = state.treatment;
+      document.getElementById('sum-treatment').classList.remove('empty');
+      document.getElementById('sum-price').textContent = state.price;
+      document.getElementById('next-1').disabled = false;
+    });
+  });
+
+  document.getElementById('next-1')?.addEventListener('click', () => showStep(2));
+
+  // Doctor select
+  document.querySelectorAll('.doctor-select-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.doctor-select-card').forEach(c => { c.classList.remove('selected'); c.setAttribute('aria-checked', 'false'); });
+      card.classList.add('selected');
+      card.setAttribute('aria-checked', 'true');
+      state.doctor = card.dataset.doctor;
+      document.getElementById('sum-doctor').textContent = state.doctor;
+      document.getElementById('sum-doctor').classList.remove('empty');
+      document.getElementById('next-2').disabled = false;
+    });
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }});
+  });
+
+  document.getElementById('no-pref-btn')?.addEventListener('click', () => {
+    document.querySelectorAll('.doctor-select-card').forEach(c => { c.classList.remove('selected'); c.setAttribute('aria-checked', 'false'); });
+    state.doctor = 'No preference';
+    document.getElementById('sum-doctor').textContent = state.doctor;
+    document.getElementById('sum-doctor').classList.remove('empty');
+    document.getElementById('next-2').disabled = false;
+  });
+
+  document.getElementById('back-2')?.addEventListener('click', () => showStep(1));
+  document.getElementById('next-2')?.addEventListener('click', () => showStep(3));
+
+  // Date select
+  document.querySelectorAll('.date-btn:not(:disabled)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      state.date = btn.querySelector('.date-day').textContent + ' ' + btn.querySelector('.date-num').textContent + ' Jun';
+      document.getElementById('sum-date').textContent = state.date;
+      document.getElementById('sum-date').classList.remove('empty');
+      if (state.time) document.getElementById('next-3').disabled = false;
+    });
+  });
+
+  document.querySelectorAll('.time-btn:not(:disabled)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      state.time = btn.dataset.time;
+      document.getElementById('sum-time').textContent = state.time;
+      document.getElementById('sum-time').classList.remove('empty');
+      if (state.date) document.getElementById('next-3').disabled = false;
+    });
+  });
+
+  document.getElementById('back-3')?.addEventListener('click', () => showStep(2));
+  document.getElementById('next-3')?.addEventListener('click', () => showStep(4));
+
+  document.getElementById('back-4')?.addEventListener('click', () => showStep(3));
+
+  // Form submit
+  document.getElementById('booking-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Confirming…';
+    await new Promise(r => setTimeout(r, 1500));
+    e.target.style.display = 'none';
+    document.getElementById('booking-success').style.display = 'block';
+    document.querySelector('.booking-stepper')?.querySelectorAll('.booking-step').forEach(s => { s.classList.remove('active'); s.classList.add('done'); });
+  });
+});
+</script>
+</body>
+</html>

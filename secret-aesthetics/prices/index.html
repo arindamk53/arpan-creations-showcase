@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treatment Prices | Secret Aesthetics Birmingham | Harvey Nichols</title>
+  <meta name="description" content="Transparent pricing for all aesthetic treatments at Secret Aesthetics Birmingham. Anti-wrinkle from £199, Endolift® from £1,500, Profhilo from £300, IV Vitamin Bar from £99. Finance available.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Treatment Prices | Secret Aesthetics Birmingham">
+  <meta property="og:description" content="Transparent pricing for all aesthetic treatments. Finance available.">
+  <meta property="og:image" content="../assets/images/og-card.png">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/cookie-banner.css">
+  <style>
+    .prices-hero { height:40vh; min-height:300px; position:relative; display:flex; align-items:flex-end; padding-bottom:60px; }
+    .prices-hero__bg { position:absolute; inset:0; }
+    .prices-hero__bg img { width:100%; height:100%; object-fit:cover; }
+    .prices-hero__bg::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.72); }
+
+    /* Offers Scroll */
+    .offers-section { background:#0F0C00; border-top:1px solid rgba(200,169,110,0.3); border-bottom:1px solid rgba(200,169,110,0.3); padding:var(--space-32) 0; }
+    .offers-scroll { display:flex; gap:var(--space-16); overflow-x:auto; padding:0 var(--section-pad-x); scrollbar-width:none; }
+    .offers-scroll::-webkit-scrollbar { display:none; }
+    .offer-card { flex-shrink:0; background:#1A1500; border:1px solid rgba(200,169,110,0.25); border-radius:var(--radius-md); padding:20px 24px; min-width:220px; transition:border-color var(--transition-base); }
+    .offer-card:hover { border-color:rgba(200,169,110,0.6); }
+    .offer-badge { font-size:10px; text-transform:uppercase; letter-spacing:0.15em; color:var(--color-gold); display:block; margin-bottom:6px; }
+    .offer-title { font-family:var(--font-body); font-weight:500; font-size:15px; color:var(--color-text); margin-bottom:4px; }
+    .offer-detail { font-size:12px; color:var(--color-text-60); line-height:1.5; }
+
+    /* Tab Nav */
+    .tab-nav { position:sticky; top:88px; z-index:var(--z-sticky); background:var(--color-bg); border-bottom:1px solid rgba(200,169,110,0.15); padding:0 var(--section-pad-x); display:flex; gap:0; overflow-x:auto; scrollbar-width:none; }
+    .tab-nav::-webkit-scrollbar { display:none; }
+    .tab-btn { font-family:var(--font-body); font-size:11px; text-transform:uppercase; letter-spacing:0.2em; padding:16px 20px; color:var(--color-text-50); background:transparent; border:none; border-bottom:3px solid transparent; cursor:pointer; white-space:nowrap; transition:all 250ms; }
+    .tab-btn:hover { color:var(--color-text-70); }
+    .tab-btn.active { color:var(--color-gold); border-bottom-color:var(--color-gold); }
+
+    .tabs-section { background:var(--color-bg); }
+    .tab-panel { display:none; padding:var(--space-48) 0; }
+    .tab-panel.active { display:block; animation:fadeIn 0.3s ease; }
+
+    /* Pricing Table */
+    .pricing-table { max-width:820px; margin:0 auto; }
+    .pricing-table-title { font-family:var(--font-feature); font-size:22px; margin-bottom:var(--space-24); color:var(--color-text); }
+    .pricing-note { font-size:13px; color:var(--color-text-60); font-style:italic; margin-bottom:var(--space-24); }
+    .pricing-row { display:flex; align-items:center; justify-content:space-between; padding:18px 0; border-bottom:1px solid rgba(200,169,110,0.08); gap:24px; }
+    .pricing-row:last-child { border-bottom:none; }
+    .pricing-row__name { font-size:15px; color:var(--color-text-80); flex:1; }
+    .pricing-row__name small { display:block; font-size:12px; color:var(--color-text-50); margin-top:2px; font-style:italic; }
+    .pricing-row__price { font-family:var(--font-feature); font-size:22px; color:var(--color-gold); text-align:right; flex-shrink:0; }
+    .pricing-row__price del { font-family:var(--font-body); font-size:13px; color:var(--color-text-50); display:block; }
+    .pricing-row--featured { background:rgba(200,169,110,0.04); margin:0 -24px; padding:18px 24px; border-radius:var(--radius-sm); }
+
+    /* Finance CTA */
+    .finance-cta { background:linear-gradient(135deg, rgba(200,169,110,0.08) 0%, transparent 60%); border:1px solid rgba(200,169,110,0.2); border-radius:var(--radius-lg); padding:var(--space-48); text-align:center; margin:var(--space-48) 0 0; }
+    .finance-cta h2 { font-family:var(--font-feature); font-size:32px; margin-bottom:12px; }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="page-transition" aria-hidden="true"></div>
+<a href="../book-online/index.html" class="floating-cta-mobile"><span class="btn-float-mobile">Book Now →</span></a>
+<div class="floating-cta-desktop" id="floating-desk"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="2" width="22" height="22"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+
+<div class="press-bar" aria-hidden="true"><div class="press-bar__inner"><span class="press-bar__label">As seen in</span><div class="press-bar__track-wrap"><div class="press-bar__track"><span class="press-bar__item">Vogue</span><span class="press-bar__sep">·</span><span class="press-bar__item">Harper's Bazaar</span><span class="press-bar__sep">·</span><span class="press-bar__item">Evening Standard</span><span class="press-bar__sep">·</span><span class="press-bar__item">The Telegraph</span><span class="press-bar__sep">·</span><span class="press-bar__item">Tatler</span><span class="press-bar__sep">·</span><span class="press-bar__item">Vogue</span></div></div></div></div>
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="../index.html" class="site-logo"><span class="site-logo__text">Secret Aesthetics</span><span class="site-logo__sub">Birmingham · Harvey Nichols</span></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-item"><a href="../the-clinic/index.html" class="nav-link">About</a></div>
+      <div class="nav-item"><a href="../treatments/index.html" class="nav-link">Treatments</a></div>
+      <div class="nav-item"><a href="../conditions/index.html" class="nav-link">Conditions</a></div>
+      <div class="nav-item"><a href="../prices/index.html" class="nav-link active">Prices</a></div>
+      <div class="nav-item"><a href="../gallery/index.html" class="nav-link">Gallery</a></div>
+      <div class="nav-item"><a href="../blog/index.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="../contact/index.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="header-actions"><a href="tel:01216166023" class="header-phone">0121 616 6023</a><a href="../book-online/index.html" class="header-book">BOOK NOW →</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mobile-nav-overlay__header"><a href="../index.html" class="site-logo"><span class="site-logo__text" style="color:var(--color-gold);">Secret Aesthetics</span></a><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close" style="color:var(--color-gold);font-size:24px;background:none;border:none;cursor:pointer;">✕</button></div>
+  <div class="mobile-nav-overlay__body"><a href="../treatments/index.html" class="mobile-nav-link">Treatments</a><a href="../prices/index.html" class="mobile-nav-link">Prices</a><a href="../gallery/index.html" class="mobile-nav-link">Gallery</a><a href="../contact/index.html" class="mobile-nav-link">Contact</a></div>
+  <div class="mobile-nav-overlay__footer"><a href="../book-online/index.html" class="mobile-book-btn">Book Consultation</a><a href="tel:01216166023" class="mobile-phone-link">0121 616 6023</a></div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="prices-hero">
+    <div class="prices-hero__bg"><img src="../assets/images/clinic-interior.png" alt="Secret Aesthetics clinic" loading="eager"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px;"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>Prices</span></nav>
+      <span class="section-label hero-anim-1">TRANSPARENT PRICING</span>
+      <h1 class="section-headline hero-anim-2" style="font-size:clamp(48px,7vw,80px);">Prices & Fees</h1>
+      <p class="hero-anim-3" style="font-size:17px;color:var(--color-text-70);max-width:540px;line-height:1.6;">No hidden costs. No surprise fees. Every treatment quoted transparently at your consultation. Finance available from 0% APR.</p>
+    </div>
+  </section>
+
+  <!-- TRUST BAR (inline) -->
+  <div class="trust-bar" style="border-top:none;">
+    <div class="trust-bar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>CQC Regulated</div>
+    <span class="trust-bar__divider" aria-hidden="true"></span>
+    <div class="trust-bar__item">0% Finance Available</div>
+    <span class="trust-bar__divider" aria-hidden="true"></span>
+    <div class="trust-bar__item">Free Consultation</div>
+    <span class="trust-bar__divider" aria-hidden="true"></span>
+    <div class="trust-bar__item">Harvey Nichols Birmingham</div>
+  </div>
+
+  <!-- OFFERS BANNER -->
+  <div class="offers-section">
+    <div style="padding:0 var(--section-pad-x) var(--space-16);">
+      <span class="section-label">EXCLUSIVE OFFERS</span>
+    </div>
+    <div class="offers-scroll">
+      <div class="offer-card">
+        <span class="offer-badge">Limited Time</span>
+        <p class="offer-title">25% Off Endolift®</p>
+        <p class="offer-detail">Full Face & Neck from £1,500 — saving £500 on RRP of £2,000</p>
+      </div>
+      <div class="offer-card">
+        <span class="offer-badge">Returning Clients</span>
+        <p class="offer-title">5% Loyalty Discount</p>
+        <p class="offer-detail">Exclusive discount for returning patients on all treatments</p>
+      </div>
+      <div class="offer-card">
+        <span class="offer-badge">Birthday Month</span>
+        <p class="offer-title">5% Birthday Discount</p>
+        <p class="offer-detail">Treat yourself — applied automatically in your birthday month</p>
+      </div>
+      <div class="offer-card">
+        <span class="offer-badge">Same Session</span>
+        <p class="offer-title">£80 Off Additional Filler</p>
+        <p class="offer-detail">When booking a second syringe of filler in the same appointment</p>
+      </div>
+      <div class="offer-card">
+        <span class="offer-badge">Refer-a-Friend</span>
+        <p class="offer-title">5% Referral Reward</p>
+        <p class="offer-detail">Refer a friend who completes treatment — you receive 5% off your next visit</p>
+      </div>
+      <div class="offer-card">
+        <span class="offer-badge">IV Therapy</span>
+        <p class="offer-title">10% Off All Drips</p>
+        <p class="offer-detail">Book any IV vitamin drip with code DRIP10</p>
+      </div>
+      <div class="offer-card">
+        <span class="offer-badge">Harvey Nichols</span>
+        <p class="offer-title">Loyalty Points Accepted</p>
+        <p class="offer-detail">Pay with your Harvey Nichols Rewards points</p>
+      </div>
+      <div class="offer-card">
+        <span class="offer-badge">Finance</span>
+        <p class="offer-title">0% Finance Available</p>
+        <p class="offer-detail">Spread the cost over 6, 12 or 24 months — interest free</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB NAV -->
+  <div class="tab-nav" role="tablist" aria-label="Price categories">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-consultations" data-tab="consultations">Consultations</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-anti-wrinkle" data-tab="anti-wrinkle">Anti-Wrinkle</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-fillers" data-tab="fillers">Dermal Fillers</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-skin-boosters" data-tab="skin-boosters">Skin Boosters</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-endolift" data-tab="endolift">Endolift®</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-collagen" data-tab="collagen">Collagen</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-hydrafacial" data-tab="hydrafacial">HydraFacial</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-prp" data-tab="prp">PRP</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-laser" data-tab="laser">Laser</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-eye" data-tab="eye">Eye Treatments</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-medical" data-tab="medical">Medical</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-blood" data-tab="blood">Blood Testing</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-iv" data-tab="iv">IV Vitamin Bar</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-packages" data-tab="packages">Packages</button>
+  </div>
+
+  <!-- TABS CONTENT -->
+  <div class="tabs-section">
+    <div class="container">
+
+      <!-- CONSULTATIONS -->
+      <div id="tab-consultations" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-consultations">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Consultations</h2>
+          <p class="pricing-note">Consultation fees are deducted from the cost of treatment when you proceed.</p>
+          <div class="pricing-row"><span class="pricing-row__name">Medical Consultation (Doctor)<small>Full facial assessment, treatment plan & skincare review</small></span><span class="pricing-row__price">£75</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Skin Therapist Consultation<small>Skincare consultation, product recommendations</small></span><span class="pricing-row__price">£50</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Free Virtual Consultation</strong><small>15-minute WhatsApp consultation with photos</small></span><span class="pricing-row__price" style="color:var(--color-text-80);">FREE</span></div>
+        </div>
+      </div>
+
+      <!-- ANTI-WRINKLE -->
+      <div id="tab-anti-wrinkle" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Anti-Wrinkle (Botox)</h2>
+          <p class="pricing-note">All anti-wrinkle treatments include a free 2-week review appointment.</p>
+          <div class="pricing-row"><span class="pricing-row__name">1 Area<small>Forehead, frown lines, or crow's feet</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">2 Areas<small>Forehead + frown lines</small></span><span class="pricing-row__price">£249</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>3 Areas</strong><small>Forehead, frown lines & crow's feet — most popular</small></span><span class="pricing-row__price">£299</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Jawline Slimming (Masseter)<small>Bruxism, TMJ, and facial slimming</small></span><span class="pricing-row__price">£300</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Hyperhidrosis (Sweating)<small>Underarms, hands, or feet</small></span><span class="pricing-row__price">£350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Neck Bands (Platysmal)</span><span class="pricing-row__price">£280</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Lip Flip<small>Subtle upper lip definition</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Brow Lift<small>Non-surgical eyebrow elevation</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Nose Tip Lift</span><span class="pricing-row__price">£149</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Migraine Treatment<small>Clinical therapeutic botulinum toxin injection</small></span><span class="pricing-row__price">£300</span></div>
+        </div>
+      </div>
+
+      <!-- FILLERS -->
+      <div id="tab-fillers" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Dermal Fillers</h2>
+          <p class="pricing-note">All filler prices include a complimentary 2-week review and aftercare advice. Hyaluronic acid only — Galderma, Allergan and Teosyal used.</p>
+          <div class="pricing-row"><span class="pricing-row__name">0.5ml Filler<small>Subtle enhancement — single syringe</small></span><span class="pricing-row__price">£300</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>1ml Filler</strong><small>Standard treatment — most popular volume</small></span><span class="pricing-row__price">£399</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">1.5ml Filler<small>Enhanced result for more significant volume needs</small></span><span class="pricing-row__price">£449</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">2ml Filler<small>Comprehensive volumising</small></span><span class="pricing-row__price">£599</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Lip Filler<small>Natural definition and volume</small></span><span class="pricing-row__price">From £300</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Cheek Filler<small>Mid-face volumising and contouring</small></span><span class="pricing-row__price">From £350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Non-Surgical Rhinoplasty<small>Nose reshaping without surgery</small></span><span class="pricing-row__price">From £450</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Tear Trough (Under Eye)<small>Dark circle and hollow correction</small></span><span class="pricing-row__price">From £450</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Jawline Definition<small>Contouring and sharpening</small></span><span class="pricing-row__price">From £399</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Chin Projection<small>Chin augmentation and lengthening</small></span><span class="pricing-row__price">From £350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Temple Filler<small>Temporal hollowing correction</small></span><span class="pricing-row__price">From £399</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Hand Rejuvenation<small>Volume restoration to the hands</small></span><span class="pricing-row__price">From £350</span></div>
+        </div>
+      </div>
+
+      <!-- SKIN BOOSTERS -->
+      <div id="tab-skin-boosters" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Skin Boosters</h2>
+          <p class="pricing-note">Skin booster treatments hydrate, plump and improve skin quality from within — no volume or sculpting effect.</p>
+          <div class="pricing-row"><span class="pricing-row__name">Profhilo (1 Session)<small>Bio-remodelling — single treatment</small></span><span class="pricing-row__price">£300</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Profhilo (2 Session Course)</strong><small>Recommended protocol — sessions 1 month apart</small></span><span class="pricing-row__price">£550</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Polynucleotides<small>PDRN skin regeneration — per session</small></span><span class="pricing-row__price">£350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Polynucleotides (2 Session Course)</span><span class="pricing-row__price">£600</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Exosomes<small>Advanced regenerative treatment</small></span><span class="pricing-row__price">£400</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Restylane Skinboosters<small>Deep hydration and smoothing</small></span><span class="pricing-row__price">£280</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Seventy Hyal Skin Booster</span><span class="pricing-row__price">£250</span></div>
+        </div>
+      </div>
+
+      <!-- ENDOLIFT -->
+      <div id="tab-endolift" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Endolift® Laser Lifting</h2>
+          <p class="pricing-note">Birmingham's only certified Endolift® provider. All prices include full medical consultation and 6-week review.</p>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Full Face & Neck</strong><small>Complete facial lift — most popular option</small></span><span class="pricing-row__price">£1,500<del>RRP £2,000</del></span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Lower Face & Neck<small>Jowls, jawline, submental and upper neck</small></span><span class="pricing-row__price">£1,200<small style="font-size:11px;color:var(--color-text-50);">RRP £1,600</small></span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Neck Only<small>Isolated neck laxity and platysmal bands</small></span><span class="pricing-row__price">£900</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Body Area (per area)<small>Abdomen, inner arm, knee, décolletage</small></span><span class="pricing-row__price">£700</span></div>
+        </div>
+        <div style="max-width:820px;margin:var(--space-24) auto 0;padding:var(--space-24);background:rgba(200,169,110,0.05);border-radius:var(--radius-md);border:1px solid rgba(200,169,110,0.15);">
+          <p style="font-size:13px;color:var(--color-text-70);line-height:1.6;"><strong style="color:var(--color-gold);">✦ Birmingham Exclusive:</strong> Secret Aesthetics is the only clinic in Birmingham and the West Midlands certified to perform the Endolift® procedure. Dr Naqvi completed advanced training with the Italian Endolift® Academy.</p>
+        </div>
+      </div>
+
+      <!-- COLLAGEN -->
+      <div id="tab-collagen" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Collagen Stimulators</h2>
+          <div class="pricing-row"><span class="pricing-row__name">Sculptra (1 Vial)<small>Progressive collagen stimulation</small></span><span class="pricing-row__price">£550</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Sculptra (2 Vials)</strong><small>Recommended initial protocol</small></span><span class="pricing-row__price">£950</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Sculptra (3 Vials)</span><span class="pricing-row__price">£1,350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Ellansé 1ml<small>Long-lasting bioresorbable stimulator</small></span><span class="pricing-row__price">£600</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Ellansé 2ml</span><span class="pricing-row__price">£1,000</span></div>
+        </div>
+      </div>
+
+      <!-- HYDRAFACIAL -->
+      <div id="tab-hydrafacial" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">HydraFacial</h2>
+          <p class="pricing-note">All HydraFacial treatments include cleanse, exfoliation, extraction, and antioxidant infusion.</p>
+          <div class="pricing-row"><span class="pricing-row__name">Signature HydraFacial<small>30 minutes — essential skin refresh</small></span><span class="pricing-row__price">£120</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Deluxe HydraFacial<small>45 minutes — includes booster serum</small></span><span class="pricing-row__price">£160</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Platinum HydraFacial</strong><small>60 minutes — includes LED therapy & lymphatic drainage</small></span><span class="pricing-row__price">£200</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Keravive Scalp HydraFacial<small>Scalp health and hair follicle treatment</small></span><span class="pricing-row__price">£250</span></div>
+        </div>
+      </div>
+
+      <!-- PRP -->
+      <div id="tab-prp" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">PRP (Platelet-Rich Plasma)</h2>
+          <div class="pricing-row"><span class="pricing-row__name">PRP Face<small>Regenerative skin treatment</small></span><span class="pricing-row__price">£350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">PRP Hair<small>Scalp injection for hair regrowth</small></span><span class="pricing-row__price">£350</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>PRP + Microneedling</strong><small>Enhanced combined protocol</small></span><span class="pricing-row__price">£450</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">PRP Course (3 sessions)</span><span class="pricing-row__price">£950</span></div>
+        </div>
+      </div>
+
+      <!-- LASER -->
+      <div id="tab-laser" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Laser Treatments</h2>
+          <div class="pricing-row"><span class="pricing-row__name">Laser Hair Removal (per area)<small>From £80 per area — packages available</small></span><span class="pricing-row__price">From £80</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Laser Hair Removal — Full Body</span><span class="pricing-row__price">£300</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">AviClear Acne Laser (per session)<small>FDA-approved acne laser treatment</small></span><span class="pricing-row__price">£400</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">AviClear 3-Session Package</span><span class="pricing-row__price">£950</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Halo Hybrid Fractional Laser</strong><small>Texture, tone & resurfacing</small></span><span class="pricing-row__price">£600</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">BBL Hero BroadBand Light<small>Pigmentation, redness, skin rejuvenation</small></span><span class="pricing-row__price">£400</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Halo + BBL Combination Session</span><span class="pricing-row__price">£850</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Ablative Laser Resurfacing<small>Advanced skin resurfacing — full recovery required</small></span><span class="pricing-row__price">£2,350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Vascular Lesion Treatment<small>Thread veins, port wine stains</small></span><span class="pricing-row__price">From £199</span></div>
+        </div>
+      </div>
+
+      <!-- EYE -->
+      <div id="tab-eye" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Eye Treatments</h2>
+          <div class="pricing-row"><span class="pricing-row__name">Tear Trough Filler<small>Under-eye hollow and dark circle correction</small></span><span class="pricing-row__price">From £450</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Brow Lift (Botox)<small>Non-surgical eyebrow elevation</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Periorbital Rejuvenation<small>Combined under-eye treatment</small></span><span class="pricing-row__price">From £350</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Under-Eye Polynucleotides<small>Dark circle and skin quality improvement</small></span><span class="pricing-row__price">£350</span></div>
+        </div>
+      </div>
+
+      <!-- MEDICAL -->
+      <div id="tab-medical" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Medical Treatments</h2>
+          <div class="pricing-row"><span class="pricing-row__name">Microneedling RF (Secret RF)<small>Fractional RF skin tightening and resurfacing</small></span><span class="pricing-row__price">£500</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">LED Light Therapy<small>Red, blue & near-infrared — per session</small></span><span class="pricing-row__price">£75</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">LED Course (6 sessions)</span><span class="pricing-row__price">£380</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Migraine Treatment<small>Botulinum toxin therapy for chronic migraine</small></span><span class="pricing-row__price">£300</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Acne Medical Consultation<small>Full dermatological assessment and treatment plan</small></span><span class="pricing-row__price">£75</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Rosacea Treatment<small>Medical management and laser options</small></span><span class="pricing-row__price">From £199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Skin Tag Removal (per area)<small>Surgical removal under local anaesthetic</small></span><span class="pricing-row__price">From £99</span></div>
+        </div>
+      </div>
+
+      <!-- BLOOD TESTING -->
+      <div id="tab-blood" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Private Blood Testing</h2>
+          <p class="pricing-note">Results reviewed by Dr Naqvi with a personalised wellness plan included.</p>
+          <div class="pricing-row"><span class="pricing-row__name">Essential Panel<small>Thyroid, full blood count, iron, vitamin D, B12</small></span><span class="pricing-row__price">£130</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Advanced Panel<small>Essential + hormones, cortisol, kidney & liver function</small></span><span class="pricing-row__price">£350</span></div>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Comprehensive Panel</strong><small>Advanced + sex hormones, inflammatory markers, heavy metals</small></span><span class="pricing-row__price">£850</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Elite Longevity Panel<small>Ultimate health optimisation — 100+ biomarkers</small></span><span class="pricing-row__price">£2,400</span></div>
+        </div>
+      </div>
+
+      <!-- IV VITAMIN BAR -->
+      <div id="tab-iv" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">IV Vitamin Bar</h2>
+          <p class="pricing-note">All drips are doctor-formulated and administered by our qualified medical team. Sessions 45–60 minutes.</p>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>NAD+ Longevity Drip</strong><small>Anti-ageing, cellular repair and cognitive enhancement</small></span><span class="pricing-row__price">£590</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Cognitive Enhancement Drip<small>Focus, clarity and memory support</small></span><span class="pricing-row__price">£299</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Vitamin C High-Dose<small>Immune support and skin brightening</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Immunity Boost Drip<small>Zinc, vitamin C, B vitamins, selenium</small></span><span class="pricing-row__price">£149</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Myers Cocktail<small>Classic multi-vitamin wellness drip</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Beauty Drip<small>Glutathione, biotin, collagen-supporting nutrients</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Glutathione IV<small>Skin brightening and antioxidant protection</small></span><span class="pricing-row__price">£179</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Weight Management Drip<small>Metabolism support and fat-burning nutrients</small></span><span class="pricing-row__price">£229</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Athletic Recovery Drip<small>Muscle recovery, hydration and performance</small></span><span class="pricing-row__price">£199</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Energy Boost Drip<small>B vitamins, magnesium, taurine, amino acids</small></span><span class="pricing-row__price">£149</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Deep Hydration Drip<small>Saline, electrolytes and essential minerals</small></span><span class="pricing-row__price">£99</span></div>
+          <div class="pricing-row"><span class="pricing-row__name">IM Booster Shot (add-on)<small>B12, vitamin D, or glutathione injection</small></span><span class="pricing-row__price">£50</span></div>
+        </div>
+      </div>
+
+      <!-- PACKAGES -->
+      <div id="tab-packages" class="tab-panel" role="tabpanel">
+        <div class="pricing-table">
+          <h2 class="pricing-table-title">Treatment Packages</h2>
+          <p class="pricing-note">Curated packages designed by Dr Naqvi for maximum results. Save up to 25% versus booking individually.</p>
+          <div class="pricing-row pricing-row--featured"><span class="pricing-row__name"><strong>Ultimate Transformation</strong><small>Endolift® + Profhilo course + anti-wrinkle — complete facial rejuvenation</small></span><span class="pricing-row__price">£2,800<del>Worth £3,500</del></span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Anti-Ageing Duo<small>Anti-wrinkle (3 areas) + Profhilo 2-session course</small></span><span class="pricing-row__price">£599<del>Worth £750</del></span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Glow Package<small>HydraFacial Platinum + Profhilo 1 session</small></span><span class="pricing-row__price">£280<del>Worth £350</del></span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Men's Refresh<small>Anti-wrinkle (3 areas) + HydraFacial Signature</small></span><span class="pricing-row__price">£399<del>Worth £450</del></span></div>
+          <div class="pricing-row"><span class="pricing-row__name">Laser Skin Reset<small>Halo + BBL Hero combination session</small></span><span class="pricing-row__price">£850<del>Worth £1,000</del></span></div>
+          <div class="pricing-row"><span class="pricing-row__name">IV + Consultation Wellness Package<small>Blood panel + Myers Cocktail + wellness plan</small></span><span class="pricing-row__price">£299<del>Worth £380</del></span></div>
+        </div>
+      </div>
+
+      <!-- Finance -->
+      <div class="finance-cta">
+        <h2>0% Finance Available</h2>
+        <p style="font-size:17px;color:var(--color-text-70);max-width:520px;margin:0 auto var(--space-24);line-height:1.6;">Spread the cost of any treatment over 6, 12 or 24 months, completely interest-free. Available on treatments from £250. Subject to status.</p>
+        <a href="../book-online/index.html" class="btn btn-primary">Apply for Finance →</a>
+      </div>
+
+      <!-- Disclaimer -->
+      <p style="font-size:12px;color:var(--color-text-50);text-align:center;max-width:700px;margin:var(--space-32) auto;font-style:italic;line-height:1.7;">All prices correct as of June 2026 and subject to change. Final treatment costs are confirmed at your consultation. Prices may vary based on clinical assessment and treatment complexity. Consultation fees are deducted from treatment cost when you proceed.</p>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-col"><a href="../index.html" class="footer-logo">Secret Aesthetics</a><p class="footer-tagline">"Your Beauty. Our Secret."™</p><p class="footer-desc">Birmingham's premier doctor-led luxury aesthetic clinic. Located within Harvey Nichols at The Mailbox.</p><div class="footer-credentials"><span class="footer-cred-badge"><span>✦</span> CQC Regulated</span><span class="footer-cred-badge"><span>✦</span> Galderma Faculty</span></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">Treatments</span></button><div class="footer-links"><a href="../treatments/index.html" class="footer-link">All Treatments</a><a href="../treatment/endolift/index.html" class="footer-link">Endolift®</a><a href="../treatments/index.html" class="footer-link">Anti-Wrinkle</a><a href="../treatments/index.html" class="footer-link">Laser</a></div></div>
+      <div class="footer-col"><button class="footer-col-toggle"><span class="footer-col-label">The Clinic</span></button><div class="footer-links"><a href="../the-clinic/index.html" class="footer-link">About</a><a href="../dr-naqvi/index.html" class="footer-link">Dr Naqvi</a><a href="../gallery/index.html" class="footer-link">Gallery</a><a href="../faq/index.html" class="footer-link">FAQ</a></div></div>
+      <div class="footer-col"><span class="footer-col-label">Visit Us</span><div class="footer-visit-item"><p class="footer-visit-text">Harvey Nichols, The Mailbox<br>Birmingham, B1 1RE</p></div><div class="footer-hours"><strong>Opening Hours</strong>Tue – Thu: 10am – 6pm<br>Fri – Sat: 10am – 7pm</div><a href="../book-online/index.html" class="footer-book-btn">Book Consultation</a></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2026 Secret Aesthetics. All rights reserved.</p><nav class="footer-legal-links" aria-label="Legal"><a href="../privacy/index.html">Privacy Policy</a><a href="../terms/index.html">Terms</a><a href="../cookies/index.html">Cookies</a></nav><p class="footer-credit">Website by <a href="https://arpancreations.com" target="_blank" rel="noopener">Arpan Creations</a></p></div>
+  </div>
+</footer>
+
+<script defer src="../js/main.js"></script>
+<script defer src="../js/animations.js"></script>
+<script defer src="../js/micro.js"></script>
+<script defer src="../js/cookies.js"></script>
+<script defer src="../js/tabs.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fd = document.getElementById('floating-desk');
+    window.addEventListener('scroll', () => { if(fd) fd.classList.toggle('visible', window.scrollY > 500); }, {passive:true});
+
+    // Tab system
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+        tabPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected','true');
+        const panel = document.getElementById('tab-' + btn.dataset.tab);
+        if(panel) panel.classList.add('active');
+        // Scroll tab into view
+        btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+      });
+    });
+  });
+</script>
+</body>
+</html>
