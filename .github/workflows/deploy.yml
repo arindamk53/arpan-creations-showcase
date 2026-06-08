@@ -33,23 +33,357 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build main site (no basePath for root URL)
+      - name: Build 786 Health Centers (Next.js)
+        env:
+          NEXT_PUBLIC_BASE_PATH: /arpan-creations-showcase/786-health-centers
         run: npm run build
 
-      - name: Copy static sites to output
+      - name: Organize output for multi-site deployment
         run: |
-          # Copy any static site folders (non-Next.js) to out directory
-          # Exclude 'out' directory itself and hidden directories
-          for dir in */; do
-            dir=${dir%/}
-            if [ "$dir" = "out" ] || [ "$dir" = ".git" ] || [ "$dir" = ".github" ] || [ "$dir" = "node_modules" ]; then
-              continue
-            fi
-            if [ -f "${dir}/index.html" ] && [ ! -f "${dir}/package.json" ]; then
-              echo "Copying static site: $dir"
-              cp -r "$dir" out/
-            fi
-          done
+          # Create temporary folder
+          mkdir -p out-tmp
+          # Move everything from out to out-tmp
+          mv out/* out-tmp/ 2>/dev/null || true
+          mv out/.* out-tmp/ 2>/dev/null || true
+
+          # Re-create out folder structure
+          mkdir -p out/786-health-centers
+          mkdir -p out/dr-abdulla
+          mkdir -p out/secret-aesthetics
+
+          # Move all Next.js build output to 786-health-centers folder
+          mv out-tmp/* out/786-health-centers/ 2>/dev/null || true
+
+          # Copy static sites
+          cp -r dr-abdulla/* out/dr-abdulla/ 2>/dev/null || true
+          cp -r secret-aesthetics/* out/secret-aesthetics/ 2>/dev/null || true
+
+      - name: Create premium portfolio showcase landing page
+        run: |
+          cat > out/index.html << 'HTMLEOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arpan Creations — Premium Web Design Showcase</title>
+  <meta name="description" content="Explore the portfolio of Arpan Creations, featuring premium, state-of-the-art websites for medical clinics, luxury aesthetic practices, and healthcare providers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030f21;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(201, 168, 96, 0.4);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --accent-gold: #c9a860;
+      --accent-teal: #0ba3c0;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Decorative background blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    
+    .blob-1 {
+      top: -10%;
+      right: 10%;
+      width: 400px;
+      height: 400px;
+      background: var(--accent-gold);
+    }
+    
+    .blob-2 {
+      bottom: 10%;
+      left: 5%;
+      width: 500px;
+      height: 500px;
+      background: var(--accent-teal);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    
+    h1 span {
+      color: var(--accent-gold);
+      font-style: italic;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(201, 168, 96, 0.05) 0%, rgba(11, 163, 192, 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(201, 168, 96, 0.05);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-header {
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .card-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .card-footer {
+      margin-top: 40px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tech-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 16px 24px;
+      background: linear-gradient(90deg, #c9a860 0%, #a8843e 100%);
+      color: #030f21;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(201, 168, 96, 0.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 168, 96, 0.4);
+      background: linear-gradient(90deg, #dbb973 0%, #bd9953 100%);
+    }
+
+    .btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="container">
+    <header>
+      <h1>Arpan <span>Creations</span></h1>
+      <p class="subtitle">A curated showcase of premium, state-of-the-art web designs crafted for elite healthcare and aesthetic clinics.</p>
+    </header>
+
+    <main class="grid">
+      <!-- 786 Health Centers -->
+      <div class="card">
+        <div class="card-header">
+          <span class="badge">Next.js Web Application</span>
+          <h2 class="card-title">786 Health Centers</h2>
+          <p class="card-desc">Family medicine practice in Richmond, TX led by Dr. Batool Asar. Features advanced fluid animations, appointment booking flow, and responsive layout.</p>
+        </div>
+        <div class="card-footer">
+          <div class="tech-list">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Framer Motion</span>
+            <span class="tech-tag">Acuity Booking</span>
+          </div>
+          <a href="786-health-centers/" class="btn">
+            View Live Site
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- High Five Care -->
+      <div class="card">
+        <div class="card-header">
+          <span class="badge">Interactive Static Site</span>
+          <h2 class="card-title">High Five Care</h2>
+          <p class="card-desc">Modern family practice clinic of Dr. Abdulla H. Abdulla in Richmond, TX. Designed with dynamic custom SVG animations, medical stats counter, and patient portal login.</p>
+        </div>
+        <div class="card-footer">
+          <div class="tech-list">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">Tailwind CDN</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">GSAP</span>
+            <span class="tech-tag">SVG Animations</span>
+          </div>
+          <a href="dr-abdulla/" class="btn">
+            View Live Site
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Secret Aesthetics -->
+      <div class="card">
+        <div class="card-header">
+          <span class="badge">Luxury Multi-page Clinic Portal</span>
+          <h2 class="card-title">Secret Aesthetics</h2>
+          <p class="card-desc">Exclusive doctor-led luxury medical aesthetics clinic at Harvey Nichols, Birmingham. Includes treatment catalog, clinical reviews, and immersive video-led design.</p>
+        </div>
+        <div class="card-footer">
+          <div class="tech-list">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">Vanilla CSS</span>
+            <span class="tech-tag">Component Architecture</span>
+            <span class="tech-tag">Vimeo SDK</span>
+            <span class="tech-tag">Interactive Sliders</span>
+          </div>
+          <a href="secret-aesthetics/" class="btn">
+            View Live Site
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Arpan Creations. All rights reserved. Premium Design, Superior Performance.</p>
+  </footer>
+</body>
+</html>
+HTMLEOF
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
