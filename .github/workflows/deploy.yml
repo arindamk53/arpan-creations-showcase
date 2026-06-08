@@ -33,18 +33,8 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /arpan-creations-showcase
+      - name: Build main site (no basePath for root URL)
         run: npm run build
-
-      - name: Copy main site to artifact root
-        run: |
-          # Copy the main site (786 Health Centers) from out/arpan-creations-showcase/ to out/ root
-          # so it's served at https://arindamk53.github.io/arpan-creations-showcase/
-          cp -r ./out/arpan-creations-showcase/* ./out/
-          # Remove the now-unneeded nested directory
-          rm -rf ./out/arpan-creations-showcase
 
       - name: Copy static sites to output
         run: |
